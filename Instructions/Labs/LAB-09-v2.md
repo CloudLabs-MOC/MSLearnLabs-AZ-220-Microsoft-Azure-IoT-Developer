@@ -50,6 +50,32 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
    ![](./media2/lab13img4.png)
 
+   >**Note:** If you encounter an error such as **"Docker Desktop - Unexpected WSL error"**, click **Quit** to close Docker and follow below steps:
+
+   ![](./media2/nvdocker7.png)
+
+   - Search for the PowerShell in your lab-VM, right-click on the PowerShell, and select run as administrator.
+     
+      ![](./media2/powershell.png)
+     
+   - Run the below command:
+      ```
+      #Check if 'docker-users' group exists before adding to 'Administrators'
+       $dockerUsersGroupExists = Get-LocalGroup -Name 'docker-users' -ErrorAction SilentlyContinue
+       $CurrentUser = "azureuser"
+       if ($dockerUsersGroupExists -ne $null) {
+           Add-LocalGroupMember -Group 'docker-users' -Member $CurrentUser -Verbose
+           Write-Host "User '$CurrentUser' added to the 'docker-users' group."
+       } else {
+           Write-Host "'docker-users' group does not exist. Skipping adding the user to 'docker-users'."
+     
+        }
+       ```
+   - Once the command is executed, from the resources tab restart the Virtual machine.
+
+     ![](./media2/res.png)
+  
+   - Once the VM is restarted, Reopen the **Docker Desktop**.
 1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
    ![](./media2/lab09img1updated.png)
@@ -204,11 +230,9 @@ In this task, you will be setting up your username and password in the solution.
 
       ![](./media2/lab09img3updated.png)
 
-1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**, ensure that the **image** is mentioned properly with the actual image name in both - **deployment.template.json** and **deployment.debug.template.json** files.
+1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**, and update **image** from "${MODULES.ObjectCountingModule.debug}" to "mcr.microsoft.com/azureiotedge-simulated-temparature-sensor:1.4" mentioned properly with the actual image name in both - **deployment.template.json** and **deployment.debug.template.json** files.
 
       ![](./media2/lab13img22.png)
-
-      >**Note**: You can use the same image name from the below configurations and paste it here.
 
 1. In the same file, ensure that the **Schema version** is mentioned properly with **1.2** or later in both - **deployment.template.json** and **deployment.debug.template.json** files.
 
