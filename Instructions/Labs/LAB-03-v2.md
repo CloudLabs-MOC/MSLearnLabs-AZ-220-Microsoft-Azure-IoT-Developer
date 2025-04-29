@@ -1,7 +1,5 @@
 # Lab 03: Individual Enrollment of a Device in DPS
 
-### Estimated Duration: 120 minutes
-
 ## Lab Overview
 
 In this lab, you will begin by reviewing the lab prerequisites and you will run a script if needed to ensure that your Azure subscription includes the required resources. You will then create a new individual enrollment in DPS that uses Symmetric Key attestation and specifies an initial Device Twin State (telemetry rate) for the device. With the device enrollment saved, you will go back into the enrollment and get the auto-generated Primary and Secondary keys needed for device attestation. Next, you create a simulated device and verify that device connects successfully with IoT hub and that the initial device twin properties are applied by the device as expected. To finish up, you will complete a deprovisioning process that securely removes the device from your solution by both disenrolling and deregistering the device (from DPS and IoT hub respectively).
@@ -21,6 +19,8 @@ In this lab, you will perform:
  - Exercise 2: Configure Simulated Device
  - Exercise 3: Test the Simulated Device
  - Exercise 4: Deprovision the Device
+
+## Estimated Duration: 120 minutes
 
 ## Architecture Diagram
 
@@ -53,7 +53,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
     | **Attestation** | Choose **Symmetric Key** **(1)** from dropdown |
     | **Registration ID** | Enter **sensor-thl-1000** **(2)** |
     | **Reprovision policy** | Select **Reprovision device and migrate current state** **(3)** |
-    | Click on | **Next: IoT hubs** **(4)** |
+    | Click on | **Next: IoT hubs >** **(4)** |
 
       ![](./media/az-3-3.png)
    
@@ -64,7 +64,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
      |  -- | -- |
      | **Target IoT hubs** | Select your **IoT hub** **(1)** from dropdown |
      | **Allocation policy** | Select **Evenly weighted distribution** **(2)** |
-     | Click on **Next** | **Device settings** **(3)** |
+     | Click on | **Next: Device settings >** **(3)** |
 
       ![](./media/az-3-41.png)
    
@@ -79,7 +79,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
     ```
     ![](./media2/lab03updatedimg1.png)
 
-1. Click on **Review + create** and select **create** after validation is successful.
+1. Click on **Review + create** and select **Create** after validation is successful.
 
 ### Task 2: Review Enrollment and Obtain Authentication Keys
 
@@ -113,7 +113,7 @@ In this task, you will be creating the simulating device using the dotnet projec
 
 1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
-   ![](./media/v2img8.png)
+   ![](./media/new-az-220-lab3-1.png)
 
 1. On the **File(1)** menu, click on **Open Folder(2)**.
 
@@ -219,7 +219,7 @@ In this task, you will be adding the code to the dotnet project for provisioning
 
 1. At the bottom of the **SendDeviceToCloudMessagesAsync** method, notice the call to `Task.Delay()`.
 
-1. Near the top of the **Program** class, locate the **telemetryDelay** variable declaration. Notice that the default value for the delay is set to **1** second. Your next step is to integrate the code that uses a device twin value to control the delay time.
+1. Near the top of the **Program** class, locate the **telemetryDelay** variable declaration. Notice that the default value for the delay is set to **2** second. Your next step is to integrate the code that uses a device twin value to control the delay time.
 
 ### Task 3: Integrate Device Twin Properties
 
@@ -282,6 +282,8 @@ In order to use the device twin properties (from Azure IoT Hub) on a device, you
 
 1. On the Visual Studio Code **File** menu, click on **Save**. Your simulated device will now use the device twin properties from Azure IoT Hub to set the delay between telemetry messages.
 
+    > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**. If it asks to install the formatter. You need to install it and then use format document using the formatter.
+
 ## Exercise 3: Test the Simulated Device
 
 In this exercise, you will run the Simulated Device and verify that it's sending sensor telemetry to Azure IoT Hub. You will also change the rate at which telemetry is sent to Azure IoT Hub by updating the telemetryDelay device twin property for the simulated device within Azure IoT Hub.
@@ -309,7 +311,7 @@ In this task you will build the dotnet project and run to send the telemetry dat
     ```text
     ProvisioningClient AssignedHub: iot-az220-training-{your-id}.azure-devices.net; DeviceID: sensor-thl-1000
     Desired Twin Property Changed:
-    {"telemetryDelay":"2","$version":1}
+    {"$version":1,"telemetryDelay":"2"}
     Reported Twin Properties:
     {"telemetryDelay":"2"}
     Start reading and sending device telemetry...
@@ -371,9 +373,11 @@ In this task, you will be changing the twin property and will verify that device
 
 1. On the **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**. The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
 
-     ![](./media/az-3-15.png)
+     ![](./media/new-az-220-lab3-2.png)
 
 1. Locate the JSON for the `properties.desired` object. This contains the desired state for the device. Notice the `telemetryDelay` property already exists, and is set to `"2"`, as was configured when the device was provisioned based on the Individual Enrollment in DPS.
+
+     ![](./media/new-az-220-lab3-3.png)
 
      ![](./media/az-3-16.png)
 
@@ -435,8 +439,6 @@ In this task, you will be deleteing the device from the enrollments
 
      ![](./media/az-3-18.png)
 
-1. At the top of the blade, click **Delete**.
-
     > **Note**: Deleting the individual enrollment from DPS will permanently remove the enrollment. To temporarily disable the enrollment, you can set the **Enable entry** setting to **Disable** within the **Enrollment Details** for the individual enrollment.
 
 1. On the **Remove enrollment** prompt, click on **Yes**. The individual enrollment is now removed from the Device Provisioning Service (DPS). To complete the deprovisioning process, the **Device ID** for the Simulated Device also must be removed from the **Azure IoT Hub** service.
@@ -463,7 +465,7 @@ In this task you will delete the device from the IoT hub device management.
 
    ![](./media/az-3-19.png)
 
-1. On the **Are you certain you wish to delete selected device(s)** prompt, click on **Yes**.
+1. On the **Are you sure you want to delete selected devices?** prompt, click on **Yes**.
 
     > **Note**:  Deleting the device ID from IoT Hub will permanently remove the device registration. To temporarily disable the device from connecting to IoT Hub, you can set the **Enable connection to IoT Hub** to **Disable** within the properties for the device.
 
@@ -471,4 +473,4 @@ In this task you will delete the device from the IoT hub device management.
 
 In this lab, you have configured the enrollment in the Device Provision Service, built a device which sends the telemetry data to the IoT hub also tested the device by changing configurations and finally deprovisioned device at last.
 
-### You have successfully completed the Lab
+### You have successfully completed the Lab!

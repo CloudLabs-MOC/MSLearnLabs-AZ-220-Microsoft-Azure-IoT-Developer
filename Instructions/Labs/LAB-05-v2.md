@@ -1,7 +1,5 @@
 # Lab 05: Integrate IoT Hub with Event Grid
 
-### Estimated Duration: 120 minutes
-
 ## Lab Overview 
 
 In this lab, you will create a Logic App resource in Azure and configure it to trigger an action when a new IoT device is created. You will start by creating a Logic App and setting up an HTTP trigger that responds to device creation events. After configuring the app to send an automated email using Outlook.com, you will set up an event subscription in Azure IoT Hub that listens for device creation events. Finally, you'll test the setup by adding new IoT devices, verifying that the Logic App successfully sends the email alerts.
@@ -24,6 +22,8 @@ In this lab, you will complete the following:
 - Task 2: Configure Your Logic App
 - Task 3: Configure Azure IoT Hub Event Subscription
 - Task 4: Test Your Logic App with New Devices
+
+## Estimated Duration: 120 minutes
 
 ## Architecture Diagram
 
@@ -77,7 +77,7 @@ In this task, you create a new Logic App in Azure. You start by navigating to th
 
 In this task, you configure a Logic App in Azure to send an email notification when an HTTP request is received. After setting up the "When a HTTP request is received" trigger, you input a sample JSON payload to generate a schema. Then, you add an action to send an email using Outlook.com, incorporating dynamic content from the event like event type and time. Finally, you save the Logic App and copy the HTTP POST URL, which serves as the Webhook trigger.
 
-1. On the **Logic App** blade, navigate to the **Logic Apps Designer** under Development Tools and click on **Add a Trigger**.
+1. On the **Logic App** blade, navigate to the **Logic apps designer** under Development Tools and click on **Add a trigger**.
 
       ![](media/9lab7.png)
 
@@ -155,7 +155,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
 1. Click **Add an operation** and in the search textbox, enter **Outlook.com**
 
-1. In the list of Actions, scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
+1. In the list of Actions, search for **Send an email (V2)** and scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
 
       ![](media/az5-4.png)
 
@@ -227,7 +227,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 1. Save the URL for future reference in the notepad or in any other text editor.
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
       > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
       
@@ -281,6 +281,8 @@ In this task, you will test your Logic App by creating a new device to trigger a
 
     ![](media/9lab23.png)
 
+      > **Note**: If you see error loading devices tab, refresh the azure portal page.
+
 1. In the **Device ID** field, enter **sensor-th-0050 (1)**. Leave all other fields at the defaults, and then click **Save (2)**.
 
     ![](media/9lab24.png)
@@ -305,7 +307,7 @@ In this task, you will test your Logic App by creating a new device to trigger a
      > **Note**: You can see that only the devices starting with **sensor-th** have been triggered, as this is the configuration we set up in our event subscription.
    
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
       > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
@@ -315,4 +317,4 @@ In this task, you will test your Logic App by creating a new device to trigger a
 
 In this lab, you have created an Azure Logic App to automatically send emails based on IoT events. You have configured an Azure IoT Hub event subscription to trigger the Logic App and set up new IoT devices to generate events that activate the workflow.
 
-## You have successfully completed the lab
+## You have successfully completed the lab!

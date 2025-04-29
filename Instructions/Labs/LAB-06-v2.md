@@ -42,7 +42,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
     ![](./media2/lab10img1.png)
 
-2. On the IoT Hub left hand menu, select **Built-in-endpoints (1)**. Under **Consumer Group** provide name as **adxevents (2)** to create a new consumer group.
+2. On the IoT Hub left hand menu, select **Built-in-endpoints (1)** under **Hub settings**. Then under **Consumer Group** provide name as **adxevents (2)** to create a new consumer group.
 
    ![](./media2/lab10img9updated.png)
 
@@ -71,7 +71,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
    ![](./media2/lab06img2.png)
    
-      >**Note**: This may take few minutes to get deployed.
+      >**Note**: This may take 10 to 15 minutes to get deployed.
 
 1. On the **Azure Data Explorer** overview page, click on **Create** under Database Creation.
 
@@ -81,7 +81,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
    ![](./media2/lab06img3.png)
 
-1. Navigate to **Databases** from left hand menu, verify **streamingdata** database is created.
+1. Navigate to **Databases** under **Data** from left hand menu, verify **streamingdata** database is created.
 
    ![](./media2/lab06img4.png)
 
@@ -127,7 +127,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
    ![](./media2/lab06img8.png)
 
-1. In the **streamingdata** page, select **Data connection** under settings.
+1. In the **streamingdata** page, select **Data connection** under **Settings**.
 
    ![](./media2/lab06img9.png)
 
@@ -179,7 +179,7 @@ In this task, you will run the simulated devices so that they start sending tele
 
     ![](./media2/lab06img18.png)
 
-1. In the IoT Hub pane, select **Devices** from the left menu under device management. select the device **sensor-thl-container0001**.
+1. In the IoT Hub pane, select **Devices** from the left menu under **Device management**. select the device **sensor-thl-container0001**.
 
     ![](./media2/lab06img19.png)
 
@@ -258,19 +258,7 @@ In this task, you will get a quick introduction to working with time series data
 
     ![](./media2/lab06img21.png)
 
-1. In the Azure Data Explorer page select **Databases** from left hand menu. Click on **streamingdata** database.
-
-    ![](./media2/lab06img24.png)
-
-1. In the **streamingdata** page select **Data connection** from left menu, under settings. Select the **Health(symbol)** as shown.
-
-    ![](./media2/lab06img25.png)
-
-1. Check the Graph, observe the **Events received** and **Events processed** data.
-
-    ![](./media2/lab06img26.png)
-
-1. Navigate back to Azure Data Explorer pane and select **Query** and run the following query to visualize the data that is streamed.
+1. Select **Query** and run the following query to visualize the data that is streamed.
 
     ```
     Telemetry

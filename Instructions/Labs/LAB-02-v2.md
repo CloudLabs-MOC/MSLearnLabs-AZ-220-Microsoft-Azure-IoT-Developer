@@ -1,7 +1,5 @@
 # Lab 02: Connect an IoT Device to Azure
 
-### Estimated Duration: 120 minutes
-
 ## Lab Overview 
 
 In this lab, you will be creating a .NET Core console application that simulates the physical IoT device and sensors. Your simulated device will implement the IoT Device SDK and it will connect to IoT Hub just like a physical device would. Your simulated device will also communicate telemetry values using the same SDK resources used by a physical device, but the sensor readings will be generated values rather than real values read from temperature and humidity sensors.
@@ -23,7 +21,9 @@ In this lab, you will complete the following:
  - Exercise 1: Create an Azure IoT Hub Device ID using the Azure portal
  - Exercise 2: Create and Test a Simulated Device (C#)
 
-## Architecure Diagram
+## Estimated Duration: 120 minutes
+
+## Architecture Diagram
 
 ![Lab 4 Architecture](media/LAB_AK_04-architecture.png)
 
@@ -72,7 +72,7 @@ In this task, you will create a device in the IoT Hub.
       ![](./media/az-2-41.png)
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
       > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
@@ -90,7 +90,7 @@ For a device to connect to an IoT Hub, it needs to establish a connection. In th
 
 1. Notice that the key and connection string values are now populated.
 
-1. To the right of the **Primary Connection String** field, click on **Copy** and paste it in a notepad for later use.
+1. To the right of the **Primary connection string** field, click on **Copy** and paste it in a notepad for later use.
 
      ![](./media/v2img7.png)
 
@@ -102,11 +102,11 @@ In this exercise, you will create a simulated device application using Visual St
 
 ### Task 1: Create the initial project
 
-In this task, you will be creating a initial dotnet project in your LabVM. For simulating telemetry data
+In this task, you will be creating an initial dotnet project in your LabVM. For simulating telemetry data
  
 1. Open **Visual Studio Code** editor from the desktop.
 
-    ![](./media/v2img8.png)
+    ![](./media/new-az-220-lab3-1.png)
 
 1. Select **Three dots(...) >> Terminal(1)** and click on **New Terminal(2)**.
    
@@ -182,10 +182,12 @@ As noted above, the application currently consists of two files:
     <Project Sdk="Microsoft.NET.Sdk">
         <PropertyGroup>
             <OutputType>Exe</OutputType>
-            <TargetFramework>netcoreapp8.0</TargetFramework>
+            <TargetFramework>net8.0</TargetFramework>
+            <ImplicitUsings>enable</ImplicitUsings>
+            <Nullable>enable</Nullable>
         </PropertyGroup>
         <ItemGroup>
-            <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.*" />
+            <PackageReference Include="Microsoft.Azure.Devices.Client" Version="1.42.3" />
         </ItemGroup>
     </Project>
     ```
@@ -198,9 +200,9 @@ As noted above, the application currently consists of two files:
      Console.WriteLine("Hello, World!");
     ```
 
-1. On the Visual Studio Code, click on **Terminal** and select **New Terminal**.
-
-    ![](./media/v2img13.png)
+1. Select **Three dots(...) >> Terminal(1)** and click on **New Terminal(2)**.
+   
+    ![](./media/az-5-71.png)
 
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
 
@@ -263,7 +265,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     ![](./media/az-2-5.png)
 
-    > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**.
+    > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**. If it asks to install the formatter. You need to install it and then use format document using the formatter.
 
 1. Locate the **// INSERT variables below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -392,7 +394,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     ```
     ![](./media/az-2-vs5.png)
    
-    > **Information**:     This is a very simple class that uses random numbers to return values that represent temperature and humidity. In reality, it is often much more complex to interact with sensors, especially if you have to communicate with them at a low-level and derive the measurement value (rather than getting a direct reading in the appropriate units).
+    > **Information**: This is a very simple class that uses random numbers to return values that represent temperature and humidity. In reality, it is often much more complex to interact with sensors, especially if you have to communicate with them at a low-level and derive the measurement value (rather than getting a direct reading in the appropriate units).
 
 1. Final code should look like this. Make sure you replace the `<Connection_String>` with the connection string you copied earlier.
 
@@ -547,7 +549,7 @@ In this task, you will be testing the application that you have built in the pre
 
 In this task, you will use the Azure CLI to verify telemetry sent by the simulated device is being received by Azure IoT Hub.
 
-1. In the Azure portal, Click on the **Cloudshell** icon to open Cloudshell.
+1. In the Azure portal, click on the **Cloudshell** icon to open Cloudshell.
 
     ![](./media/az-5-9.png)
 
@@ -568,7 +570,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     
     > **Note**: If prompted **Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
     
-    > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.24.0 
+    > **Note**: **Dependency update (uamqp 1.2) required for IoT extension version: 0.25.0 
 Continue? (y/n) -> y**
     
     You should see messages displayed that are similar to the following:
@@ -578,12 +580,18 @@ Continue? (y/n) -> y**
      {
          "event": {
              "origin": "sensor-th-0001",
+             "module": "",
+             "interface": "",
+             "component": "",
              "payload": "{\"temperature\":25.058683971901743,\"humidity\":67.54816981383979}"
          }
      }
      {
          "event": {
              "origin": "sensor-th-0001",
+             "module": "",
+             "interface": "",
+             "component": "",
              "payload": "{\"temperature\":29.202181296051563,\"humidity\":69.13840303623043}"
          }
      }
@@ -597,4 +605,4 @@ Continue? (y/n) -> y**
 
 In this lab, you first created an Azure IoT Hub Device ID.  Then, you developed a simulator using C# to generate and send telemetry data to the IoT Hub, and finally verified the data was successfully received.
 
-## You have successfully completed the lab!!
+### You have successfully completed the lab!

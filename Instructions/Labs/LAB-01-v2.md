@@ -1,7 +1,5 @@
 # Lab 01: Getting Started with Azure IoT Services
 
-### Estimated Duration: 60 minutes
-
 ## Lab Overview 
 
 In this lab, you'll create and configure an Azure IoT Hub and Device Provisioning Service (DPS) to manage and securely connect IoT devices. You'll begin by setting up the IoT Hub, exploring key features like device management, message routing, and endpoints. Next, you'll create a DPS to enable automated, secure device provisioning and link it to the IoT Hub. The lab provides step-by-step guidance to help you understand how these services work together for effective IoT device management.
@@ -19,6 +17,9 @@ In this lab, you will complete the following:
 - Exercise 3: Create a Device Provisioning Service using the Azure portal
 - Exercise 4: Examine the Device Provisioning Service
 
+
+## Estimated Duration: 60 minutes
+
 ## Architecture Diagram
 
 ![](./media2/lab01archv2.png)
@@ -33,7 +34,7 @@ In this exercise, you will create an IoT Hub using the Azure portal. You'll prov
 
     ![](media/hub.png)
 
-1. To begin the process of creating your new IoT Hub, click **Create**.
+1. To begin the process of creating your new IoT Hub, click **+ Create**.
 
     ![](media/1lab20.png)
     
@@ -42,7 +43,7 @@ In this exercise, you will create an IoT Hub using the Azure portal. You'll prov
    | Settings | Values |
    | --- | --- |
    | Subscription | **Select the default Subscription (1)** |
-   | Resource group | **Select the Existing Resource group (2)** |
+   | Resource group | **Select az220rg-<inject key="DeploymentID" enableCopy="false"/> (2)** resource group|
    | IoT hub name | Enter **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)** |
    | Region | **eastus(4)** |
    | Tier | **Standard(5)** |
@@ -53,16 +54,16 @@ In this exercise, you will create an IoT Hub using the Azure portal. You'll prov
 
     ![](media/1lab17.png)
 
-1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4** and click on **Review + create**. Click on **Create**.
+1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4** and click on **Review + create**. Then, click on **Create**.
 
     ![](media/toi2.png)
 
-1. Once the Deployment is completed, Click on **Go to resource** and then you will be able to see the newly created IoT Hub.
+1. Once the Deployment is completed, click on **Go to resource** and then you will be able to see the newly created IoT Hub.
 
     ![](media/iott9.png)
 
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
@@ -93,7 +94,7 @@ IoT Hub is a managed service, hosted in the cloud, that acts as a central messag
 
 ### Task 2: View features of IoT Hub using the left-side menu
 
-1. On the IoT Hub blade,from the left navigation menu,click on **Device** under **Device management**. This pane can be used to add, modify, and delete devices registered to your hub.
+1. On the IoT Hub blade, from the left navigation menu, click on **Devices** under **Device management**. This pane can be used to add, modify, and delete devices registered to your hub.
 
     ![](media/device.png)
 
@@ -106,7 +107,7 @@ IoT Hub is a managed service, hosted in the cloud, that acts as a central messag
     * _Event Hub compatible endpoint_ **(1)**
     * _Cloud to device messaging_ **(2)**
 
-    ![](media/endpoint.png)
+        ![](media/endpoint.png)
 
 1. On the left-side menu, under **Hub settings**, click on **Message routing(1)**. The IoT Hub message routing feature enables you to route incoming device-to-cloud messages to service endpoints such as Azure Storage containers, Event Hubs, and Service Bus queues. You can also create routing rules to perform query-based routes.
 
@@ -139,21 +140,21 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
     ![](media/iot29.png)
 
-1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create**.  Click on **Create**.
+1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create**.  Then click on **Create**.
 
     | Setting | Value |
     | --- | --- |
     | Subscription | **Select the default subscription (1)**  |
-    | Resource Group | **Select the existing Resource group (2)** |
+    | Resource Group | **Select az220rg-<inject key="DeploymentID" enableCopy="false"/> (2)** resource group |
     | Name | **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)** |
     | Region | **eastus (4)** |
 
     ![](media/1lab19.png)
    
-1. After the deployement is completed, click on **Go to resource** to see the newly created **DPS**.
+1. After the deployment is completed, click on **Go to resource** to see the newly created **DPS**.
 
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+    > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
     > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
     > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
@@ -225,11 +226,11 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
     ![](media/iott27.png)
 
-1. On the left-side menu, click on **Certificates(1)** under **Settings**. Here you can manage the X.509 certificates that can be used to secure your Azure IoT hub using the X.509 Certificate Authentication.
+1. On the left-side menu, click on **Certificates** under **Settings**. Here you can manage the X.509 certificates that can be used to secure your Azure IoT hub using the X.509 Certificate Authentication.
 
     ![](media/1lab7.png)
 
-1. On the left-side menu, click on **Manage enrollments(2)** under **Settings**. Here you can manage the enrollment groups and individual enrollments. Enrollment groups can be used for a large number of devices that share a desired initial configuration, or for devices all going to the same tenant. An enrollment group is a group of devices that share a specific attestation mechanism. Enrollment groups support both X.509 as well as symmetric. An individual enrollment is an entry for a single device that may register. 
+1. On the left-side menu, click on **Manage enrollments** under **Settings**. Here you can manage the enrollment groups and individual enrollments. Enrollment groups can be used for a large number of devices that share a desired initial configuration, or for devices all going to the same tenant. An enrollment group is a group of devices that share a specific attestation mechanism. Enrollment groups support both X.509 as well as symmetric. An individual enrollment is an entry for a single device that may register. 
 
     ![](media/1lab8.png)
 
@@ -241,4 +242,4 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
 In this lab, you have created a Azure IoT Hub, explored its features, created and linked a Device Provisioning Service to the IoT Hub and also explored the features of the Device Provisioning Service.
 
-### You have successfully completed the lab
+### You have successfully completed the lab!

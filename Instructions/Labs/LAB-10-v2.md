@@ -1,16 +1,14 @@
 # Lab 10: Remotely monitor and control devices with Azure IoT Hub
 
-### Estimated Duration: 120 minutes
-
 ## Lab Overview
 
-In this lab, you will set up and configure a simulated IoT environment using Azure IoT Hub. You will start by preparing your environment and reviewing code for sending and receiving telemetry data. Next, you’ll complete a backend application to receive this telemetry and implement functionality to invoke a direct method for controlling a simulated fan. Finally, you'll enable and test Device Twin functionality to synchronize device properties and settings. This exercise includes working with Visual Studio Code to manage code and configurations, running applications, and verifying functionality through terminal outputs.
+In this lab, you will set up and configure a simulated IoT environment using Azure IoT Hub. You will start by preparing your environment and reviewing the code for sending and receiving telemetry data. Next, you’ll complete a backend application to receive this telemetry and implement functionality to invoke a direct method for controlling a simulated fan. Finally, you'll enable and test Device Twin functionality to synchronize device properties and settings. This exercise includes working with Visual Studio Code to manage code and configurations, running applications, and verifying functionality through terminal outputs.
 
 ## Lab Scenario
 
 Contoso is proud of its award-winning cheeses and is careful to maintain the perfect temperature and humidity during the entire manufacturing process, but conditions during the aging process have always received special attention.
 
-In recent years, Contoso has used environmental sensors to record the conditions within their natural cheese caves where aging occurs, and has used that data to identify a near perfect environment. Data from the most successful (aka award producing) locations indicates that the ideal temperature for aging cheese is approximately 50 degrees Fahrenheit +/- 5 degrees (10 degrees Celsius +/- 2.8 degrees). The ideal humidity value, measured in percentage of maximum saturation, is approximately 85% +/- 10%.
+In recent years, Contoso has used environmental sensors to record the conditions within their natural cheese caves where aging occurs and has used that data to identify a near-perfect environment. Data from the most successful (aka award-producing) locations indicates that the ideal temperature for aging cheese is approximately 50 degrees Fahrenheit +/- 5 degrees (10 degrees Celsius +/- 2.8 degrees). The ideal humidity value, measured in percentage of maximum saturation, is approximately 85% +/- 10%.
 
 These ideal temperature and humidity values work well for most types of cheese. However, minor variations are required for especially hard or especially soft cheeses. The environment must also be adjusted at critical times/phases within the aging process to achieve specific results, such as a desired condition for the cheese rind.
 
@@ -20,7 +18,7 @@ Currently, an operator monitors the environmental conditions within each zone of
 
 Contoso has tasked you with implementing an automated system that keeps the cave environment within control limits.
 
-In this lab, you will be prototyping a cheese cave monitoring system that implements IoT devices. Each device is equipped with temperature and humidity sensors, and is connected to the air processing system that controls temperature and humidity for the zone where the device is located.
+In this lab, you will be prototyping a cheese cave monitoring system that implements IoT devices. Each device is equipped with temperature and humidity sensors and is connected to the air processing system that controls temperature and humidity for the zone where the device is located.
 
 ## Lab Objectives
 
@@ -32,6 +30,8 @@ In this lab, you will complete the following:
 - Exercise 4: Include Code to Invoke a Direct Method
 - Exercise 5: Implement the Device Twin functionality
 
+## Estimated Duration: 120 minutes
+
 ## Architecture Diagram
 
 ![Lab 15 Architecture](media/LAB_AK_15-architecture-1.png)
@@ -40,11 +40,11 @@ In this lab, you will complete the following:
 
 1. Navigate to the **Environment (1)** tab in your VM and copy the following values in a notepad for future use:
 
-   - **deviceConnectionString (2)**
-   - **eventHubsCompatibleEndpoint (3)**
-   - **eventHubsCompatiblePath (4)**
-   - **iotHubSasKey (5)**
-   - **serviceConnectionString (6)**
+   - **DeviceConnectionString (2)**
+   - **EventHubsCompatibleEndpoint (3)**
+   - **EventHubsCompatiblePath (4)**
+   - **IotHubSasKey (5)**
+   - **ServiceConnectionString (6)**
 
         ![](./media/az15-34.png)
 
@@ -64,7 +64,7 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 1. Navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
 
-1. Click on **Yes, i trust the authors** when prompted.
+1. Click on **Yes, I trust the authors** when prompted.
 
       ![](./media/az15-35.png)
 
@@ -95,7 +95,7 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 The simulated device app that you will build in this task simulates an IoT device that monitors temperature and humidity. The app will simulate sensor readings and communicate sensor data every two seconds.
 
-1. In visual studio code, open **Program.cs**. Replace the **assigned placeholder** value (including the angle braces) with the device **connection string** that you saved earlier.
+1. In Visual Studio code, open **Program.cs**. Replace the **assigned placeholder** value (including the angle braces) with the **Device connection string** that you saved earlier.
    
       ![](./media/az15-6.png)
 
@@ -119,13 +119,13 @@ The simulated device app that you will build in this task simulates an IoT devic
 
       ![](./media/az15-7.png)
 
-    > **Note**:  Green text is used to indicate when things are working as they should be. Red text is used to indicate when there is a problem. If you don't get a screen similar to the image above, start by checking your device connection string.
+    > **Note**: The green text is used to indicate when things are working as they should be. Red text is used to indicate when there is a problem. If you don't get a screen similar to the image above, start by checking your device connection string.
 
 1. Leave this app running.
 
 ## Exercise 3: Complete a Second App to Receive Telemetry
 
-Now that you have your (simulated) cheese cave device sending telemetry to your IoT Hub, you need to complete a back-end app that can connect to IoT Hub and "listen" for that telemetry. Eventually, this back-end app will be used to automate the control of the temperature in the cheese cave.
+Now that you have your (simulated) cheese cave device sending telemetry to your IoT Hub, you need to complete a back-end app that can connect to the IoT Hub and "listen" for that telemetry. Eventually, this back-end app will be used to automate the control of the temperature in the cheese cave.
 
 ### Task 1: Complete an app to receive telemetry
 
@@ -151,7 +151,7 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. In the **EXPLORER** pane, click **Program.cs**.
 
-1. Replace the **eventHubsCompatibleEndpoint (1)**, **eventHubsCompatiblePath (2)** ,**iotHubSasKey (3)** and **serviceConnectionString (4)** placeholder values with the values that you saved earlier in the exercise-1.
+1. Replace the **EventHubsCompatibleEndpoint (1)**, **EventHubsCompatiblePath (2)**, **IotHubSasKey (3)** and **ServiceConnectionString (4)** placeholder values with the values that you saved earlier in the Exercise 1.
 
      ![](./media/az15-9.png)
   
@@ -175,21 +175,21 @@ This test is important, checking whether your back-end app is picking up the tel
 
     ![](./media/az15-10.png)
 
-    > **Note**:  Green text is used to show things are working as they should and red text when bad stuff is happening. If you don't get a screen similar to this image, start by checking your device connection string.
+    > **Note**: The Green text is used to show things are working as they should and red text when bad stuff is happening. If you don't get a screen similar to this image, start by checking your device connection string.
 
 1. Leave this app running for a moment longer.
 
-1. You can press **CTRL+C** in the Terminal pane to stop the apps.
+1. You can press **CTRL + C** in the Terminal pane to stop the apps.
 
 ## Exercise 4: Include Code to Invoke a Direct Method
 
-Direct methods let the backend app control device features or settings by sending commands with parameters. In the Contoso scenario, you'll add code to a device to control a fan in a cheese cave simulation, with the backend app invoking this method through IoT Hub. The device needs to handle errors like fan failures or invalid parameters. You'll update the device app with the direct method code and the backend app to call it. In this Exercise, you will update your device app by adding the code for a direct method that will simulate turning on the fan in the cheese cave. Next, you will add code to the back-end service app to invoke this direct method.
+Direct methods let the backend app control device features or settings by sending commands with parameters. In the Contoso scenario, you'll add code to a device to control a fan in a cheese cave simulation, with the backend app invoking this method through IoT Hub. The device needs to handle errors like fan failures or invalid parameters. You'll update the device app with the direct method code and the backend app to call it. In this exercise, you will update your device app by adding the code for a direct method that will simulate turning on the fan in the cheese cave. Next, you will add code to the back-end service app to invoke this direct method.
 
 ### Task 1: Enable Code to Define a Direct Method in the Device App
 
 1. Return to the Visual Studio Code instance that contains your **CheeseCaveDevice** application.
 
-    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and the press **CTRL+C** to exit the running application).
+    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and press **CTRL + C** to exit the running application).
 
 1. Ensure that **Program.cs** is open in the code editor.
 
@@ -209,13 +209,13 @@ Direct methods let the backend app control device features or settings by sendin
 
 1. Uncomment the **SetFanState** direct method, and review the code and comments.
 
-    `  ![](./media/az15-12.png)
+    ![](./media/az15-12.png)
 
 ### Task 2: Add Code to Call Your Direct Method
 
 1. Return to the Visual Studio Code instance that contains the **CheeseCaveOperator** application.
 
-    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and the press **CTRL+C** to exit the running application).
+    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and press **CTRL + C** to exit the running application).
 
 1. Ensure that **Program.cs** is open in the code editor.
 
@@ -225,7 +225,7 @@ Direct methods let the backend app control device features or settings by sendin
     private static ServiceClient serviceClient;
     ```
 
-1. Locate the **Create a ServiceClient to communicate with service-facing endpoint on your hub** comment line within the code.
+1. Locate the **Create a ServiceClient to communicate with the service-facing endpoint on your hub** comment line within the code.
 
 1. Uncomment the following lines of code:
 
@@ -292,7 +292,7 @@ Device twins synchronize automatically with the IoT device and can be queried by
 
 1. Return to the Visual Studio Code instance that is running the **CheeseCaveOperator** back-end app.
 
-1. If the app is still running, place input focus on the terminal and press **CTRL+C** to exit the app.
+1. If the app is still running, place input focus on the terminal and press **CTRL + C** to exit the app.
 
 1. Ensure that the **Program.cs** is open.
 
@@ -315,13 +315,13 @@ Device twins synchronize automatically with the IoT device and can be queried by
 
     > **Note**: Notice that the **serviceConnectionString** value is used to connect to the IoT Hub with the appropriate access level. The **SetTwinProperties** is then called.
 
-1. Press `Ctrl+S` to save.
+1. Press `Ctrl + S` to save.
 
 ### Task 2: Enable Code to Synchronize Device Twin Settings for the Device
 
 1. Return to the Visual Studio Code instance that contains the **CheeseCaveDevice** app.
 
-1. If the app is still running, place input focus on the terminal and press **CTRL+C** to exit the app.
+1. If the app is still running, place input focus on the terminal and press **CTRL + C** to exit the app.
 
 1. Ensure that the **Program.cs** file is open in the Code Editor pane.
 
@@ -341,6 +341,8 @@ Device twins synchronize automatically with the IoT device and can be queried by
 
 1. Locate the **OnDesiredPropertyChanged is the handler that is invoked when a desired property changes in the device twin** comment line within the code.
 
+    > **Note:** If this is already commented on, please ignore it.
+
 1. Take a minute to review the OnDesiredPropertyChanged code.
 
 1. Press `Ctrl+S` to save.
@@ -349,7 +351,7 @@ Device twins synchronize automatically with the IoT device and can be queried by
 
 ### Task 3: Test the Device Twins
 
-To test the code that manages device twin desired property changes, you will start the apps in the correct order, device application first and then back-end application.
+To test the code that manages the device twin desired property changes, you will start the apps in the correct order, the device application first and then the back-end application.
 
 1. Switch to the instance of Visual Studio Code that contains the **CheeseCaveDevice** device app.
 
@@ -371,7 +373,7 @@ To test the code that manages device twin desired property changes, you will sta
 
 1. Switch back to the instance of Visual Studio Code that contains the **CheeseCaveDevice** device app.
 
-1. Check the console output and confirm that the device twin synchronized correctly.
+1. Check the console output and confirm that the device twin is synchronized correctly.
 
     ![](./media/az-15-18.png)
 
@@ -384,4 +386,4 @@ To test the code that manages device twin desired property changes, you will sta
 ## Summary
 In this lab, you have configured the Lab Prerequisites, reviewed Code to Send and Receive Telemetry, completed a Second App to Receive Telemetry, included Code to Invoke a Direct Method and implemented the Device Twin functionality.
 
-### You have successfully completed the lab
+### You have successfully completed the lab!

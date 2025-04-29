@@ -1,7 +1,5 @@
 # Lab 04: Device Message Routing
 
-### Estimated Duration: 120 minutes
-
 ## Lab Overview
 
 In this lab, you will begin by ensuring that your Azure subscription includes the required resources for this lab. You will then create a simulated device that sends vibration telemetry to your IoT hub. With your simulated data arriving at IoT hub, you will implement an IoT hub message route and Azure Stream Analytics job that can be used to process device messages (in both cases data will be delivered to a Blob storage container that is used to verify successful implementation).
@@ -24,6 +22,8 @@ The conveyor belt system is a critical link in this process and is visually moni
  - Exercise 1: Write Code to generate Vibration Telemetry
  - Exercise 2: Create a Message Route to Azure Blob Storage
  - Exercise 3: Create an Azure Stream Analytics Job
+
+## Estimated Duration: 120 minutes
 
 ## Architecture Diagram
 
@@ -48,7 +48,7 @@ In this task, you will be opening the Simulated device project using visual stud
 
 1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
-   ![](./media/v2img8.png)
+   ![](./media/new-az-220-lab3-1.png)
 
 1. In Visual Studio Code, go to the **File(1)** menu at the top-left corner of the window and select **Open Folder(2)**. This will prompt you to browse through your file system and select the folder you want to open in the workspace.
 
@@ -191,7 +191,7 @@ In this task, you will use the Azure portal to verify that your IoT Hub is recei
 1. The **Device to cloud messages** tile should be plotting some current activity. If no activity is shown, wait a short while, as there's some latency. With your device sending telemetry, and your hub receiving it, the next step is to route the messages to their correct endpoints.
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
       > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
@@ -324,7 +324,7 @@ In this task, you will verify that the data is properly archived or not by looki
     ![](./media/lab7img22.png)
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
       > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
@@ -357,7 +357,7 @@ In this task, you will create a stream analytics job in the Azure portal.
 
     ![](./media/lab7img25.png)
 
-1. On the **New Stream Analytics job** pane, provide the following details and then click on **Review + create**.
+1. On the **New Stream Analytics job** pane, provide the following details. Click on **Review + create** then click on **Create**.
 
     | Setting | Value |
     | --- | --- |
@@ -503,7 +503,7 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 1. Switch to the Visual Studio Code window. At the Terminal command prompt, to exit the device simulator app, press **CTRL+C**.
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
-      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task. Alternatively, you can navigate to the Lab Validation Page, from the upper right corner in the lab guide section.
+      > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
       > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
 
@@ -513,4 +513,4 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 In this lab, you began by writing code to generate vibration telemetry data. Next, you created a message route to direct this data to Azure Blob Storage. Finally, you set up an Azure Stream Analytics job to process and analyze the incoming telemetry data in real time.
 
-## You have successfully completed the Lab
+## You have successfully completed the Lab!
