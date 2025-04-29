@@ -6,13 +6,13 @@ In this lab, you will create a Logic App resource in Azure and configure it to t
 
 ## Lab Scenario
 
-Contoso management is impressed with the prototype solutions that you've created using Azure IoT services, and they feel comfortable assigning additional budget the capabilities that you have already demonstrated. They are now asking that you explore the integration of certain operational support capabilities. Specifically, they would like to see how the Azure tools support sending alert notifications to the managers who are responsible for specific work areas. Alert criteria will be defined by the business area managers. The telemetry data arriving at IoT hub will be evaluated to generate the notifications.
+Contoso management is impressed with the prototype solutions that you've created using Azure IoT services, and they feel comfortable assigning additional budget the capabilities that you have already demonstrated. They are now asking that you explore the integration of certain operational support capabilities. Specifically, they would like to see how the Azure tools support sending alert notifications to the managers who are responsible for specific work areas. Alert criteria will be defined by the business area managers. The telemetry data arriving at the IoT hub will be evaluated to generate the notifications.
 
-You've identified a business manager, Nancy, that you've had success working with in the past. You'll work with her during the initial phase of your solution.
+You've identified a business manager, Nancy, with whom you've had success working in the past. You'll work with her during the initial phase of your solution.
 
-Nancy informs you that her team of facility technicians is responsible for installing the new connected thermostats that will be used to monitor temperature across different cheese caves. The thermostat devices function as IoT devices that can be connected to IoT hub. To get your project started, you agree to create an alert that will generate a notification when a new device has been implemented.
+Nancy informs you that her team of facility technicians is responsible for installing the new connected thermostats that will be used to monitor temperature across different cheese caves. The thermostat devices function as IoT devices that can be connected to an IoT hub. To get your project started, you agree to create an alert that will generate a notification when a new device has been implemented.
 
-To generate an alert, you will push a device created event type to Event Grid when a new thermostat device is created in IoT Hub. You will create a Logic Apps instance that reacts to this event (on Event Grid) and which will send an email to alert facilities when a new device has been created, specifying the device ID and connection state.
+To generate an alert, you will push a device-created event type to Event Grid when a new thermostat device is created in IoT Hub. You will create a Logic Apps instance that reacts to this event (on Event Grid) and which will send an email to alert facilities when a new device has been created, specifying the device ID and connection state.
 
 ## Lab Objectives
 
@@ -75,7 +75,7 @@ In this task, you create a new Logic App in Azure. You start by navigating to th
 
 ### Task 2: Configure Your Logic App
 
-In this task, you configure a Logic App in Azure to send an email notification when an HTTP request is received. After setting up the "When a HTTP request is received" trigger, you input a sample JSON payload to generate a schema. Then, you add an action to send an email using Outlook.com, incorporating dynamic content from the event like event type and time. Finally, you save the Logic App and copy the HTTP POST URL, which serves as the Webhook trigger.
+In this task, you configure a Logic App in Azure to send an email notification when an HTTP request is received. After setting up the "When a HTTP request is received" trigger, you input a sample JSON payload to generate a schema. Then, you add an action to send an email using Outlook.com, incorporating dynamic content from the event, like event type and time. Finally, you save the Logic App and copy the HTTP POST URL, which serves as the Webhook trigger.
 
 1. On the **Logic App** blade, navigate to the **Logic apps designer** under Development Tools and click on **Add a trigger**.
 
@@ -91,7 +91,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
       ![](media/9lab9.png)   
 
-      > **Note**: In the next step you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
+      > **Note**: In the next step, you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
       
       > **Note**: In the JSON replace the **id, subscription ID, resource group name, hub name** with the actual values. 
 
@@ -143,7 +143,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
     }]
     ```
 
-      > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
+      > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added, and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
 
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
 
@@ -165,23 +165,23 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
       ![](media/9lab14.png)
 
-     > **Note**: If **The browser has blocked the popup window** this pop up appears, at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
+     > **Note**: If **the browser has blocked the pop-up window** this pop-up appears, at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
 
       ![](media/az70011.png)
 
 1. When prompted to sign in with your credentials.
 
-   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
+   - **Email/Username:** Enter your personal Microsoft account email (e.g., Outlook.com).
 
         ![](media/9lab15.png)
  
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Password:** Enter your personal Microsoft account email password.
 
        ![](media/9lab16.png)
 
 1. If prompted to **stay signed in**, you can click **No**.
 
-1. If prompted to Let this app access your info? (1 of 1 apps) select **Accept**.
+1. If prompted, let this app access your info? (1 of 1 apps) select **Accept**.
 
 1. On the **Send an email (V2)** action, in the **To** field, enter <inject key="AzureAdUserEmail"></inject>.
 
@@ -200,7 +200,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
     ```
     ![](media/az-5-4.png)
 
-1. To replace the values, click on the the **Dynamic Content** icon shown in the below image.
+1. To replace the values, click on the **Dynamic Content** icon shown in the image below.
 
       ![](media/az5-5.png)
 
@@ -224,7 +224,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
     > **Note**: This URL is the Web Hook endpoint that is used to call the Logic App trigger via HTTPS. Notice the **sig** query string parameter and it's value. The **sig** parameter contains the shared access key that is used to authenticate requests to the Web Hook endpoint.
 
-1. Save the URL for future reference in the notepad or in any other text editor.
+1. Save the URL for future reference in Notepad or in any other text editor.
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
@@ -235,7 +235,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
 ## Task 3: Configure Azure IoT Hub Event Subscription
 
-Azure IoT Hub integrates with Azure Event Grid so that you can send event notifications to other services and trigger downstream processes. You can configure business applications to listen for IoT Hub events so that you can react to critical events in a reliable, scalable, and secure manner. For example, build an application that updates a database, creates a work ticket, and delivers an email notification every time a new IoT device is registered to your IoT hub. In this exercise, you will create an Event Subscription within Azure IoT Hub to setup Event Grid integration that will trigger a Logic App to send an alert email.
+Azure IoT Hub integrates with Azure Event Grid so that you can send event notifications to other services and trigger downstream processes. You can configure business applications to listen for IoT Hub events so that you can react to critical events in a reliable, scalable, and secure manner. For example, build an application that updates a database, creates a work ticket, and delivers an email notification every time a new IoT device is registered to your IoT hub. In this exercise, you will create an Event Subscription within Azure IoT Hub to set up Event Grid integration that will trigger a Logic App to send an alert email.
 
 1. Search for **Iot Hub** and select it. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
 
@@ -275,13 +275,13 @@ Azure IoT Hub integrates with Azure Event Grid so that you can send event notifi
 
 In this task, you will test your Logic App by creating a new device to trigger an event notification email.
 
-1. On your Azure portal, navigate to your Iot Hub **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>** blade if it is not displaying.
+1. On your Azure portal, navigate to your IoT Hub **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>** blade if it is not displaying.
 
 1. On the left side navigation menu, under **Device Management**, click on **Devices(1)**. At the top of the IoT devices blade, click on **+ Add Device(2)**.
 
     ![](media/9lab23.png)
 
-      > **Note**: If you see error loading devices tab, refresh the azure portal page.
+      > **Note**: If you see an error loading the devices tab, refresh the Azure portal page.
 
 1. In the **Device ID** field, enter **sensor-th-0050 (1)**. Leave all other fields at the defaults, and then click **Save (2)**.
 
@@ -293,11 +293,11 @@ In this task, you will test your Logic App by creating a new device to trigger a
     * `sensor-th-0030`
     * `sensor-v-3003`
 
-    If you added the four examples total, your list of IoT devices should look like the following image:
+    If you added the four examples, your list of IoT devices should look like the following image:
 
     ![](media/9lab25.png)
 
-1. Copy the following link in a private window and sign with your **Username** and **Password** available in the VM's Environment tab.
+1. Copy the following link in a private window and sign in with your **Username** and **Password** available in the VM's Environment tab.
    
     ```text
     https://outlook.office365.com/mail/
