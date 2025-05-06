@@ -100,6 +100,10 @@ In this task, you will configure the Network Security Group (NSG) that secures a
    [![Deploy to Azure](
 https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FCloudLabs-MOC%2FMSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer%2Fstage%2FAllfiles%2FARM%2Flab12a.json)
 
+   >**Note:** To access the **Deploy to Azure** link, right-click **(1)** on the button, **copy the link (2)** address, and paste it into a new tab in the Lab VM browser.
+   
+      ![](./media/azuredeploy.png)
+
 1. In the **Custom deployment** page, under **Project details**, enter the following details:
 
     | Settings | Values |
