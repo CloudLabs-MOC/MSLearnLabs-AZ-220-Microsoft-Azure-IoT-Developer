@@ -171,11 +171,11 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
 1. When prompted to sign in with your credentials.
 
-   - **Email/Username:** Enter your personal Microsoft account email (e.g., Outlook.com).
+   - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
         ![](media/9lab15.png)
  
-   - **Password:** Enter your personal Microsoft account email password.
+   - **Password:** <inject key="AzureAdUserPassword"></inject>
 
        ![](media/9lab16.png)
 
