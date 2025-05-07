@@ -153,15 +153,15 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
       ![](media/9lab12.png)
 
-1. Click **Add an operation** and in the search textbox, enter **Outlook.com**
+1. On **Add an Action** window, in the textbox search for **Send an email (V2)**.
 
-1. In the list of Actions, search for **Send an email (V2)** and scroll down to the **Office 365 Outlook**, and then click **Send an email (V2)**.
+1. You will be given with list of connectors with the search result, click **Send an email (V2)** which grouped under **Office 365 Outlook** connector.
 
       ![](media/az5-4.png)
 
-      > **Note**:  These instructions walk through configuring the Logic App to send an email using an **Outlook.com** email address. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
+      > **Note**:  These instructions walk through configuring the Logic App to send an email using an email address thats visible in **Outlook.com**account. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
-1. On the **Outlook.com** connector, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
+1. On the **Send an email(V2)** connector page, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
 
       ![](media/9lab14.png)
 
