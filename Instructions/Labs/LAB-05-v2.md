@@ -243,7 +243,6 @@ Azure IoT Hub integrates with Azure Event Grid so that you can send event notifi
 
     ![](media/AI-220-l1-1.png)
 
-
 1.  Click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
 
       ![](media/AI-220-l5-14.png)
