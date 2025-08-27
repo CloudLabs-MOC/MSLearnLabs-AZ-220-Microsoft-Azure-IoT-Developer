@@ -204,7 +204,7 @@ As noted above, the application currently consists of two files:
      Console.WriteLine("Hello, World!");
     ```
 
-1. Select **Three dots(...) >> Terminal(1)** and click on **New Terminal(2)**.
+1. Select **Three dots(...) >> Terminal (1)** and click on **New Terminal (2)**.
    
     ![](./media/az-5-71.png)
 
