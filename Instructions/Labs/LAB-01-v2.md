@@ -12,13 +12,13 @@ You are an Azure IoT Developer working for Contoso, a company that crafts and di
 
 In this lab, you will complete the following:
 
-- Exercise 1: Create an IoT Hub using the Azure portal
-- Exercise 2: Examine the IoT Hub Service
-- Exercise 3: Create a Device Provisioning Service using the Azure portal
-- Exercise 4: Examine the Device Provisioning Service
+- **Exercise 1:** Create an IoT Hub using the Azure portal
+- **Exercise 2:** Examine the IoT Hub Service
+- **Exercise 3:** Create a Device Provisioning Service using the Azure portal
+- **Exercise 4:** Examine the Device Provisioning Service
 
 
-## Estimated Duration: 60 minutes
+## Estimated Duration: 60 Minutes
 
 ## Architecture Diagram
 
@@ -30,15 +30,15 @@ In this exercise, you will create an IoT Hub using the Azure portal. You'll prov
 
 ### Task 1: Use the Azure portal to create a IoT Hub with required property settings
 
-1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub** and click on it.
+1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub (1)** and select **IoT Hub (2)** from list.
 
-    ![](media/hub.png)
+    ![](media/AI-220-l1-1.png)
 
 1. To begin the process of creating your new IoT Hub, click **+ Create**.
 
-    ![](media/1lab20.png)
+    ![](media/AI-220-l1-2.png)
     
-1. On the **IoT hub** blades **Basics** tab, provide the following details and then click on **Next:Networking>**.
+1. On the **IoT hub** blades **Basics** tab, provide the following details and then click on **Next:Networking> (6)**.
 
    | Settings | Values |
    | --- | --- |
@@ -48,19 +48,19 @@ In this exercise, you will create an IoT Hub using the Azure portal. You'll prov
    | Region | **eastus(4)** |
    | Tier | **Standard(5)** |
 
-    ![](media/toi1.png)
+    ![](media/AI-220-l1-3.png)
 
-1. Ensure the **Minimum TLS Version** is set to **1.0** and then click on **Next:Management>**.
+1. Ensure the **Minimum TLS Version** is set to **1.2 (1)** and then click on **Next:Management> (2)**.
 
-    ![](media/1lab17.png)
+    ![](media/AI-220-l1-4.png)
 
-1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4** and click on **Review + create**. Then, click on **Create**.
+1. Under **Scale** (you may need to scroll down), ensure that **Device-to-cloud partitions** is set to **4 (1)** and click on **Review + create (2)**. Then, click on **Create**.
 
-    ![](media/toi2.png)
+    ![](media/AI-220-l1-5.png)
 
 1. Once the Deployment is completed, click on **Go to resource** and then you will be able to see the newly created IoT Hub.
 
-    ![](media/iott9.png)
+    ![](media/AI-220-l1-6.png)
 
     > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
     > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
@@ -75,13 +75,13 @@ IoT Hub is a managed service, hosted in the cloud, that acts as a central messag
 
 ### Task 1: Explore the IoT Hub Overview information
 
-1. If the IOT Hub blade is not opened, open your Azure dashboard. Search and select **IoT Hub** from the Azure dashboard.
+1. If the IOT Hub blade is not opened, open your Azure dashboard. Search and select **IoT Hub (1)** from the Azure dashboard ans **IoT Hub (2)** select from the list.
 
-    ![](./media/az11-50.png)
+    ![](media/AI-220-l1-1.png)
 
 1. Click on the newly created **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>**
 
-    ![](media/1lab4.png)
+    ![](media/AI-220-l1-7.png)
 
 1. At the bottom of your IoT Hub blade **Overview** page, notice the **IoT Hub Usage** tile.
 
@@ -104,14 +104,14 @@ IoT Hub is a managed service, hosted in the cloud, that acts as a central messag
 
 1. On the left-side menu, under **Hub settings**, click on **Built-in endpoints**. IoT Hub exposes "endpoints" that enable external connections. Essentially, an endpoint is anything connected to or communicating with your IoT Hub. You should see that your hub already has endpoints defined, including the following:
 
-    * _Event Hub compatible endpoint_ **(1)**
-    * _Cloud to device messaging_ **(2)**
+    * Event Hub compatible endpoint **(1)**
+    * Cloud to device messaging **(2)**
 
         ![](media/endpoint.png)
 
-1. On the left-side menu, under **Hub settings**, click on **Message routing(1)**. The IoT Hub message routing feature enables you to route incoming device-to-cloud messages to service endpoints such as Azure Storage containers, Event Hubs, and Service Bus queues. You can also create routing rules to perform query-based routes.
+1. On the left-side menu, under **Hub settings**, click on **Message routing (1)**. The IoT Hub message routing feature enables you to route incoming device-to-cloud messages to service endpoints such as Azure Storage containers, Event Hubs, and Service Bus queues. You can also create routing rules to perform query-based routes.
 
-1. At the top of the **Message routing** pane, click on **Custom endpoints(2)**.  Custom endpoints (such as Event Hubs and Storage) are often used within an IoT implementation.
+1. At the top of the **Message routing** pane, click on **Custom endpoints (2)**.  Custom endpoints (such as Event Hubs and Storage) are often used within an IoT implementation.
 
     ![](media/az-1-1.png)
 
@@ -128,19 +128,19 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 1. On the Azure portal menu, click **+ Create a resource**.
 
-    ![](media/1lab11.png)
+    ![](media/AI-220-l1-9.png)
 
-1. In the Search textbox, type **device provisioning service(1)** and then press Enter.
+1. In the Search textbox, type **device provisioning service (1)** and then press Enter.
 
-1. On the **Marketplace** blade, click on **IoT Hub Device Provisioning Service(2)** search result.
+1. On the **Marketplace** blade, click on **Azure IoT Hub Device Provisioning Service (2)** search result.
 
-    ![](media/iot16.png)
+    ![](media/AI-220-l1-10.png)
 
 1. To begin the process of creating your new DPS instance, click on **Create**.
 
-    ![](media/iot29.png)
+    ![](media/AI-220-l1-11.png)
 
-1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create**.  Then click on **Create**.
+1. On the **Azure IoT Hub Device Provisioning Service** blades **Basics** tab, provide the following details and then click on **Review + create (5)**.  Then click on **Create**.
 
     | Setting | Value |
     | --- | --- |
@@ -149,7 +149,7 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
     | Name | **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (3)** |
     | Region | **eastus (4)** |
 
-    ![](media/1lab19.png)
+    ![](media/AI-220-l1-12.png)
    
 1. After the deployment is completed, click on **Go to resource** to see the newly created **DPS**.
 
@@ -162,29 +162,29 @@ The Azure IoT Hub Device Provisioning Service is a helper service for IoT Hub th
 
 ### Task 2: Link your IoT Hub and Device Provisioning Service.
 
-1. On the Azure dashboard you can see the list of both your **IoT Hub(2)** and **DPS resources(1)**.
+1. On the Azure dashboard you can see the list of both your **IoT Hub (2)** and **DPS resources (1)**.
 
     ![](media/1lab5.png)
 
-1. Click on **dps-az220-training-cah281216**.
+1. Click on **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>**.
 
     ![](media/1lab6.png)
 
-1. On the **Device Provisioning Service** blade, click on **Linked IoT hubs(1)** under **Settings.**
+1. On the **Device Provisioning Service** blade, click on **Linked IoT hubs (2)** under **Settings (1).**
 
-1. At the top of the blade, click on **+ Add(2)**.
+1. At the top of the blade, click on **+ Add (3)**.
 
 1. On the **Add link to IoT hub** blade,
 
-    - Ensure that the **Subscription(3)** dropdown is displaying the subscription that you are using for this lab.
+    - Ensure that the **Subscription (4)** dropdown is displaying the subscription that you are using for this lab.
 
-    - Open the IoT hub dropdown, and then select the **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/>(4)**.
+    - Open the IoT hub dropdown, and then select the **iot-az220-training-cah<inject key="DeploymentID" enableCopy="false"/> (5)**.
       
-    - In the Access Policy dropdown, select **iothubowner(5)**.
+    - In the Access Policy dropdown, select **iothubowner (6)**.
 
-    - Click on **Save(6)**.
+    - Click on **Save (7)**.
 
-        ![](media/az-1-7.png)
+        ![](media/AI-220-l1-13.png)
 
 1. Here, you can see the newly created Linked IoT Hub.
 
@@ -196,9 +196,9 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
 ### Task 1: Explore the Device Provisioning Service Overview information
 
-1. On your Azure dashboard, search and select the **Resource group**.
+1. On your Azure dashboard, search **Resource group (1)** and select the **Resource group (2)** from the list.
 
-    ![](media/1lab13.png)
+    ![](media/AI-220-l1-14.png)
    
 1. Select the Resource group **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
@@ -206,7 +206,7 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
 1. Click on **dps-az220-training-cah<inject key="DeploymentID" enableCopy="false"></inject>**
 
-    ![](media/1lab15.png)
+    ![](media/AI-220-l1-15.png)
 
 ### Task 2: View features of Device Provisioning Service using the navigation menu
 
@@ -224,15 +224,15 @@ The IoT Hub Device Provisioning Service is a helper service for IoT Hub that ena
 
 1. On the left-side menu, click on **Linked IoT hubs** under **Settings**. Here you can see the linked IoT Hub from earlier. The Device Provisioning Service can only provision devices to IoT hubs that have been linked to it. Linking an IoT hub to an instance of the Device Provisioning service gives the service read/write permissions to the IoT hub's device registry; with the link, a Device Provisioning service can register a device ID and set the initial configuration in the device twin. 
 
-    ![](media/iott27.png)
+    ![](media/AI-220-l1-16.png)
 
 1. On the left-side menu, click on **Certificates** under **Settings**. Here you can manage the X.509 certificates that can be used to secure your Azure IoT hub using the X.509 Certificate Authentication.
 
-    ![](media/1lab7.png)
+    ![](media/AI-220-l1-17.png)
 
 1. On the left-side menu, click on **Manage enrollments** under **Settings**. Here you can manage the enrollment groups and individual enrollments. Enrollment groups can be used for a large number of devices that share a desired initial configuration, or for devices all going to the same tenant. An enrollment group is a group of devices that share a specific attestation mechanism. Enrollment groups support both X.509 as well as symmetric. An individual enrollment is an entry for a single device that may register. 
 
-    ![](media/1lab8.png)
+    ![](media/AI-220-l1-18.png)
 
 1. Take a minute to review some of the other menu options under **Settings**
 
