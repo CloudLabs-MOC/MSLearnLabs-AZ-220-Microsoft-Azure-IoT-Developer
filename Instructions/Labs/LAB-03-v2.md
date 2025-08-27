@@ -46,7 +46,7 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 1. On the left-side menu under **Settings (1)**, click on **Manage enrollments (2)** then navigate to **Individual enrollments (3)** and click on **+ Add individual enrollment (4)**.
 
-   ![](./media/az-3-2.png)
+   ![](./media/AI-220-l3-2.png)
 
 1. On the **Add Enrollment** blade under **Registration + provisioning**, fill the details as follows: 
 
@@ -370,7 +370,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
     > - If prompted **The command requires the extension azure-iot. Do you want to install it now? The command will continue to run after the extension is installed. (Y/n): Y**.
     > - If prompted **Dependency update (uamqp 1.2)required for IoT extension version: 0.24.0. Continue? (y/n): y**
 
-     ![](./media/az-3-20.png)
+    ![](./media/az-3-20.png)
 
 ### Task 3: Change the device configuration through its twin
 
