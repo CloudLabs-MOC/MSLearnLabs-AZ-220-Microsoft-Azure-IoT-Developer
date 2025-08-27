@@ -67,7 +67,7 @@ In this task, you will be opening the Simulated device project using visual stud
     * Program.cs
     * VibrationDevice.csproj
 
-    ![](./media/AI-220-l4-4.png)
+      ![](./media/AI-220-l4-4.png)
 
 1. In the **EXPLORER** pane, click **Program.cs (1)** and click on Three dots **(...) (2) >> Terminal (3)** and then **New Terminal (4)**.
 
@@ -252,7 +252,7 @@ In this task, you will creating a routes using the message routing tab in the Az
     - Account kind: **StorageV2 (general purpose v2) (2)**
     - Performance: **Standard (3)** 
       
-         ![](./media/AI-220-l4-15.png)
+         ![](./media/AI-220-l4-15.1.png)
 
 1. Wait until the request is validated and the storage account deployment has completed. Validation and creation can take a minute or two. Once completed, the **Create storage account** blade will close and the **Storage accounts** blade will be displayed if it did not appear refresh the page it will appear. The Storage accounts blade should have auto-updated to show the storage account that was just created.
 
@@ -262,7 +262,7 @@ In this task, you will create a storage account and a container for route.
 
 1. On the **Storage accounts** blade, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**. The **Containers** blade should appear. Since this is a new storage account, there are no containers listed.
 
-    ![](./media/AI-220-l4-16.png)
+    ![](./media/AI-220-l4-16.1.png)
 
 1. To create a container, click **+ Container**. The **New container** dialog should now be displayed.
    
