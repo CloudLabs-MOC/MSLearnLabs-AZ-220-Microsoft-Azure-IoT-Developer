@@ -81,6 +81,8 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
    
       >**Note**: This may take `10 to 15` minutes to get deployed.
 
+1. Once the deployment is completed, select **Go to resource**.      
+
 1. On the **Azure Data Explorer** overview page, click on **Create** under **Database Creation**.
 
    ![](./media2/lab10img6.png)
@@ -175,7 +177,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
 <validation step="455aeeef-964f-40a5-90ed-6fc8d87479c7" />
 
@@ -205,7 +207,9 @@ In this task, you will run the simulated devices so that they start sending tele
 
     ![](./media2/lab06img16.png)
 
-1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\10-Explore and analyze time stamped data with Time Series Insights\Starter\ContainerSimulation` and click on **select folder**.
+1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\10-Explore and analyze time stamped data with Time Series Insights\Starter` **(1)**, then select **ContainerSimulation (2)** and then click on **select folder (3)**.
+
+    ![](./media2/az6l5.png)
 
 1. After selecting the folder, if you are prompted with a security dialog, select **Yes, I trust the authors**.
 
@@ -213,11 +217,13 @@ In this task, you will run the simulated devices so that they start sending tele
  
 1. In the EXPLORER pane, click on **Program.cs**.
 
-    ![](./media2/lab06img2v2.png)
+    ![](./media2/az6l6.png)
 
-1. Locate the variables used to assign the connections strings. Update the variable assignments with the connection strings that you saved earlier in the lab. Be sure to replace the placeholder values with the Connection String for the corresponding IoT device.
+1. Locate the variables used to assign the connections strings. Update the variable assignments with the connection strings that you saved earlier in the lab. **Be sure to replace the placeholder values with the Connection String for the corresponding IoT device**.
 
     ![](./media2/lab06img5v2.png)
+
+    ![](./media2/az6l7.png)    
 
 1. In the **File** menu, select **Save**. This action will save any changes made to the currently open file, ensuring your latest edits are preserved.
 
@@ -266,7 +272,7 @@ In this task, you will get a quick introduction to working with time series data
 
     ![](./media2/lab06img21.png)
 
-1. Select **Query** and run the following query to visualize the data that is streamed.
+1. Select **Query (1)** and run the following query to visualize the data that is streamed **(2)(3)**.
 
     ```
     Telemetry
