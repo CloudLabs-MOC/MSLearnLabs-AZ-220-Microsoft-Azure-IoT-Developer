@@ -33,10 +33,12 @@ In this lab, you will complete the following:
 
 In this exercise, you'll use the Azure portal to create and manage an IoT Edge device. You'll add a new device, save its details, and copy its connection string for future configuration.
 
-1. On the Azure portal, naviagate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+1. On the **Azure portal**, seach for **Resource group (1)** and then select **Resource group (2)** from the services.
 
-      ![](./media/v2img1.png)
-   
+    ![](./media2/az6l1.png)
+
+1. Then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+  
 1. Under the **Resources** tab, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
       ![](./media/az11-70.png)
@@ -60,7 +62,7 @@ In this exercise, you'll use the Azure portal to create and manage an IoT Edge d
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+      > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.com. We are available 24/7 to help you out.
 
       <validation step="9d641031-24e1-4f66-8bea-e118343ee133" />
 
@@ -141,6 +143,8 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH** in a notepad for future use.
 
    ![](./media/az11-28.png)
+
+1. You will be using this in next task.   
 
 ### Task 3: Connect to the VM
 
@@ -227,7 +231,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+      > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.com. We are available 24/7 to help you out.
 
       <validation step="191f1b2a-c39d-46d1-9bc4-8d667d71674a" />
 
@@ -237,21 +241,23 @@ When a new module instance is created by the IoT Edge runtime, it gets a corresp
 
 ### Task 1: Configure module for deployment
 
-1. Search for **IoT Hub** and select it.
+1. Search for **IoT Hub (1)** and select **IoT Hub (2)**.
 
-      ![](./media/az11-50.png)
+    ![](./media/az6l10.png)
 
-1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
+1. Select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
-      ![](./media/edge12.png)
+1. Click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
+
+    ![](./media/edge12.png)
    
 1. Scroll to the bottom of the **sensor-th-0067** blade. Scroll down to find the **Modules (1)** section and notice the list of the modules currently configured for the device. At the top of the **sensor-th-0067** blade, click **Set Modules (2)**.
 
     ![](./media/sensor.png)
 
-1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click **+ Add**, and then select **+ IoT Edge Module**.
+1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click **+ Add (1)**, and then select **+ IoT Edge Module (2)**.
 
-    ![](./media/az11-21.png)
+    ![](./media/az6l11.png)
 
 1. On the Add IoT Edge Module pane, under IOT Edge Module Name, enter **tempsensor (1)**. Under Image URI, enter **mcr.microsoft.com/azureiotedge-simulated-temperature-sensor:1.0 (2)**
 
@@ -299,13 +305,13 @@ When a new module instance is created by the IoT Edge runtime, it gets a corresp
 
      ![](./media/sensor1.png)
 
-    > **Note**: If the value is still not reported, or if an error is reported, wait a moment and then refresh the blade again.
+    > **Note**: If the value is still not reported, or if an error is reported, wait a moment and then **refresh** the blade again.
 
      ![](./media/sensor2.png)
 
 ### Task 2: Confirm module deployment
 
-1. Open a Cloud Shell session (if it is not still open).
+1. Open a **Cloud Shell** session (if it is not still open).
 
     > **Note**: If you are no longer connected to the **vm-az220-training-edge0001-<inject key="DeploymentID" enableCopy="false"></inject>** virtual machine, connect using SSH as your did earlier in this lab. The SSH command should be available in Notepad.
 
@@ -344,7 +350,7 @@ When a new module instance is created by the IoT Edge runtime, it gets a corresp
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+      > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.com. We are available 24/7 to help you out.
 
       <validation step="fca9d004-2423-4636-826d-89abf367549e" />
   
@@ -354,9 +360,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 ### Task 1: Create Azure Storage Account
 
-1. Search for **storage account** and select it.
+1. Search for **Storage account (1)** and select **Storage account (2)** from the services.
 
-      ![](./media/az11-12.png)
+      ![](./media/az6l12.png)
 
 1. Click on **+ Create**.
 
@@ -372,15 +378,15 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
        - Redundancy: **Locally-redundant storage (LRS) (6)** 
        - Click on **Review + create (7)**
     
-            ![](./media/edge3.png)
+         ![](./media/az6l13.png)
     
 1. Click on **Create**.
 
 ### Task 2: Create an Azure Stream Analytics job
 
-1. Search for **Stream Analytics** and select **Stream Analytics jobs**.
+1. Search for **Stream Analytics (1)** and select **Stream Analytics jobs (2)**.
 
-      ![](./media/az11-11.png)
+      ![](./media/az6l14.png)
 
 1. Click on **+ Create**.
    
@@ -394,11 +400,11 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
      | Region | Select **<inject key="Region" enableCopy="false"/> (4)** |
      | Hosting environment | **Edge (5)** |
 
-      ![](./media/edge4.png)
+      ![](./media/az6l15.png)
 
-1. Under the storage tab, select the **Add storage account** check box then select **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(1)** from the drop down and click on **Review + create (2)**
+1. Under the storage tab, select the **Add storage account** check box  **(1)** then select **az220store<inject key="DeploymentID" enableCopy="false"></inject>** **(2)** from the drop down and click on **Review + create (3)**
 
-      ![](./media/az11-9.png)
+      ![](./media/az6l16.png)
    
 1. At the bottom of the blade, click **Create**. It can take a few moments to for this resource to be deployed.
 
@@ -406,9 +412,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
 1. When you see the **Your deployment is complete** message, click **Go to resource**.
 
-1. On the left side navigation menu, under **Job topology**, click **Inputs (1)**. Under **+ Add Input (1)**, select **Edge Hub (2)**.
+1. On the left side navigation menu, under **Job topology**, click **Inputs (1)**. Under **+ Add Input (2)**, select **Edge Hub (3)**.
 
-      ![](./media/az11-8.png)
+      ![](./media/az6l17.png)
 
 1. In the Edge Hub, provide the following and click on **Save (5)**:
 
@@ -419,7 +425,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
 
            ![](./media/az11-7.png)
      
-1. On the left side navigation menu, under **Job topology**, click **Outputs**. On the **Outputs** pane, click **+ Add output**, and then click **Edge Hub**.
+1. On the left side navigation menu, under **Job topology**, click **Outputs (1)**. On the **Outputs** pane, click **+ Add output (2)**, and then click **Edge Hub (3)**.
+
+      ![](./media/az6l18.png)
 
 1. In the Edge Hub, provide the following and click on **Save (5)**:
 
@@ -448,26 +456,39 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
       > **Note**: This query looks at the events coming into the **temperature** Input, and groups by a Tumbling Windows of 15 seconds, then it checks if the average temperature value within that grouping is greater than 25. If the average is greater than 25, then it sends an event with the **command** property set to the value of **reset** to the **alert** Output. For more information about the **TumblingWindow** functions, reference this link: [https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics](https://docs.microsoft.com/en-us/stream-analytics-query/tumbling-window-azure-stream-analytics)
 
 ### Task 4: Deploy the Stream Analytics Job
+1. In the Azure portal, search for **IoT Hub (1)** and then select **IoT Hub (2)**.
 
-1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**, click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
+      ![](./media/az6l10.png)
+
+1. Open **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**.
+
+      ![](./media/az6l19.png)
+
+1. Click on **Iot Edge (1)** under **Device Management** tab in the left pane and select **sensor-th-0067 (2)**.
+
+      ![](./media/az6l20.png)
 
 1. Navigate to **Set modules** tab.
 
       ![](./media/new-az220-lab7-5.png)
   
-1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click **+ Add**, and then select **+ Azure Stream Analytics Module**.
+1. On the **Set modules on device: **sensor-th-0067** blade**, locate the **IoT Edge Modules** section. Click **+ Add (1)**, and then select **+ Azure Stream Analytics Module (2)**.
 
-      ![](./media/az11-4.png)
+      ![](./media/az6l21.png)
 
 1. On the **Edge deployment** window, select the **subscription (1)**, select the **edge job(2)** we created earlier and click on **Save (3)**.
 
-      ![](./media/az11-3.png)
+      ![](./media/az6l22.png)
 
       > **Note**: The job may take upto 5-7 minutes to come up, please refresh the page for it to appear. The job may already be selected, yet the **Save** button is disabled - just open the **Edge job** dropdown again and select the **asa-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>** job again. The **Save** button should then become enabled.
 
-1. Once the Edge package has been successfully published, notice that the new ASA module is listed under the **IoT Edge Modules** section
+1. Once the Edge package has been successfully published, notice that the new `ASA` module is listed under the **IoT Edge Modules** section.
+
+      ![](./media/az6l24.png)
 
 1. Under **IoT Edge Modules**, click **asaaztraining**.
+
+      ![](./media/az6l24.png)
 
 1. On the **Update IoT Edge Module** pane, notice that the **Image URI** points to a standard Azure Stream Analytics image.
 
@@ -531,7 +552,9 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
       sudo iotedge logs tempsensor
       ```
 
-      > **Note**: If the simulated temperature sensor module stopped before the asa module was deployed, you can restart it by running the `sudo iotedge restart tempsensor` command. Let it run for about 30 seconds and then recheck the logs.
+      ![](./media/az6l23.png)      
+
+       >**Note**: If the simulated temperature sensor module stopped before the asa module was deployed, you can restart it by running the `sudo iotedge restart tempsensor` command. Let it run for about 30 seconds and then recheck the logs.
 
 1. Take a minute to observe the output. While watching the temperature telemetry being sent by **tempsensor**, notice that a **reset** command is sent by the Stream Analytics job when the **machine.temperature** reaches an average above **25**. This is the action configured in the Stream Analytics job query. Output of this event will look similar to the following:
 
@@ -540,7 +563,7 @@ Now that the tempSensor module is deployed and running on the IoT Edge device, w
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
       > - If not, carefully read the error message and retry the step, following the instructions in the lab guide. 
-      > - If you need any assistance, please contact us at labs-support@spektrasystems.com. We are available 24/7 to help you out.
+      > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.com. We are available 24/7 to help you out.
       
       <validation step="01b8b6ba-8df5-4f54-8dd8-559f82617e96" />
    
