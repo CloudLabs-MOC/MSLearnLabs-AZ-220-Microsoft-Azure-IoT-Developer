@@ -81,7 +81,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
    
       >**Note**: This may take `10 to 15` minutes to get deployed.
 
-1. On the **Azure Data Explorer** overview page, click on **Create** under Database Creation.
+1. On the **Azure Data Explorer** overview page, click on **Create** under **Database Creation**.
 
    ![](./media2/lab10img6.png)
 
