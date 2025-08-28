@@ -141,9 +141,9 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
    ![](./media2/lab06img9.png)
 
-1. Select **+ Add data connection**, in the dropdown click on **IoT Hub**.
+1. Select **+ Add data connection (1)**, in the dropdown click on **IoT Hub (2)**.
 
-   ![](./media2/lab06img10.png)
+   ![](./media2/az6l9.png)
 
 1. In the **create data connection** page, select **Event system properties** dropdown.
 
@@ -229,9 +229,9 @@ In this task, you will run the simulated devices so that they start sending tele
 
     ![](./media2/lab06img3v2.png)
 
-1. Open **New terminal** in **Visual Studio Code**
+1. Select **elispses(...) (1)**, then **Terminal (2)** and then open **New terminal (3)**.
 
-    ![](./media2/lab09img3.png)
+    ![](./media2/az6l8.png)
 
 1. Within the **Terminal** pane, ensure that the command prompt specifies the path to the lab 10 **/Starter/ContainerSimulation** directory.
 
