@@ -172,7 +172,7 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="b1385042-0098-4338-aa44-f920b7ab3d5d" />
 
@@ -419,13 +419,15 @@ Next, you need to "download" the **MyEdgeDeviceCA** certificate from the **vm-az
     certs       index.txt  index.txt.attr.old  newcerts       private              serial.old
     ```
 
+     ![](./media/az6l33.png)     
+
 1. Once the files are copied to Cloud Shell storage from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine, you will be able to easily download any of the IoT Edge Device certificate and key files to your local machine as necessary. Files can be downloaded from the Cloud Shell using the `download <filename>` command. You will do this later in the lab.
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="347b3d97-90c7-4666-9630-5fe2b5a5b3d8" />
 
@@ -474,14 +476,24 @@ In this task, you will configure the connection between a pre-built downstream d
 1. At the Cloud Shell command prompt, to download the root CA X.509 certificate for the IoT Edge Gateway virtual machine, enter the following command:
 
     ```bash
-    download lab12/certs/azure-iot-test-only.root.ca.cert.pem
+    scp vmadmin@vm-az220-training-gw0001-1838002.westus.cloudapp.azure.com:/tmp/lab12/certs/azure-iot-test-only.root.ca.cert.pem .
     ```
 
-    > **Note**: Your browser UI may prompt you to save the download file.
+     >**Note**: Your browser UI may prompt you to save the download file.
 
-1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is: `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`
+1. Search  and select **Windows Powershell** from the labvm and **Run as an Administrator**.
 
-    > **Important**: Make sure the file has that exact name. Rename the file after copying it if necessary.
+1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is: `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`. Enter the below command:
+
+    ```
+    scp vmadmin@vm-az220-training-gw0001-<DID>.westus.cloudapp.azure.com:/tmp/lab12/certs/azure-iot-test-only.root.ca.cert.pem "C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownstreamDevice"
+    ```
+
+     >**Note**: Be sure to replace the **< DID>** with **<inject key="DeploymentID" enableCopy="true" />**
+
+     ![](./media/az6l35.png)
+
+
 
 ### Task 3: Create hosts file entry
 
@@ -491,11 +503,19 @@ In this task, you will add the required entry to the hosts file.
 
 1. Open **Visual Studio Code** from the desktop.
 
-1. On the **File** menu, click **Open Folder**.
+1. On the **File** menu, click **Open File**.
 
-1. Navigate to the following folder location: `C:\Windows\System32\drivers\etc\`, and then open the **hosts** file.
+    ![](./media/az6l36.png)
 
-    > **Note**: the **hosts** file has no extension.
+1. Navigate to the following folder location: `C:\Windows\System32\drivers\etc\` **(1)**, select the **hosts (2)** file and then **Open (3)**.
+
+    ![](./media/az6l37.png)
+
+     >**Note**: the **hosts** file has no extension.
+
+1. Select **Open**.
+
+    ![](./media/az6l38.png)
 
 1. Add the following line to the **hosts** file, followed by an empty line:
 
@@ -503,7 +523,8 @@ In this task, you will add the required entry to the hosts file.
     {VM Public IP Address} vm-az220-training-gw0001-{your-id}
     {blank line}
     ```
-    >**Note**: Be sure to replace the **{your-id}** with **<inject key="DeploymentID" enableCopy="true" />**.
+    >**Note**: Be sure to replace the **{your-id}** with **<inject key="DeploymentID" enableCopy="true" />** and **{VM Public IP Address}** with IP Adress you copied in previous step.
+
     For example,
 
     ```text
@@ -511,7 +532,13 @@ In this task, you will add the required entry to the hosts file.
 
     ```
 
+     ![](./media/az6l39.png)    
+
 1. On the Visual Studio Code **File** menu, click **Save**. The local machine can now resolve the VM name to the appropriate IP Address.
+
+1. Make sure copy and paste the **IoT edge geteway** in a notepad. You will need this in next task.
+
+    ![](./media/az6l43.png)
 
 ### Task 4: Connect Downstream Device to IoT Edge Gateway
 
@@ -521,17 +548,25 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
      ![](./media2/lab06img16.png)
 
-1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-master\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownStreamDevice` click on **DownstreamDevice**, and then click on **Select Folder**. You should see the azure-iot-test-only.root.ca.cert.pem file listed in the EXPLORER pane along with the Program.cs file.
+1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter` **(1)**, click on **DownstreamDevice (2)**, and then click on **Select Folder (3)**. You should see the azure-iot-test-only.root.ca.cert.pem file listed in the EXPLORER pane along with the Program.cs file.
 
-    > **Note**: If you see messages to restore dotnet and/or load the C# extension, you can complete the installs.
+    ![](./media/az6l40.png)
+
+     >**Note**: If you see messages to restore dotnet and/or load the C# extension, you can complete the installs.
+
+1. Select **Yes, I trust the author**.
+
+    ![](./media/az6l41.png)
 
 1. In the EXPLORER pane, click **Program.cs**. Take a minute to review the code.
 
-1. Locate the declaration for the **connectionString** variable, and then replace the placeholder value with the **Primary Connection String** for the **sensor-th-0072** IoT device.
+    ![](./media/az6l42.png)
 
-1. Append the assigned **connectionString** value with a **GatewayHostName** property, and then set the value of GatewayHostName to the name of your IoT Edge gateway device.
+1. Locate the declaration for the **connectionString** variable, and then replace the placeholder value with the **Primary Connection String** for the **sensor-th-0072** IoT device that you have xopied in `Task 1 step 8`.
 
-    > **Note**: In the previous task, you updated the local machine's **hosts** file to resolve the IoT Edge device's hostname to an IP Address. As a result, the fully qualified domain name (DNS name) of your Edge gateway device is not required.
+    - Append the assigned **connectionString** value with a **GatewayHostName** property, with the value of GatewayHostName to the name of your IoT Edge gateway device that you have copied in `Task 3 step 7`.
+
+      >**Note**: In the previous task, you updated the local machine's **hosts** file to resolve the IoT Edge device's hostname to an IP Address. As a result, the fully qualified domain name (DNS name) of your Edge gateway device is not required.
 
 1. The completed connection string values should match the following format:
 
@@ -633,6 +668,8 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
     }
     ```
 
+    ![](./media/az6l47.png)
+
 1. Verify that the message data displayed by the leaf device in Visual Studio Code is being received by IoT hub as reflected in the Cloud Shell. You have successfully configured an IoT Edge transparent gateway to support communication from a downstream leaf device in support of a simple device-side architecture.
 
     > **NOTE**: Once you have completed this lab and verified the event flow, exit the Cloud Shell and console application by pressing **CTRL+C**.
@@ -645,7 +682,7 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="668a4f06-e613-47f9-85c3-7f08c66ab8e5" />
 
