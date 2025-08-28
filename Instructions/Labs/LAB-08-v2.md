@@ -38,10 +38,12 @@ In this exercise, you will deploy an Ubuntu Server VM and configure it as an IoT
 
 In this task, you will use Azure IoT Hub to create a new IoT Edge device identity that you will use for the IoT Edge Transparent Gateway (your IoT Edge VM).
 
-1. On the Azure portal, navigate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+1. On the **Azure portal**, seach for **Resource group (1)** and then select **Resource group (2)** from the services.
 
-   ![](./media/v2img1.png)
-   
+    ![](./media2/az6l1.png)
+
+1. Select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+  
 1. On the **All resources** tile, to open your IoT hub, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](./media/lab12img1.png)
@@ -50,11 +52,11 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
    ![](./media/lab12img3.png)
 
-1. On the **Create a device** blade, in the **Device ID** field, enter **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, let **IoT Edge Device** checkbox selected if not selected by default. Leave other setting as default and click on **Save (2)**.
+1. On the **Create a device** blade, in the **Device ID** field, enter **sensor-<inject key="DeploymentID" enableCopy="false" />** **(1)**, let **IoT Edge Device** checkbox selected if not selected by default **(2)**. Leave other setting as default and click on **Save (3)**.
 
-   ![](./media/new-az-220-lab8-099.png)
+   ![](./media/az6l25.png)
 
-1. Under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />**.
+1. Navigate to **Devices**, under **Device ID**, click **sensor-<inject key="DeploymentID" enableCopy="false" />**.
 
    ![](./media/az8-2.png)
  
@@ -66,16 +68,16 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
    ![](./media/E1T1S7.png)
 
-1. At the top of the **Set module on device** blade, click **Routes**. Under **Routes**, the editor displays a configured default route for the IoT Edge Device. At this time, it should be configured with a route that sends all messages from all modules to Azure IoT Hub. If the route configuration doesn't match this, then update it to match the following route:
+1. At the top of the **Set module on device** blade, click **Routes (1)**. Under **Routes**, the editor displays a configured default route for the IoT Edge Device. At this time, it should be configured with a route that sends all messages from all modules to Azure IoT Hub. If the route configuration doesn't match this, then update it to match the following route **(2)**. At the bottom of the blade, click **Review + create (3)**.
 
     | Setting | Value |
     | --- | --- |
     | NAME | `route` |
     | VALUE | `FROM /messages/* INTO $upstream` |
 
-      ![](./media/lab12img9.png)
+     ![](./media/az6l26.png)
 
-1. At the bottom of the blade, click **Review + create**. Take a moment to review the deployment manifest. At the bottom of the blade, click **Create**.
+1. Take a moment to review the deployment manifest. At the bottom of the blade, click **Create**.
 
 ### Task 2: Open IoT Edge Gateway Device Ports for Communication
 
@@ -127,9 +129,9 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    > **Note**: Wait for the deployment to be completed. It will take approximately 5 minutes to complete.
 
-1. Once the deployment has been completed, navigate to the **Outputs** pane, copy the values for **publicFQDN** and **publicSSH** in a notepad for future use.
+1. Once the deployment has been completed, navigate to the **Outputs (1)** pane, copy the values for **publicFQDN (2)** and **publicSSH (3)** in a notepad for future use.
 
-   ![](./media/az8-20.png)
+   ![](./media/az6l28.png)
 
 1. Go to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false"/>**.
    
@@ -151,12 +153,12 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 
    ![](./media2/lab08updatedimg1.png)
 
-1. After the MQTT rule is added. To open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 5 by replacing the following **name** and **port** and click on **Add**:
+1. After the MQTT rule is added. To open ports for the **AMQP** and **HTTPS** communication protocols, please repeat step number 7 abd 8 by replacing the following **name** and **port** and click on **Add (4)**:
 
     | Destination port ranges | Protocol | Name |
     | :--- | :--- | :--- |
-    | 5671 | TCP | AMQP |
-    | 443 | TCP | HTTPS |
+    | 5671 **(1)** | TCP **(2)** | AMQP **(3)** |
+    | 443 **(1)** | TCP **(2)** | HTTPS **(3)** |
 
       ![](./media/az8-4.png)
 
@@ -182,9 +184,11 @@ In this exercise, you will explore the **vm-az220-training-gw0001-<inject key="D
 
 In this task, you will verify that your Linux VM (IoT edge) device is deployed successfully.
 
+1. Go to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false"/>**.
+
 1. Verify that the IoT Edge virtual machine has been deployed successfully.
 
-     ![](./media/lab12img13.png)
+     ![](./media/az6l27.png)
 
 1. On the Azure portal toolbar, to open the Azure Cloud Shell, click **Cloud Shell**.
 
@@ -218,11 +222,11 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     > **Note**: Both *Bash* and *PowerShell* interfaces for the Azure Cloud Shell support the use of **OpenSSL**.
 
-1. Navigate to the virtual machine **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />**, copy the DNS name, add **vmadmin@** as a prefix, and paste the **ssh** command in cloudshell. Then press **Enter**. The command should resemble the following:
+1. Paste the **PublicSSH** command you have copied in `Task 2 step 4` then press **Enter**. The command should resemble the following:
   
     - **ssh vmadmin@vm-az220-training-edge0001-dm080321.centralus.cloudapp.azure.com**.
 
-      ![](./media/vmazz-8.png)    
+      ![](./media/az6l29.png)     
 
 1. When prompted with **Are you sure you want to continue connecting?**, type **yes** and then press **Enter**. This prompt is a security confirmation since the certificate used to secure the connection to the VM is self-signed. The answer to this prompt will be remembered for subsequent connections and is only prompted on the first connection.
 
@@ -236,15 +240,16 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
     vmadmin@vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />:~$
     ```
 
-1. To determine the virtual machine's public IP address, enter the following command:
+     ![](./media/az6l30.png)   
+
+1. To determine the virtual machine's public IP address, enter the following command **(1)**:
 
     ```bash
     nslookup {Public FQDN of your VM}
     ```
+     >**Note**: Replace the value of `FQDN` which you had copied earlier in `Task 2 step 4`.
 
-    > **Note**: Replace the value of FQDN which you had copied earlier.
-
-1. The output from the nslookup command will be similar to:
+1. The output from the nslookup command will be similar to the below, record the value of the **public IP address (2)**:
 
     ```bash
     Server:         127.0.0.53
@@ -252,12 +257,12 @@ In this task, you will verify that your Linux VM (IoT edge) device is deployed s
 
     Non-authoritative answer:
     Name:   vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />.{your location}.cloudapp.azure.com
-    Address: 168.61.181.131
+    Address: x.x.x.x
     ```
 
-      ![](./media/az8-7.png)
+     ![](./media/az6l31.png) 
 
-    > **Note**: If the nslookup command is unable to display the public IP address of the VM, open the vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" /> virtual machine in the portal to find and record the value of the public IP address. 
+      >**Note**: If the nslookup command is unable to display the public IP address of the VM, open the vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" /> virtual machine in the portal to find and record the value of the public IP address. 
 
     > **Important**: Make a note of this IP address - you will need it later. The IP Address will usually change every time the VM is restarted.
 
@@ -392,11 +397,13 @@ Next, you need to "download" the **MyEdgeDeviceCA** certificate from the **vm-az
     scp -r -p {username}@{FQDN}:/tmp/lab12 .
     ```
 
+     ![](./media/az6l32.png)     
+
     >**Important**: The command above has a **space character** followed by a period **.** at the end of the command.
 
-    > **Note**: Replace the **{username}** placeholder with the username of the admin user for the VM and replace the **{FQDN}** placeholder with the fully qualified domain name for the VM. Refer to the command that you used to open the SSH session if needed.
+    >**Note**: Replace the **{username}** placeholder with the `vmadmin` and replace the **{FQDN}** placeholder with the value that you have copied in **Task 2 step 5**. Refer to the command that you used to open the SSH session if needed.
 
-1. Enter the Admin password for the VM when prompted. Once the command has executed, it will have downloaded a copy of the **/tmp/lab12** directory with the certificate and key files over SSH to the Cloud Shell storage.
+1. Enter the Admin password as `Password!123` for the VM when prompted. Once the command has executed, it will have downloaded a copy of the **/tmp/lab12** directory with the certificate and key files over SSH to the Cloud Shell storage.
 
 1. To verify that the files have been downloaded, enter the following commands:
 
