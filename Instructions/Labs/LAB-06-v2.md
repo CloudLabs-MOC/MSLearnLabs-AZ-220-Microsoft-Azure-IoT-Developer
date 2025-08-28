@@ -34,9 +34,11 @@ In this lab, you will complete the following activities:
 
 Azure Data Explorer is an end-to-end platform-as-a-service offering used to collect, process, store, analyze, and query data from IoT solutions at scale. Azure Data Explorer is designed for ad hoc data exploration and operational analysis of data that's highly contextualized and optimized for time series. In this task, you will setup Azure Data Explorer integration with Azure IoT Hub.
 
-1. On the Azure portal, navigate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+1. On the **Azure portal**, seach for **Resource group (1)** and then select **Resource group (2)** from the services.
 
-      ![](./media/v2img1.png)
+    ![](./media2/az6l1.png)
+
+1. Then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
 1. Under the **Resources** tab, select select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -50,28 +52,34 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
    ![](./media2/lab06img1.png)
 
-1. On the **New** blade, in the **Search the Marketplace** textbox, enter **Azure Data Explorer**. In the search results, click **Azure Data Explorer**. On the **Azure Data Explorer** blade, click **Create**.
+1. On the **New** blade, in the **Search the Marketplace** textbox, seach for **Azure Data Explorer (1)** press **Enter**. In the search results, click **Azure Data Explorer (2)**.
+
+    ![](./media2/az6l2.png)
+
+1. On the **Azure Data Explorer** blade, click **Create**.
 
    ![](./media2/lab10img4.png)
 
 1. On the **Create an Azure Data Explorer Cluster** blade,
 
-   - Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" />**
-   - Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" />**
-   - Select the workload as **Dev/test**
-   - Click on **Next : Scale >**
+   - Subscription: Use the deafult one **(1)**
+   - Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" /> (2)**
+   - Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" /> (3)**
+   - Region: Leave the default region **(4)**
+   - Select the workload as **Dev/test (5)**
+   - Click on **Next : Scale > (6)**
 
-        ![](./media2/lab10img11.png)
+     ![](./media2/az6l3.png)
 
-1. In the **Scale** tab, keep all the settings at their default values. Click on **Next : Configurations >**.
+1. In the **Scale** tab, select **Manual scale (1)** and then click on **Next : Configurations > (2)**.
 
-   ![](./media2/lab06img1v2.png)
+    ![](./media2/az6l4.png)
 
 1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion** and click on **Review + create**. Click on **Create** on the next pane.
 
-   ![](./media2/lab06img2.png)
+    ![](./media2/lab06img2.png)
    
-      >**Note**: This may take 10 to 15 minutes to get deployed.
+      >**Note**: This may take `10 to 15` minutes to get deployed.
 
 1. On the **Azure Data Explorer** overview page, click on **Create** under Database Creation.
 
