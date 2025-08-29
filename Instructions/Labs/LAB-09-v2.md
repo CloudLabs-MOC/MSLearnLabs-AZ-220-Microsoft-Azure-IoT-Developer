@@ -130,7 +130,7 @@ In this task, you will be connecting your Docker to Container Registry.
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="50eea306-3342-453b-9f11-b1721b9ac260" />
 
@@ -344,7 +344,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="976bf7db-9c4f-4611-9bfc-f4c533696c10" />
 
@@ -472,7 +472,7 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
   > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
   > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at labs-support@spektrasystems.com.
+  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="702e474b-50e3-4fa6-8d7e-864560f327f6" />
 
