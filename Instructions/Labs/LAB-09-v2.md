@@ -79,15 +79,15 @@ Azure Container Registry (ACR) is a managed service for storing and managing pri
 
 In this task, you will create a Container Registry from Azure Portal.
 
-1. On the Azure Portal, search for **Container registries** and select it.
+1. On the Azure Portal, search for **Container registries (1)** and select **Container registries (2)**
 
-   ![](./media2/lab13img9.png)
+   ![](./media2/az9l1.png)
 
 1. On the **Container registries** blade, click on **+ Create**.
 
    ![](./media2/lab13img10.png)
 
-1. On the **Create container registry** blade, enter the followig details and click on **Review + Create (4)** then click on **Create** in Review + create tab.
+1. On the **Create container registry** blade, enter the followig details and click on **Review + Create (4)**.
 
     | Settings | Values |
     |  -- | -- |
@@ -98,19 +98,21 @@ In this task, you will create a Container Registry from Azure Portal.
    
       ![](./media2/lab09img2updated.png)
 
+1. Then click on **Create** in Review + create tab.      
+
+1. Wait for the deployemet to complete, select **Go to resource**.
+
 ### Task 2: Connect Docker to the container registry
 
 In this task, you will be connecting your Docker to Container Registry.
 
-1. From the resources tab of your resource group, open your container registry, click **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />**.
+1. On the left side navigation menu, under **Settings**, click **Access keys (1)**. Under **Admin user**, check the box to enable it ***(2)**. Make a record of the following values, paste it in a notepad. You will be using these values further in this lab:
 
-1. On the left side navigation menu, under **Settings**, click **Access keys**. Under **Admin user**, check the box to enable it. Make a record of the following values, paste it in a notepad. You will be using these values further in this lab:
+    * **Login server (3)**
+    * **Username (4)**
+    * **password:** Click on **Show (5)** the copy the value to notepad 
 
-    * **Login server**
-    * **Username**
-    * **password**
-
-      ![](./media2/lab13img12.png)
+      ![](./media2/az9l2.png)
 
 1. Navigate back to **Visual Studio Code** terminal which you have opened earlier, and then run the following command:
 
@@ -118,13 +120,15 @@ In this task, you will be connecting your Docker to Container Registry.
     docker login <loginserver>
     ```
 
-   >**Note:** Replace `<loginserver>` with the name you recorded, and enter the username and password you recorded when prompted. For example:
+   >**Note:** Replace `<loginserver>` with the name you recorded, and enter the **username** and **password** you recorded when prompted. For example:
 
     ```cmd/sh
     docker login acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />.azurecr.io
     ```
 
 1. You will be prompted for the Username and Password values that you recorded. Once these values are entered and verified, you will see a **Login Succeeded** message.
+
+    ![](./media2/az9l6.png)  
 
   >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
@@ -142,9 +146,9 @@ In this exercise, you will create an Azure IoT Edge Solution that contains a cus
 
 In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
-1. In the **Visual Studio Code** open, select **Three dots(...) -> View** menu, and click on **Command Palette**.
+1. In the **Visual Studio Code** open, select **View (1)** menu, and click on **Command Palette (2)**.
 
-      ![](./media2/lab13img13.png)
+      ![](./media2/az9l5.png)
 
 1. At the command prompt, type **Azure IoT Edge: New**, and then click **Azure IoT Edge: New IoT Edge Solution**.
 
@@ -156,7 +160,13 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
       ![](./media/extension.png)
 
-1. Navigate to `C:\Labfiles`, create a folder with the name **EdgeSolution** and then click on **Select folder**.
+1. Navigate to `C:\Labfiles` **(1)**, select **New folder (2)**. 
+
+     ![](./media2/az9l3.png)  
+
+1. Create a folder with the name **EdgeSolution (1)** and then click on **Select folder (2)**.
+
+     ![](./media2/az9l4.png)  
 
 1. When prompted for a solution name, enter **EdgeSolution**. This name will be used as the directory name for the new **IoT Edge Solution** that will be created. Then, click **Enter**.
 
@@ -164,11 +174,15 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. When prompted for the name of the custom IoT Edge Module, enter **objectcountingmodule**. Then, click **Enter**.
 
+     ![](./media2/az9l7.png) 
+
 1. When prompted for name of the Docker image repository for the module, replace the **localhost:5000** part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />.azurecr.io**. Then, click **Enter**.
    
     ```text
     <acr-name>.azurecr.io/<module-name>
     ```
+
+     ![](./media2/az9l8.png)     
 
     > **Note**: Be sure to replace the placeholders with the appropriate values:
               - `<acr-name>`: Replace with the name of the Azure Container Registry service.
@@ -200,17 +214,29 @@ In this task, you will be setting up your username and password in the solution.
     ```
     >**Note**: Within your version of .env file, notice that the `<registry-name>` has already been added to the configuration values. The value that has been added should match the name of the Docker registry that you specified when creating the IoT Edge Solution.
 
-1. Within the **.env** file, replace the placeholder values with the username and password values that you saved earlier. Save the updated **.env** file.
+1. Within the **.env** file, replace the placeholder values with the **username and password values that you saved earlier**. Save the updated **.env** file.
 
       ![](./media2/lab09img3updated.png)
 
-1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**, ensure that the **image** is mentioned properly with the actual image name in both - **deployment.template.json** and **deployment.debug.template.json** files.
+1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**.
 
-      ![](./media2/lab13img22.png)
+      ![](./media2/az9l9.png)
 
-      >**Note**: You can use the same image name from the below configurations and paste it here.
+1. Copy the **image (1)** that is mentioned in the `SimulatedTemperatureSensor` (Line no. 77) and paste the same for `objectcountingmodule` **image (2)** (Line no. 66).
 
-1. In the same file, ensure that the **Schema version** is mentioned properly with **1.2** or later in both - **deployment.template.json** and **deployment.debug.template.json** files.
+      ![](./media2/az9l10.png)
+
+1. Ensure that the image mentioned in the **EdgeHub (1)** is `mcr.microsoft.com/azureiotedge-hub:1.4` **(2)** (Line no. 34).
+
+      ![](./media2/az9l12.png)
+
+1. Click on  **deployment.template.json**.
+
+1. Copy the **image (1)** that is mentioned in the `SimulatedTemperatureSensor` (Line no. 77) and paste the same for `objectcountingmodule` **image (2)** (Line no. 66).
+
+      ![](./media2/az9l11.png)
+
+1. In the same file, ensure that the **Schema version** is mentioned properly with **1.2** for `edgeHub` in both **deployment.template.json** and **deployment.debug.template.json** files (Line no. 85).
 
       ![](./media2/lab13img21.png)
 
