@@ -244,9 +244,13 @@ In this task, you will be setting up your username and password in the solution.
 
      ![](./media2/lab13img13.png)
 
-1. At the command prompt, type **Azure IoT Edge: Set Default** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution**.
+1. At the command prompt, type **Azure IoT Edge: Set Default (1)** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution (2)**.
+
+      ![](./media2/az9l14.png)
 
 1. To select the target platform, click **windows-amd64**.
+
+      ![](./media2/az9l15.png)
 
 ## Exercise 4: Debug in Attach Mode with IoT Edge Simulator
 
@@ -256,19 +260,19 @@ In this exercise, you will build and run a custom IoT Edge Module solution using
 
 In this task, you will test the IoT Edge device.
 
-1. In the Azure Portal, on your Resource group tile, to open your IoT hub, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
+1. In the Azure Portal, Go to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false"/> (1)**, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" /> (2)**.
 
-     ![](./media2/lab13img16.png)
+     ![](./media2/az9l19.png)
 
-1. On the left side navigation menu, under **Security settings**, click **Shared access policies**. In the list of policies, click **iothubowner**.  copy the value for **Primary connection string**.
+1. On the left side navigation menu, under **Security settings**, click **Shared access policies (1)**. In the list of policies, click **iothubowner (2)**.  copy and paste the value for **Primary connection string (3)** in a Notepad. You will need this value in the next steps.
 
-     ![](./media2/lab13img17.png)
+     ![](./media2/az9l17.png)
 
       >**Note**: Record this value, as you will need it below.
 
-1. On the left side navigation menu, under **Device management**, click **IoT Edge**. Click **+ Add an IoT Edge device**.
+1. On the left side navigation menu, under **Device management**, click **IoT Edge (1)**. Click **+ Add an IoT Edge device (2)**.
 
-     ![](./media2/lab13img18.png)
+     ![](./media2/az9l18.png)
 
 1. On the **Create a device** blade, under **Device ID**,  enter **SimulatedDevice**. Leave all other settings as default, click on **Save**.
 
@@ -280,21 +284,35 @@ In this task, you will be configuring the module using the connection string of 
 
 1. Switch to the **Visual Studio Code** instance containing your IoT Edge solution.
 
-1. In the **Explorer** pane, right-click **deployment.debug.template.json**, and then click **Build and Run IoT Edge Solution in Simulator**.
+1. Navigate to **Extensions (1)**, search for **Azure account (2)** then select the **Azure account (3)** and then **Uninstall (3)**.
 
-      ![](./media2/lab13img1.png)
+     ![](./media2/az9l20.png)
+
+      >**Note**: We uninstall the **Azure Account** extension because it’s deprecated, and replacing it with Azure Resources for subscription sign-in and management.
+
+1. Select **Uninstall All**.
+
+     ![](./media2/az9l22.png)
+
+1. In the **Explorer** pane, right-click **deployment.debug.template.json (1)**, and then click **Build and Run IoT Edge Solution in Simulator (2)**.
+
+     ![](./media2/az9l21.png)
 
 1. This file is the debugging deployment manifest file. It is located in the root directory of the IoT Edge Solution.
 
-1. When the process begins, you will see a dialog open in the lower right corner of the windows that says, **Please setup iotedgehubdev first before starting simulator**.
+1. When the process begins, you will see a dialog open in the lower right corner of the windows that says, **Please setup iotedgehubdev first before starting simulator**. When you see the prompt to setup iotedgehubdev, click **Setup**.
 
-1. When you see the prompt to setup iotedgehubdev, click **Setup**.
+     ![](./media2/az9l23.png)
 
 1. When prompted for the **IoT Hub Connection String**, enter the **Primary Connection string** you recorded earlier and select it.
 
+     ![](./media2/az9l25.png)
+
 1. When prompted to **Select an IoT Edge Device**, click **SimulatedDevice**.
 
-    > **Note**: If you get an **Unauthorized** error in the lower-right-hand corner, run the **Azure IoT Hub: Set IoT Hub Connection String** command from the Command Palette to reconfigure your simulator connection string, then run **Azure IoT Edge: Setup IoT Edge Simulator** from the command palette and try to select your device again.
+     ![](./media2/az9l24.png)
+
+      >**Note**: If you get an **Unauthorized** error in the lower-right-hand corner, run the **Azure IoT Hub: Set IoT Hub Connection String** command from the Command Palette to reconfigure your simulator connection string, then run **Azure IoT Edge: Setup IoT Edge Simulator** from the command palette and try to select your device again.
 
     > **Note**: It is possible that you will be prompted for your Admin password on your local machine (in the Visual Studio Code **TERMINAL** window), particularly on Linux or macOS. Enter your password at the prompt and press **Enter**. The reason it might ask for your password is that the setup command for **iotedgehubdev** is being run using **sudo** as it requires elevated privileges.
 
