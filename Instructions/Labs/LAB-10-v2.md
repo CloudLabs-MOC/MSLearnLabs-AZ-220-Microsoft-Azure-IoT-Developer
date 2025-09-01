@@ -131,9 +131,15 @@ Now that you have your (simulated) cheese cave device sending telemetry to your 
 
 In this task, you will begin work on the back-end app that will be used to receive telemetry from the IoT Hub Event Hub endpoint.
 
-1. Open an additional instance of Visual Studio Code.
+1. Open an additional instance of Visual Studio Code by selecting **File (1)** and then **New Window (2)**.
 
-1. On the **File (1)** menu, click **Open Folder (2)**.
+    ![](./media/az9l40.png)
+
+1. From now on, you will have two instances of Visual Studio Code open, and you’ll need to switch between them as required.
+
+    ![](./media/az9l41.png)
+
+1. On the **File (1)** menu, click **Open Folder (2)** in the new instance.
 
     ![](./media/open.png)
 
