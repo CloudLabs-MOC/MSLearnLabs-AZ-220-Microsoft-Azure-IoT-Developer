@@ -39,9 +39,11 @@ In this lab, you will complete the following:
 
 In this task, you'll set up your Azure IoT environment by accessing your resource group in the Azure portal and selecting the appropriate IoT training resource. From there, you'll navigate to the Devices section, locate the specific device **sensor-th-0155**, and copy its connection string for later use.
 
-1. On the Azure portal, navigate to the Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
+1. On the **Azure portal**, seach for **Resource group (1)** and then select **Resource group (2)** from the services.
 
-    ![](./media/v2img1.png)
+    ![](./media2/az6l1.png)
+
+1. Then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
 1. In the **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>** page, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false"></inject>**
 
