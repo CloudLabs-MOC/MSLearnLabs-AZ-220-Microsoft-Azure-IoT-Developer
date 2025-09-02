@@ -65,7 +65,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
    - Subscription: Use the deafult one **(1)**
    - Under **Resource group** select **az220rg-<inject key="DeploymentID" enableCopy="false" /> (2)**
    - Provide the cluster name as **adx-az220-<inject key="DeploymentID" enableCopy="false" /> (3)**
-   - Region: Leave the default region **(4)**
+   - Region: Select **<inject key="Region" enableCopy="false"/></inject> (4)**
    - Select the workload as **Dev/test (5)**
    - Click on **Next : Scale > (6)**
 
