@@ -91,7 +91,7 @@ In this lab, you'll create and configure an IoT Edge VM on Azure. You'll first s
 1. In the create a storage account page, provide the following details and click on **Create**.
 
    - Subscription: **Select the default subscription (1)**
-   - Resource Group: Select **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>** (2)**
+   - Resource Group: Select **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>** **(2)**
    - Region: Select **<inject key="Region" enableCopy="false"/></inject> (3)**
    - Storage Account Name: Provide the name as **stoaz220<inject key="DeploymentID" enableCopy="false"></inject>** **(4)**
    - File Share: Provide the name as **fileshare220 (5)**
