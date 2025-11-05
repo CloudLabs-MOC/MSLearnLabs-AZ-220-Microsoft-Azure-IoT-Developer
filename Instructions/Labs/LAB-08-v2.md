@@ -476,20 +476,20 @@ In this task, you will configure the connection between a pre-built downstream d
 1. At the Cloud Shell command prompt, to download the root CA X.509 certificate for the IoT Edge Gateway virtual machine, enter the following command:
 
     ```bash
-    scp vmadmin@vm-az220-training-gw0001-1838002.westus.cloudapp.azure.com:/tmp/lab12/certs/azure-iot-test-only.root.ca.cert.pem .
+    scp vmadmin@vm-az220-training-gw0001-<DID>.{your location}.cloudapp.azure.com:/tmp/lab12/certs/azure-iot-test-only.root.ca.cert.pem .
     ```
 
-     >**Note**: Your browser UI may prompt you to save the download file.
+     >**Note**: Be sure to replace the **< DID>** with **<inject key="DeploymentID" enableCopy="true" />** and replace `{your location}` with your actual labvm location. Your browser UI may prompt you to save the download file.
 
 1. Search  and select **Windows Powershell** from the labvm and **Run as an Administrator**.
 
 1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is: `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`. Enter the below command:
 
     ```
-    scp vmadmin@vm-az220-training-gw0001-<DID>.westus.cloudapp.azure.com:/tmp/lab12/certs/azure-iot-test-only.root.ca.cert.pem "C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownstreamDevice"
+    scp vmadmin@vm-az220-training-gw0001-<DID>.{your location}.cloudapp.azure.com:/tmp/lab12/certs/azure-iot-test-only.root.ca.cert.pem "C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownstreamDevice"
     ```
 
-     >**Note**: Be sure to replace the **< DID>** with **<inject key="DeploymentID" enableCopy="true" />**
+     >**Note**: Be sure to replace the **< DID>** with **<inject key="DeploymentID" enableCopy="true" />** and  replace `{your location}` with your actual labvm location.
 
      ![](./media/az6l35.png)
 
@@ -691,3 +691,4 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
 In this lab, you have created a Linux based Virtual Machine as an IoT Edge Device. and you have connected to that VM and check regarding IoT edge modules and download CA certificate and created a downstream device.
 
 ## You have successfully completed this Lab!
+
