@@ -95,8 +95,17 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
       > **Note**: In the next step, you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
       
-      > **Note**: In the JSON replace the **id, subscription ID, resource group name, hub name** with the actual values from Iot hub. 
+      > **Note**: In the JSON replace the **subscription ID, resource group name, hub name** with the actual values from Iot hub.
 
+      - Go to **Subscriptions** in the Azure portal and copy the **Subscription ID**.
+
+         ![](media/AZ-220-l5-4.png)
+
+      - Navigate to **Resource groups**, open your resource group, and copy the **Resource Group name**.
+      - Inside the same resource group, select the **IoT Hub** and copy the **IoT Hub name**.
+
+        ![](media/AZ-220-l5-5.png)
+      
 1. Copy the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
 
     ```json
@@ -145,6 +154,8 @@ In this task, you configure a Logic App in Azure to send an email notification w
     }]
     ```
 
+      ![](media/AZ-220-l5-3.png)
+   
       > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added, and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
 
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
@@ -263,7 +274,9 @@ Azure IoT Hub integrates with Azure Event Grid so that you can send event notifi
     | ENDPOINT DETAILS | Click on **Configure an endpoint (6)** |
     | Select Web Hook | Paste the **URL** **(7)** that you copied from your logic app, then click **Confirm Selection (8)**. |
 
-      ![](media/az5-8.png)
+      ![](media/AZ-220-l5-1.png)
+
+      ![](media/AZ-220-l5-2.png)
 
 1. At the top of the pane, click on **Filters**. Under **ADVANCED FILTERS**, click on **Add new filter(1)**, and then fill in the fields with these values:
 
