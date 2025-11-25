@@ -85,7 +85,7 @@ On the **Progress (1)** tab, you can view your overall points and validation sta
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
  
-       ![](./media/sc900-image-2.png)
+       ![](media/AZ-220-l5-0.png)
  
 4. If prompted to **Stay signed in**, you can click **No.**
 
