@@ -30,6 +30,8 @@ In this lab, you will complete the following activities:
 
 ### Lab Prerequisites
 
+Perform the below steps to enable the Azure IoT Toolkit extension to use the experimental Quick Pick tooltip API. Because the extension uses the quickPickItemTooltip proposed API, which must be explicitly declared and enabled for development.
+
 1. Search for **File (1)** and select **File explorer (2)**.
 
    ![](./media/av6.png)
@@ -106,6 +108,8 @@ In this exercise, you will ensure docker engine is running and install the Azure
     ```
 
      ![](./media/av11.png)
+
+1. Visual Studio Code opens.   
 
 1. Click on warning **(1)** and select **Trust (2)**, to trust the author.
 
@@ -602,4 +606,5 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 In this lab, you have deployed an azure container registry and docker desktop to manage the container which is built using .NET Simulator project. You have used the build commands to build the image from the project. You have pushed the image to registry and created a IoT Edge Device and added the Docker Image as module to it.
 
 ### You have successfully completed the Lab!
+
 
