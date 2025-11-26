@@ -97,9 +97,21 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
    ![](./media2/lab13img4.png)
 
-1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
+1. Search for **cmd (1)** and select **Command Prompt (2)**.
 
-   ![](./media2/lab09img1updated.png)
+   ![](./media/av10.png)
+
+1. Run the below command to enable the proposed API for the Azure IoT Toolkit extension when starting VS Code in development mode and press **Enter**.
+
+    ```cmd/sh
+    code --enable-proposed-api vsciot-vscode.azure-iot-toolkit
+    ```
+
+     ![](./media/av11.png)
+
+1. Click on warning **(1)** and select **Trust (2)**, to trust the author.
+
+    ![](./media/av12.png)
 
 1. Open **New terminal** in **Visual Studio Code** by selecting **Three dots(...) -> Terminal -> New Terminal**.
 
