@@ -192,11 +192,11 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. When prompted to select a module template, click **C# Module**. This will define **C#** as the development language for the custom IoT Edge Module added to the solution.
 
-1. When prompted for the name of the custom IoT Edge Module, enter **objectcountingmodule**. Then, click **Enter**.
+1. When prompted for the name of the custom IoT Edge Module, delete the existing name and enter **objectcountingmodule**. Then, click **Enter**.
 
      ![](./media2/az9l7.png) 
 
-1. When prompted for name of the Docker image repository for the module, replace the **localhost:5000** part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server - similar to **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />.azurecr.io**. Then, click **Enter**.
+1. When prompted for name of the Docker image repository for the module, replace the **localhost:5000** part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />.azurecr.io**. Then, click **Enter**.
    
     ```text
     <acr-name>.azurecr.io/<module-name>
@@ -238,7 +238,7 @@ In this task, you will be setting up your username and password in the solution.
 
       ![](./media2/lab09img3updated.png)
 
-1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.template.json**.
+1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.debug.template.json**.
 
       ![](./media2/az9l9.png)
 
