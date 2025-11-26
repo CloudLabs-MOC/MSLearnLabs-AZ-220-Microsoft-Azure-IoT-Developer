@@ -54,6 +54,8 @@ Perform the below steps to enable the Azure IoT Toolkit extension to use the exp
 
      - Then search for **hub**, then **Install** the **Azure IoT Hub**.
 
+     - Please make sure to close the Visual Studio Code.
+
      - Then search for `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`.
 
 1. Add the below proposal to allow the extension to use the experimental Quick Pick tooltip API.
