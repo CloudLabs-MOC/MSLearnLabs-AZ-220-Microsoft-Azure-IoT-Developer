@@ -126,7 +126,7 @@ In this task, you will create a Container Registry from Azure Portal.
 
 In this task, you will be connecting your Docker to Container Registry.
 
-1. On the left side navigation menu, under **Settings**, click **Access keys (1)**. Under **Admin user**, check the box to enable it ***(2)**. Make a record of the following values, paste it in a notepad. You will be using these values further in this lab:
+1. On the left side navigation menu, under **Settings**, click **Access keys (1)**. Under **Admin user**, check the box to enable it **(2)**. Make a record of the following values, paste it in a notepad. You will be using these values further in this lab:
 
     * **Login server (3)**
     * **Username (4)**
