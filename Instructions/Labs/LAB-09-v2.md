@@ -240,8 +240,6 @@ In this task, you will be setting up your username and password in the solution.
 
 1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.debug.template.json**.
 
-      ![](./media2/az9l9.png)
-
 1. Copy the **image (1)** that is mentioned in the `SimulatedTemperatureSensor` (Line no. 76) and paste the same for `objectcountingmodule` **image (2)** (Line no. 66).
 
       ![](./media2/az9l10.png)
@@ -251,6 +249,8 @@ In this task, you will be setting up your username and password in the solution.
       ![](./media2/az9l12.png)
 
 1. Click on  **deployment.template.json**.
+
+      ![](./media2/az9l9.png)
 
 1. Copy the **image (1)** that is mentioned in the `SimulatedTemperatureSensor` (Line no. 76) and paste the same for `objectcountingmodule` **image (2)** (Line no. 66).
 
