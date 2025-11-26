@@ -4,10 +4,6 @@
 
 In this lab, you'll set up an Azure IoT Edge solution from scratch. First, you'll install the Azure IoT EdgeHub Dev Tool and ensure Docker is running. Next, you'll create an Azure Container Registry (ACR) for managing your Docker images and connect Docker to this registry. You'll then create a custom IoT Edge Module in C# using Visual Studio Code, configure it, and debug it with the IoT Edge Simulator. Finally, you'll publish the module to the ACR and deploy the IoT Edge solution to an IoT Edge device, configuring it to use the module and setting up necessary routes.
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 4cb11aaddf8bd364755aaa9db958fcdeeb82dd6d
 To help manage fluctuations in consumer demand, Contoso maintains a small inventory of ripened cheeses in a warehouse at each cheese making facility. These ripened wheels are sealed in wax and the storage environment is carefully controlled to ensure that the cheese remains in perfect condition. Contoso uses a conveyor system to move the large wax-sealed cheese wheels from the warehouse to the packaging facilities.
 
 In the past, Contoso has run their packaging process at full capacity, processing all the cheese that is placed in the system. Any excess volume of packaged cheese was not an issue because it could be used for promotional offers, and additional cheese could be pulled from inventory as needed. However, with the significant growth that Contoso is experiencing, and with growing fluctuations due to worldwide demand, the company needs to automate the system in a way that helps to manage the volume of cheese being packaged.
@@ -54,7 +50,7 @@ Perform the below steps to enable the Azure IoT Toolkit extension to use the exp
 
      - Then search for **hub**, then **Install** the **Azure IoT Hub**.
 
-     - Please make sure to close the Visual Studio Code.
+     - Please make sure to **close** the Visual Studio Code.
 
      - Then search for `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`.
 
