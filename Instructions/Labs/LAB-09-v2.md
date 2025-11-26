@@ -30,6 +30,33 @@ In this lab, you will complete the following activities:
 
 ![Lab 13 Architecture](media/LAB_AK_13-architecture.png)
 
+### Lab Prerequisites
+
+1. Search for **File (1)** and select **File explorer (2)**.
+
+   ![](./media/av6.png)
+
+1. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1` **(1)**, select **package.json (2)** file.
+
+   ![](./media/av7.png)
+
+1. Add the below proposal to allow the extension to use the experimental Quick Pick tooltip API.
+
+    ```cmd/sh
+    "enabledApiProposals": [
+      "quickPickItemTooltip"
+    ],
+    ```
+
+     ![](./media/av8.png)
+
+1. Select **File (1)**, and then **Save (2)** to save the file.
+
+   ![](./media/av9.png)
+
+1. Please make sure the proposal is added.   
+    
+
 ## Exercise 1: Install Azure IoT EdgeHub Dev Tool
 
 In this exercise, you will ensure docker engine is running and install the Azure IoT EdgeHub Dev Tool.
