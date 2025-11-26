@@ -46,6 +46,26 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
    ![](./media2/lab13img3.png)
 
+1. If `WSL needs updating` warning appear, please copy the `wsl --update` command. 
+
+   ![](./media/av1.png)
+
+1. Search for **Powershell (1)** and then select **Windows powershell (2)**.
+
+   ![](./media/av3.png)
+
+1. Paste the `wsl --update` command.
+
+   ![](./media/av4.png)
+
+1. Navigate back to docker, click **Restart**.
+
+   ![](./media/av2.png)
+
+1. You can see the Docker Engine start running.
+
+   ![](./media/av5.png)
+
 1. Wait for sometime in the  **docker desktop**, ensure that **Engine running** status as shown. Close the docker desktop, continue with further steps.
 
    ![](./media2/lab13img4.png)
@@ -65,7 +85,7 @@ In this exercise, you will ensure docker engine is running and install the Azure
     python get-pip.py
     ```
 
-1. To verify that the Azure IoT EdgeHub Dev Tool is installed, run the following command:
+1. Run the following command to install the Azure IoT Edge Hub Dev Tool for local development and testing of IoT Edge modules.
 
     ```cmd/sh
     pip install iotedgehubdev --user
