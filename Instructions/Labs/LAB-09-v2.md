@@ -383,6 +383,8 @@ In this task, you will be configuring the module using the connection string of 
 
      ![](./media2/az9l25.png)
 
+      >**Note**: If you get an error in the lower-right-hand corner realted to proposed APIs, please make sure you have performed the Lab prerequisites part properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not please add as mentioned in the Lab prerequisites, `step no.3`.    
+
 1. When prompted to **Select an IoT Edge Device**, click **SimulatedDevice**.
 
      ![](./media2/az9l24.png)
