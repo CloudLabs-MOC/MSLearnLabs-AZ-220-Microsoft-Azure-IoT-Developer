@@ -2,6 +2,12 @@
  
 Welcome to your IoT Workshop! We've prepared a seamless environment for you to explore and learn about Azure services in IoT. Let's begin by making the most of this experience.
 
+### Caution
+
+If the command is running in the PowerShell terminal, please **do not close the window**. Wait for it to finish before continuing with the lab. It may take 3–5 minutes to complete.
+
+   ![](./media/av14.png)
+
 ## Overview
 
 This hands-on lab will guide you through setting up Azure IoT services by starting with the creation of an Azure IoT Hub. You'll learn to connect an IoT device to Azure, perform individual enrollment in the Device Provisioning Service (DPS), and set up device message routing. The lab also covers integrating IoT Hub with Event Grid, exploring time-stamped data using Azure Data Explorer, and introduces Azure IoT Edge, where you'll set up an IoT Edge Gateway, develop, deploy, and debug a custom module using VS Code. Finally, you'll learn how to remotely monitor and control devices, and automate IoT device management with Azure IoT Hub.
