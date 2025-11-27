@@ -190,7 +190,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
         ![](media/9lab15.png)
 
-     >**Note:** If authentication fail, please make sure you selected **Send an email (V2) (2)** which grouped under **Office 365 Outlook** connector in step no. `9`.  
+     >**Note:** If authentication fail, please make sure you selected **Send an email (V2) (2)** under **Office 365 Outlook** connector in step no. `9`.  
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
