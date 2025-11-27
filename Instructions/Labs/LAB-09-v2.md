@@ -383,7 +383,7 @@ In this task, you will be configuring the module using the connection string of 
 
      ![](./media2/az9l25.png)
 
-      >**Note**: If you get an error in the lower-right-hand corner realted to proposed APIs, please make sure you have performed the Lab prerequisites part properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not please add as mentioned in the Lab prerequisites, `step no.3`.    
+      >**Note**: If you get an error in the lower-right-hand corner realted to proposed APIs, please make sure you have performed the Lab prerequisites part properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not please add as mentioned in the Lab prerequisites, `step no.3` and save the file.   
 
 1. When prompted to **Select an IoT Edge Device**, click **SimulatedDevice**.
 
@@ -622,5 +622,6 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 In this lab, you have deployed an azure container registry and docker desktop to manage the container which is built using .NET Simulator project. You have used the build commands to build the image from the project. You have pushed the image to registry and created a IoT Edge Device and added the Docker Image as module to it.
 
 ### You have successfully completed the Lab!
+
 
 
