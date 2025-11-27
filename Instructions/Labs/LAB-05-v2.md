@@ -95,7 +95,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
       > **Note**: In the next step, you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
       
-      > **Note**: In the JSON replace the **subscription ID, resource group name, hub name** with the actual values from Iot hub.
+      > **Note**: In the JSON replace the `<subscription ID>`, `<resource group name>`, `<hub name>` with the actual values from Iot hub.
 
       - Go to **Subscriptions** in the Azure portal and copy the **Subscription ID**.
 
@@ -106,7 +106,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
         ![](media/AZ-220-l5-5.png)
       
-1. Copy the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**.
+1. Copy the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**. Please make sure to replace `<subscription ID>`, `<resource group name>`, `<hub name>` with the actual values.
 
     ```json
     [{
@@ -172,6 +172,8 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
       ![](media/AI-220-l5-9.png)
 
+      >**Note**: Please make sure to select **Send an email (V2) (2)** which grouped under **Office 365 Outlook** connector. If you select it under **Outlook.com** authentication fail.
+
       > **Note**:  These instructions walk through configuring the Logic App to send an email using an email address thats visible in **Outlook.com**account. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
 1. On the **Send an email(V2)** connector page, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
@@ -187,6 +189,8 @@ In this task, you configure a Logic App in Azure to send an email notification w
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
         ![](media/9lab15.png)
+
+     >**Note:** If authentication fail, please make sure you selected **Send an email (V2) (2)** which grouped under **Office 365 Outlook** connector in step no. `9`.  
  
    - **Password:** <inject key="AzureAdUserPassword"></inject>
 
