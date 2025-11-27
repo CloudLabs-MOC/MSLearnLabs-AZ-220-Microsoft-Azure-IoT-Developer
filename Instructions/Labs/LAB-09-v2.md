@@ -125,9 +125,9 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
 1. Visual Studio Code opens.   
 
-1. Click on warning **(1)** and select **Trust (2)**, to trust the author.
+1. Click on **Manage (1)** and select **Trust (2)**, to trust the author.
 
-    ![](./media/av12.png)
+    ![](./media/av15.png)
 
 1. Open **New terminal** in **Visual Studio Code** by selecting **Three dots(...) -> Terminal -> New Terminal**.
 
