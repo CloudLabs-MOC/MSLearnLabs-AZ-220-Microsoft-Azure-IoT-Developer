@@ -196,6 +196,8 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
        ![](./media/sc900-image-2.png)
 
+1. If you encounter a **404 or REST API not supported error**, please delete the trigger and repeat Task 2.
+
 1. If prompted to **stay signed in**, you can click **No**.
 
 1. If prompted, let this app access your info? (1 of 1 apps) select **Accept**.
