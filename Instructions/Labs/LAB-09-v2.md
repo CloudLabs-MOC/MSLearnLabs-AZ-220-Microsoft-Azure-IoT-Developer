@@ -385,6 +385,57 @@ In this task, you will be configuring the module using the connection string of 
 
       >**Note**: If you get an error in the lower-right-hand corner realted to proposed APIs, please make sure you have performed the Lab prerequisites part properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not please add as mentioned in the Lab prerequisites, `step no.3` and save the file.   
 
+      - Please follow the below steps, if you still face the below issue:
+
+      - Close the opened Visual Studio Code.
+      - Open a new command terminal
+
+        ![](./media/av10.png)
+
+      - Run the below command to enable the proposed API for the Azure IoT Toolkit extension when starting VS Code in development mode and press **Enter**.
+
+        ```cmd/sh
+        code --enable-proposed-api  vsciot-vscode.azure-iot-toolkit
+        ```
+
+        ![](./media/av11.png)
+
+      - Visual Studio Code opens. 
+
+      - Open a new terminal and run **docker login acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />.azurecr.io**  
+
+      - Make sure **Azure IOT edge** is installed from the extension. If not please install.
+
+        ![](./media/av13.png)
+
+      - Open **package.json** from `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1 ` in file explorer.
+
+      - Make sure the below proposal is added, if not please add and save the file.
+
+        ![](./media/av8.png)
+
+      - At the command prompt, type **Azure IoT Edge: Set Default (1)** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution (2)**.
+
+        ![](./media2/az9l14.png)
+
+      - To select the target platform, click **windows-amd64**.
+
+        ![](./media2/az9l15.png)  
+
+      - Navigate to **Extensions (1)**, search for **Azure account (2)** then select the **Azure account (3)** and then **Uninstall (3)**.
+
+        ![](./media2/az9l20.png)
+
+      - In the **Explorer** pane, right-click **deployment.debug.template.json (1)**, and then click **Build and Run IoT Edge Solution in Simulator (2)**.
+
+        ![](./media2/az9l21.png)
+
+      - When the process begins, you will see a dialog open in the lower right corner of the windows that says, **Please setup iotedgehubdev first before starting simulator**. When you see the prompt to setup iotedgehubdev, click **Setup**.
+
+        ![](./media2/az9l23.png)  
+
+      - Select  **SimulatedDevice**. 
+
 1. When prompted to **Select an IoT Edge Device**, click **SimulatedDevice**.
 
      ![](./media2/az9l24.png)
