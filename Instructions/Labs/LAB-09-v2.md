@@ -389,8 +389,8 @@ In this task, you will be configuring the module using the connection string of 
 
         ![](./media/aa2.png)
 
-      - Close the opened Visual Studio Code.
-      - Open a new command terminal
+      - **Close the opened Visual Studio Code.**
+      - Open a new command prompt
 
         ![](./media/av10.png)
 
