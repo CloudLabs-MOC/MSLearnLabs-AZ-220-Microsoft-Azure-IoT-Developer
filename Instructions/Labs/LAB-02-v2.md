@@ -41,15 +41,15 @@ In this task, you will create a device in the IoT Hub.
 
    ![](./media/v2img1.png)
 
-   ![](./media/AI-220-l2-1.png)
+   ![](./media/upAI-220-l2-1.png)
 
 1. On the resources tile, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**
 
-   ![](./media/AI-220-l2-2.png)
+   ![](./media/upAI-220-l2-2.png)
 
-1. On the left-side menu of your IoT Hub blade, click on **Devices (1)** under **Device management.**
+1. On the left-side menu of your IoT Hub blade, click on **Devices (1)** under **Device management**.
 
-1. On the **Devices** pane, click on **+ Add Device (3)**.
+1. On the **Devices** pane, click on **+ Add Device (2)**.
 
    ![](./media/AI-220-l2-3.png)
 
@@ -67,7 +67,7 @@ In this task, you will create a device in the IoT Hub.
 
 1. After a few moments, the **IoT devices** pane will refresh and the new device will be listed.
 
-    > **Note**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
+    > **Note:** You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
 
       ![](./media/AI-220-l2-4.png)
 
@@ -84,7 +84,7 @@ For a device to connect to an IoT Hub, it needs to establish a connection. In th
 
 1. On the **IoT devices** pane of your IoT Hub, under **Device ID**, click on **sensor-th-0001**.
 
-    ![](./media/az-2-41.png)
+    ![](./media/senth.png)
 
 1. Take a minute to review the contents of the **sensor-th-0001** device detail blade.
 
@@ -92,13 +92,13 @@ For a device to connect to an IoT Hub, it needs to establish a connection. In th
 
 1. To the right of the **Primary connection string** field, click on **Copy** and paste it in a notepad for later use.
 
-     ![](./media/AI-220-l2-5.png)
+     ![](./media/pcs.png)
 
 ## Exercise 2: Create and Test a Simulated Device (C#)
 
 In this exercise, you will create a simulated device application using Visual Studio Code and the Azure IoT Device SDKs. You will connect your device to Azure IoT Hub using the Device ID and Shared Access Key (Primary Connection String) that you created in the previous exercise. You will then test your secured device connection and communication to ensure that IoT Hub is receiving the simulated temperature and humidity values from your device as expected.
 
-   > **Note**: You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
+   > **Note:** You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
 
 ### Task 1: Create the initial project
 
@@ -110,7 +110,7 @@ In this task, you will be creating an initial dotnet project in your LabVM. For 
 
 1. Select **Three dots(...) >> Terminal (1)** and click on **New Terminal (2)**.
    
-    ![](./media/az-5-71.png)
+    ![](./media/ntr.png)
 
 1. In the terminal, run the following commands to create a directory named **CaveDevice** and switch to that directory.
 
@@ -133,7 +133,7 @@ In this task, you will be creating an initial dotnet project in your LabVM. For 
     dotnet add package Microsoft.Azure.Devices.Client
     ```
 
-    > **Note**: The **Microsoft.Azure.Devices.Client** package contains the Azure IoT Device SDK for .NET and has the **Newtonsoft.Json** package as a dependency. The **Newtonsoft.Json** package contains APIs that aid in the creation and manipulation of JSON.
+    >**Note:** The **Microsoft.Azure.Devices.Client** package contains the Azure IoT Device SDK for .NET and has the **Newtonsoft.Json** package as a dependency. The **Newtonsoft.Json** package contains APIs that aid in the creation and manipulation of JSON.
 
 1. To ensure all the application dependencies are downloaded, run the following command:
 
@@ -150,7 +150,7 @@ In this task, you will be creating an initial dotnet project in your LabVM. For 
 
 1. In the list of folders, click on **CaveDevice (1)** and then click on **Select Folder (2)**.
 
-    ![](./media/az-2-cave.png)
+    ![](./media/cdslct.png)
 
 1. If the pop up appears click on **Yes, I trust the authors**.
 
@@ -163,7 +163,7 @@ In this task, you will be creating an initial dotnet project in your LabVM. For 
 
       ![](./media/AI-220-l2-8.png)
 
-      > **Note**: If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
+      >**Note:** If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
 
 ### Task 2: Explore the application
 
@@ -194,7 +194,7 @@ As noted above, the application currently consists of two files:
     </Project>
     ```
     
-1. In the **EXPLORER** pane, click on **Program.cs**.
+1. In the **EXPLORER** pane, click on **Program.cs** .
 
      ![](./media/AI-220-l2-10.png)
 
@@ -206,7 +206,7 @@ As noted above, the application currently consists of two files:
 
 1. Select **Three dots(...) >> Terminal (1)** and click on **New Terminal (2)**.
    
-    ![](./media/az-5-71.png)
+    ![](./media/ntr.png)
 
 1. In the Terminal pane, ensure that the current directory path is set to the **CaveDevice** folder.
 
@@ -269,7 +269,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
     ![](./media/AI-220-l2-14.png)
 
-    > **Tip**: When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**. If it asks to install the formatter. You need to install it and then use format document using the formatter.
+    > **Tip:** When inserting code, the code layout may not be ideal. You can have Visual Studio Code format the document for you by right-clicking in the code editor pane and then clicking **Format Document**. You can achieve the same result by opening the **Task** pane (press **F1**) and typing **Format Document** and then pressing **Enter**. And on Windows, the shortcut for this task is **SHIFT+ALT+F**. If it asks to install the formatter. You need to install it and then use format document using the formatter.
 
 1. Locate the **// INSERT variables below here (1)** comment, and then position the cursor on a blank line below the comment.
 
@@ -343,7 +343,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     ```
     ![](./media/az-2-vs3.png)
    
-    > **Note**: Notice that the declaration for the **SendDeviceToCloudMessagesAsync** method includes the keyword **async**. This specifies that the method contains asynchronous code that uses the **await** keyword and instructs the compiler to handle the callback plumbing for you.
+    > **Note:** Notice that the declaration for the **SendDeviceToCloudMessagesAsync** method includes the keyword **async**. This specifies that the method contains asynchronous code that uses the **await** keyword and instructs the compiler to handle the callback plumbing for you.
 
 1. Locate the **// INSERT CreateMessageString method below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -364,7 +364,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     ```
     ![](./media/AI-220-l2-18.png)
    
-    > **Note**:  This method creates an anonymous object with the temperature and humidity properties and assigns it to **telemetryDataPoint**. The value of **telemetryDataPoint** is then converted to a JSON string via the **JsonConvert** class that is part of the **Newtonsoft.Json** package you added earlier. The JSON string value is then returned to be used as the payload in the message.
+    > **Note:** This method creates an anonymous object with the temperature and humidity properties and assigns it to **telemetryDataPoint**. The value of **telemetryDataPoint** is then converted to a JSON string via the **JsonConvert** class that is part of the **Newtonsoft.Json** package you added earlier. The JSON string value is then returned to be used as the payload in the message.
 
 1. Locate the **// INSERT EnvironmentSensor class below here** comment, and then position the cursor on a blank line below the comment.
 
@@ -399,7 +399,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
     ```
     ![](./media/AI-220-l2-19.png)
    
-    > **Information**: This is a very simple class that uses random numbers to return values that represent temperature and humidity. In reality, it is often much more complex to interact with sensors, especially if you have to communicate with them at a low-level and derive the measurement value (rather than getting a direct reading in the appropriate units).
+    > **Information:** This is a very simple class that uses random numbers to return values that represent temperature and humidity. In reality, it is often much more complex to interact with sensors, especially if you have to communicate with them at a low-level and derive the measurement value (rather than getting a direct reading in the appropriate units).
 
 1. Final code should look like this. Make sure you replace the `<Connection_String>` with the connection string you copied earlier.
 
@@ -511,7 +511,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 1. Select the **File (1)** menu and click on **Save (2)**.
 
-    ![](./media/az-4-20.png)
+    ![](./media/fsave.png)
    
 1. Take a minute to scan through your completed application. Your completed application represents a simple simulated device. It demonstrates how to connect a device to an IoT Hub and send Device to Cloud messages. You are now ready to test the application.
 
@@ -529,7 +529,7 @@ In this task, you will be testing the application that you have built in the pre
     dotnet run
     ```
 
-    > **Note**:  If the command outputs a **Malformed Token** or other error message, then make sure the **Primary Connection String** value is configured correctly as the value of the **connectionString** variable.
+    > **Note:** If the command outputs a **Malformed Token** or other error message, then make sure the **Primary Connection String** value is configured correctly as the value of the **connectionString** variable.
 
 1. Observe the message string output displayed in the Terminal. Once the Simulated Device application is running, it will be sending event messages to the Azure IoT Hub that include **temperature** and **humidity** values and displaying message string output in the console. The terminal output will look similar to the following:
 
@@ -556,7 +556,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
 1. In the Azure portal, click on the **Cloudshell** icon to open Cloudshell.
 
-    ![](./media/az-5-9.png)
+    ![](./media/shellc.png)
 
 1. From the **Welcome to Azure Cloud Shell** tab, select **Bash**.
 
@@ -564,7 +564,7 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
 1. Select **No Storage Account Required (1)** and under **Subscription (2)**, ensure the correct subscription is selected. Click on **Apply (3)**.
 
-    ![](./media/AI-220-l2-22.png)
+    ![](./media/nst.png)
 
 1. Run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name which looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -604,9 +604,11 @@ Continue? (y/n) -> y**
      }
      ```
 
+    ![](./media/op.png)    
+
 1. Once you have verified that IoT hub is receiving the telemetry, press **Ctrl+C** in the Azure Cloud Shell and Visual Studio Code windows.
 
-    > **Note**: **Ctrl+C** is used to stop the running apps. Always remember to shut down unneeded apps and jobs.
+    > **Note:** **Ctrl+C** is used to stop the running apps. Always remember to shut down unneeded apps and jobs.
 
 ## Summary 
 
