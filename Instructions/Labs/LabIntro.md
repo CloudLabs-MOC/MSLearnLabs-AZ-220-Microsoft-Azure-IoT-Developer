@@ -1,4 +1,4 @@
-# Getting Started with Your IoT Workshops
+# Getting Started with Your IoT Workshop
  
 Welcome to your IoT Workshop! We've prepared a seamless environment for you to explore and learn about Azure services in IoT. Let's begin by making the most of this experience.
 
@@ -16,7 +16,7 @@ Once you're ready to dive in, your virtual machine and **Guide** will be right a
  
 In the integrated environment, the lab VM serves as the designated workspace, while the lab guide is accessible on the right side of the screen.
 
-**Note:** Kindly ensure that you are following the instructions carefully to ensure the lab runs smoothly and provides an optimal user experience.
+   >**Note:** Kindly ensure that you are following the instructions carefully to ensure the lab runs smoothly and provides an optimal user experience.
 
 ## Exploring Your Lab Resources
  
@@ -79,21 +79,21 @@ On the **Progress (1)** tab, you can view your overall points and validation sta
  
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
  
-        ![](./media/sc900-image-1.png)
+        ![](./media/odlusr.png)
  
 3. Next, provide your password:
  
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Password:** <inject key="AzureAdUserPassword"></inject>
  
-       ![](media/AZ-220-l5-0.png)
+       ![](media/odltap.png)
  
 4. If prompted to **Stay signed in**, you can click **No.**
 
-    ![](./media/AI-220-g7.png)
+    ![](./media/staysign.png)
 
-5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **"Cancel"** to skip the tour.
+5. If a **Welcome to Microsoft Azure** pop-up window appears, simply click **Maybe later** to skip the tour.
 
-    ![](./media/AI-220-g8.png)
+    ![](./media/starttour.png)
 
  ## Steps to Proceed with MFA Setup if the "Ask Later" Option is Not Visible
 
