@@ -67,7 +67,7 @@ In this task, you will create a device in the IoT Hub.
 
 1. After a few moments, the **IoT devices** pane will refresh and the new device will be listed.
 
-    > **Note**: You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
+    > **Note:** You may need to refresh manually - click the **Refresh** button on the page, rather than refreshing the browser
 
       ![](./media/AI-220-l2-4.png)
 
@@ -98,7 +98,7 @@ For a device to connect to an IoT Hub, it needs to establish a connection. In th
 
 In this exercise, you will create a simulated device application using Visual Studio Code and the Azure IoT Device SDKs. You will connect your device to Azure IoT Hub using the Device ID and Shared Access Key (Primary Connection String) that you created in the previous exercise. You will then test your secured device connection and communication to ensure that IoT Hub is receiving the simulated temperature and humidity values from your device as expected.
 
-   > **Note**: You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
+   > **Note:** You will be writing your simulated device code using the C# programming language, but don't worry if you are more accustomed to another programming language or if your programming skills are a bit rusty, the instructions will be easy to follow. The important thing is for you to recognize how the IoT Device SDK is implemented in code (which is also explained in detail).
 
 ### Task 1: Create the initial project
 
@@ -163,7 +163,7 @@ In this task, you will be creating an initial dotnet project in your LabVM. For 
 
       ![](./media/AI-220-l2-8.png)
 
-      >**Note**: If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
+      >**Note:** If you see a message **Required assets to build and debug are missing from CaveDevice. Add them?**, you may click **Yes** to proceed.
 
 ### Task 2: Explore the application
 
