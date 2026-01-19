@@ -31,7 +31,7 @@ In this lab, you will complete the following:
 
 In this exercise, you will open your IoT Hub in the Azure portal, add a new IoT device to the device registry, and then get a copy of the Connection String that IoT Hub created for your device (which you will use in your device code later in the lab).
 
-> **Note**: This lab focuses on using IoT Hub to establish reliable and secure bidirectional communications between IoT Hub and your IoT device. The Microsoft Learn platform includes other Modules (and Learning Paths) that enable you to explore other IoT Hub capabilities. Collectively, this training will help you to build scalable, full-featured IoT solutions.
+> **Note:** This lab focuses on using IoT Hub to establish reliable and secure bidirectional communications between IoT Hub and your IoT device. The Microsoft Learn platform includes other Modules (and Learning Paths) that enable you to explore other IoT Hub capabilities. Collectively, this training will help you to build scalable, full-featured IoT solutions.
 
 ### Task 1: Create the Device
 
@@ -519,7 +519,7 @@ In this task, you will use Visual Studio Code to enter the code that leverages t
 
 In this task, you will be testing the application that you have built in the previous tasks.
 
-1. In the Visual Studio Code Explorer pane, select Three dots **(...) (1)** >> **Terminal (2)** menu, click on **New Terminal (2)**.
+1. In the Visual Studio Code Explorer pane, select Three dots **(...) (1)** >> **Terminal (2)** menu, click on **New Terminal (3)**.
 
     ![](./media/AI-220-l2-20.png)
 
@@ -546,7 +546,7 @@ In this task, you will be testing the application that you have built in the pre
     10/25/2019 6:10:19 PM > Sending message: {"temperature":25.77350195766124,"humidity":67.27347029711747}
     ```
 
-    > **Note**: Leave the simulated device app running for now. Your next task will be to verify that your IoT Hub is receiving the telemetry messages.
+    > **Note:** Leave the simulated device app running for now. Your next task will be to verify that your IoT Hub is receiving the telemetry messages.
 
      ![](./media/AI-220-l2-21.png)
 

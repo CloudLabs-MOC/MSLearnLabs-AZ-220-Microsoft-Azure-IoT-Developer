@@ -104,11 +104,11 @@ In this task, you will be reviewing your code and also configure it with connect
 
 1. On your Resources tile of your resource group, click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media/AI-220-l4-6.png)
+   ![](./media/iotrslct.png)
 
 1. On the IoT hub blade, under **Device management**, click on **Devices (1)** and then click on **+ Add Device (2)**.
 
-   ![](./media/az-4-4.png)
+   ![](./media/addvc.png)
 
 1. On the **Create a device** page, under **Device ID**, enter **sensor-v-3000 (1)**. Click on **Save (2)**.
 
@@ -140,7 +140,7 @@ In this task, you will be reviewing your code and also configure it with connect
     private readonly static string deviceConnectionString = "<your device connection string>";
     ```
 
-1. Replace the **your device connection string** placeholder, including the angle brackets, with the Primary Connection String of the Device ID that you copied earlier.
+1. Replace the **your device connection string (2)** placeholder, including the angle brackets, with the Primary Connection String of the Device ID that you copied earlier.
 
    ![](./media/AI-220-l4-11.png)
 
@@ -148,7 +148,7 @@ In this task, you will be reviewing your code and also configure it with connect
 
 1. On the **File (1)** menu, click on **Save (2)**.
    
-    ![](./media/az-4-20.png)
+    ![](./media/fsave.png)
 
 ### Task 3: Test your code to send telemetry
 
@@ -178,7 +178,7 @@ In this task, you well verify if your code is working or not by running it.
     Log data sent
     ```
 
-    > **Note**:  In the Terminal window, green text is used to show things are working as they should and red text when bad stuff is happening. If you receive error messages, start by checking your device connection string.
+    > **Note:** In the Terminal window, green text is used to show things are working as they should and red text when bad stuff is happening. If you receive error messages, start by checking your device connection string.
 
 1. Leave this app running for the next task. If you won't be continuing to the next task, you can enter **Ctrl+C** in the Terminal window to stop the app. You can start it again later by using the **dotnet run** command.
 
@@ -188,13 +188,15 @@ In this task, you will use the Azure portal to verify that your IoT Hub is recei
 
 1. On your Resources tile of your resource group, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-   ![](./media/AI-220-l4-6.png)
+   ![](./media/iotrslct.png)
 
 1. On the **Overview** pane, scroll down to view the metrics tiles.
 
    ![](./media/lab7img9.png)
 
 1. The **Device to cloud messages** tile should be plotting some current activity. If no activity is shown, wait a short while, as there's some latency. With your device sending telemetry, and your hub receiving it, the next step is to route the messages to their correct endpoints.
+
+    > **Note:** If no activity is shown for the **Device to cloud messages** tile please proceed with next Exercise and you can come back and check it later on.
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
@@ -211,8 +213,8 @@ The architecture of our system requires data be processed in two ways: routed to
 
 Contoso's vibration monitoring scenario requires you to create the following message processes:
 
-* the first process is an IoT hub route that delivers message data to an Azure Blob storage location for data archiving
-* the second process is an Azure Stream Analytics job for real-time analysis
+* The first process is an IoT hub route that delivers message data to an Azure Blob storage location for data archiving
+* The second process is an Azure Stream Analytics job for real-time analysis
 
 In this exercise, you will create and test the logging route.
 
@@ -244,7 +246,7 @@ In this task, you will creating a routes using the message routing tab in the Az
 
 1. To begin creating a storage account, click **+ Storage account**. The **Create storage account** blade should now be displayed.
 
-     ![](./media/AI-220-l4-14.png)
+     ![](./media/psa.png)
 
 1. On the **Create storage account** blade, provide the following details and then click on **OK** **(4)**.
    
@@ -252,7 +254,7 @@ In this task, you will creating a routes using the message routing tab in the Az
     - Account kind: **StorageV2 (general purpose v2) (2)**
     - Performance: **Standard (3)** 
       
-         ![](./media/AI-220-l4-15.1.png)
+         ![](./media/stdet.png)
 
 1. Wait until the request is validated and the storage account deployment has completed. Validation and creation can take a minute or two. Once completed, the **Create storage account** blade will close and the **Storage accounts** blade will be displayed if it did not appear refresh the page it will appear. The Storage accounts blade should have auto-updated to show the storage account that was just created.
 
@@ -270,7 +272,7 @@ In this task, you will create a storage account and a container for route.
 
 1. On the **New container** dialog, under **Name** enter **vibrationcontainer (1)** and then click on **Create (2)** to create the Container.
 
-    ![](./media/AI-220-l4-17.png)
+    ![](./media/vccr.png)
  
 1. To choose this container for your solution, click **vibrationcontainer (1)**, and then click **Select (2)**.
 
@@ -278,7 +280,7 @@ In this task, you will create a storage account and a container for route.
 
 1. Now on the **Add a route** page verify **Endpoint type (1)**, **Endpoint name (2)**, **Azure storage container (3)** and then click on **Create + next (4)**. Notice that the **Endpoint** is now populated.
 
-    ![](./media/AI-220-l4-19.png)
+    ![](./media/rcn.png)
 
 ### Task 3: Define the routing query
 
@@ -301,7 +303,7 @@ In this task, you will define a route for storage account.
 
 1. Once you see your new route listed on the **Message routing** pane, navigate back to your Azure portal Dashboard.
 
-    ![](./media/az-4-8.png)   
+    ![](./media/vlrdon.png)   
 
 ### Task 4: Verify Data Archival
 
@@ -309,9 +311,9 @@ In this task, you will verify that the data is properly archived or not by looki
 
 1. Ensure that the device app you created in Visual Studio Code is still running.
 
-1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **Storage Account (1)** and select **Storage Account (2)** from the list.
+1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **Storage Account (1)** and select **Storage accounts (2)** from the list.
 
-     ![](./media/AI-220-l4-21.png)
+     ![](./media/strsrch.png)
 
 1. Click on **vibrationstore<inject key="DeploymentID" enableCopy="false" />**.
 
@@ -319,19 +321,19 @@ In this task, you will verify that the data is properly archived or not by looki
  
 1. On the left-side menu of your **vibrationstore<inject key="DeploymentID" enableCopy="false" />** blade, click on **Storage browser (1)** under **vibrationstore<inject key="DeploymentID" enableCopy="false" />** then click on **Blob containers (2)** and then click on **vibrationcontainer (3)**
 
-    ![](./media/az-4-14.png)
+    ![](./media/stbro.png)
 
 1. In the right-hand pane, under **NAME**, click **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**, and then use clicks to navigate down into the hierarchy.
 
     ![](./media/lab7img21.png)
 
-    >**Note**: It may take some time for the folder to appear.
+    >**Note:** It may take some time for the folder to appear.
 
 1. Under your IoT hub folder, you will see folders for the Partition, then numeric values for the Year, Month, and Day. The final folder represents the Hour, listed in UTC time. The Hour folder will contain a number of Block Blobs that contain your logging message data.
 
-1. Click the Block Blob for the data with the earliest time stamp. The .avro files use a naming pattern of **{num}.avro** (i.e. **22.avro**).
+1. Click the Block Blob for the data with the earliest time stamp. The .avro files use a naming pattern of **{num}.avro** (i.e. **35.avro**).
 
-    ![](./media/AI-220-l4-23.png)
+    ![](./media/nav.png)
 
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
@@ -351,7 +353,7 @@ This will enable you to verify that your ASA job processes message data to an ou
 * **ASA job output** - Blob storage container
 * **ASA job query** - pass through all messages from input to output
 
-> **Note**: It may seem odd that in this lab you are using IoT hub routing to deliver device data to a storage location, and then also processing your device message data through an Azure Stream Analytics job with output to the same storage location. In a real-world scenario you probably wouldn't use both of these message processing tools for processing device data in this way. Instead, it's more common to use an ASA job to invoke a time sensitive action based on analysis of real-time data. However, since this lab is providing an introduction to both of these data processing tools, the Blob storage container provides an easy way to validate that your IoT hub route is working as expected and to show a simple implementation of Azure Stream Analytics.
+> **Note:** It may seem odd that in this lab you are using IoT hub routing to deliver device data to a storage location, and then also processing your device message data through an Azure Stream Analytics job with output to the same storage location. In a real-world scenario you probably wouldn't use both of these message processing tools for processing device data in this way. Instead, it's more common to use an ASA job to invoke a time sensitive action based on analysis of real-time data. However, since this lab is providing an introduction to both of these data processing tools, the Blob storage container provides an easy way to validate that your IoT hub route is working as expected and to show a simple implementation of Azure Stream Analytics.
 
 ### Task 1: Create the Stream Analytics Job
 
@@ -363,13 +365,13 @@ In this task, you will create a stream analytics job in the Azure portal.
 
 1. On the **New** blade, in the **Search the Marketplace** textbox, type **stream analytics (1)**, press enter and then click **Stream Analytics job (2)**.
 
-     ![](./media/AI-220-l4-25.png)
+     ![](./media/ansrch.png)
 
 1. On the **Stream Analytics job** blade, click **Create**. The **New Stream Analytics job** pane is displayed.
 
     ![](./media/AI-220-l4-26.png)
 
-1. On the **New Stream Analytics job** pane, provide the following details. Click on **Review + create** then click on **Create**.
+1. On the **New Stream Analytics job** pane, provide the following details and after that click on **Review + create (5)** then click on **Create**.
 
     | Setting | Value |
     | --- | --- |
@@ -378,11 +380,11 @@ In this task, you will create a stream analytics job in the Azure portal.
     | Name | **vibrationJob (3)** |
     | Region | **eastus (4)** |
 
-     ![](./media/az-4-9.png)
+     ![](./media/sajb.png)
 
 1. Wait for the **Your deployment is complete** message, and then click **Go to resource**.
 
-     ![](./media/AI-220-l4-27.png)
+     ![](./media/gtrsaj.png)
 
 ### Task 2: Create the Stream Analytics Job Input
 
@@ -420,7 +422,7 @@ In this task, you will create a output in the Stream Analytics in the Portal.
 
 1. To create an output, on the left-side menu under **Job topology**, click on **Outputs (1)**. On the **Outputs** pane, click on **+ Add output (2)** and then select **Blob storage/ADLS Gen2 (3)**.
 
-    ![](./media/az-4-18.png)
+    ![](./media/sanop.png)
 
 1. On the **Blob storage/ADLS Gen2 - New output** pane, provide the following settings, click **Save (11)** and to create the output, and then wait for the output to be created.
 
@@ -475,25 +477,27 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. On the **Overview (1)** pane of your Stream Analytics job, click **Start job (2)**.
 
-    ![](./media/AI-220-l4-34.png)
+    ![](./media/strtjob.png)
 
 1. In the **Start job** pane, leave the **Job output start time** set to **Now**, and then click **Start**. It can take a few moments for the job to start.
 
-    ![](./media/AI-220-l4-35.png)
+    ![](./media/strt.png)
 
 1. On your Resources tile, click **vibrationstore<inject key="DeploymentID" enableCopy="false" />**. If your Storage account is not visible, use the **Refresh** button at the top of the resource group tile.
 
+    ![](./media/vstopn.png)
+
 1. On the left-side menu, click on **Storage browser (1)**. In **Storage browser**, under **vibrationstore<inject key="DeploymentID" enableCopy="false" />**, click on **Blob containers (2)**  then click on  **vibrationcontainer (3)** and then select the json file **(4)**
 
-    ![](./media/AI-220-l4-36.png)
+    ![](./media/upAI-220-l4-36.png)
 
 1. On the page displaying file details for the json file, click **Download**.
 
-    ![](./media/AI-220-l4-37.png) 
+    ![](./media/upAI-220-l4-37.png) 
 
 1. Open the downloaded file in **Visual Studio Code**, and review the JSON data.
 
-1. If **Do you wanr to allow untrusted files in the workspace** pop up appears then click on **Open.**
+1. If **Do you want to allow untrusted files in the workspace** pop up appears then click on **Open.**
 
     ![](./media/AI-220-l4-38.png)   
 
@@ -512,7 +516,7 @@ Now for the fun part. Is the telemetry from your device app being processed thro
 
 1. Return to your Azure portal window and navigate to your Dashboard. On your Resources tile, click **vibrationJob**.
 
-    ![](./media/AI-220-l4-40.png) 
+    ![](./media/upAI-220-l4-40.png) 
 
 1. On the **vibrationJob** blade, click on **Stop job**, and then click **Yes**.
 
