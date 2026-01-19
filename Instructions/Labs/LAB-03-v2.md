@@ -34,7 +34,7 @@ In this exercise, you will create a new individual enrollment for a device withi
 
 In this task, you will create an individual enrollment in the Device Provisioning Service.
 
-1. On the Azure portal, navigate to Resource group and then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false" />.**
+1. On the **Azure portal** home page, under **Navigate**, select **Resource groups**. From the list of resource groups, select **az220rg-<inject key="DeploymentID" enableCopy="false" />.**
 
    ![](./media/v2img1.png)
 
@@ -83,17 +83,15 @@ In this task, you will create an individual enrollment in the Device Provisionin
 
 1. Click on **Review + create** and select **Create** after validation is successful.
 
-     ![](./media/AI-220-l3-3.png)
+     ![](./media/image1-220.png)
 
 ### Task 2: Review Enrollment and Obtain Authentication Keys
 
 In this task, you will be reviewing the enrollment created and obtain the keys for further tasks.
 
-1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments then click on **Individual enrollments(2)**.
+1. On the **Manage enrollments(1)** pane, to view the list of individual device enrollments then click on **Individual enrollments(2)**. Under **Registration ID**, click on **sensor-thl-1000 (3)**. This blade enables you to view the enrollment details for the individual enrollment that you just created.
 
     ![](./media/AI-220-l3-4.png)
-
-1. Under **Registration ID**, click on **sensor-thl-1000 (3)**. This blade enables you to view the enrollment details for the individual enrollment that you just created.
 
 1. Copy the **Primary Key (1)** and **Secondary Key (2)** values for this device enrollment, and then paste them in any text editor such as notepad for later use.
 
@@ -489,5 +487,6 @@ In this task you will delete the device from the IoT hub device management.
 ## Summary
 
 In this lab, you have configured the enrollment in the Device Provision Service, built a device which sends the telemetry data to the IoT hub also tested the device by changing configurations and finally deprovisioned device at last.
+
 
 ### You have successfully completed the Lab!
