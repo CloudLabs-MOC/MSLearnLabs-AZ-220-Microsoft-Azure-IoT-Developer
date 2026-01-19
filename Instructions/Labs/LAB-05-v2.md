@@ -37,13 +37,9 @@ In this task, you create a new Logic App in Azure. You start by navigating to th
 
       ![](media/AI-220-l4-24.png)
    
-1. On the **Search services and marketplace** box, enter **logic app (1)**. From the search results, select **Logic App (2)**.
+1. On the **Search services and marketplace** box, type **logic app (1)**, press enter and then click **Logic App (2)**.
 
-      ![](media/AI-220-l5-1.png)
-
-1. Select the **Logic App** from below results.
-
-      ![](media/AI-220-l5-2.png)
+      ![](media/lap.png)
 
 1. On the **Logic App** blade, click **Create**.
 
@@ -51,7 +47,7 @@ In this task, you create a new Logic App in Azure. You start by navigating to th
 
 1. Under the **Create Logic App** select **Consumption (1)** and click on **Select (2)**.
 
-      ![](media/AI-220-l5-6.png)
+      ![](media/conslct.png)
 
 1. On the **Basics** tab, under **Create Logic App (Multi-tenant)** with the following settings, click on **Review + create (6)**. Click on **Create**.
 
@@ -63,13 +59,13 @@ In this task, you create a new Logic App in Azure. You start by navigating to th
     | Region | **Default region (4)** |
     | Enable Log Analytics | **No (5)** |
 
-    ![](media/AI-220-l5-7.png)
+    ![](media/lacr.png)
 
-    > **Note**: It will take a minute or two for the Logic App deployment to complete.
+    > **Note:** It will take a minute or two for the Logic App deployment to complete.
 
 1. After the deployment is completed, click on **Go to resource**.
 
-      ![](media/AI-220-l5-4.png)
+      ![](media/upAI-220-l5-4.png)
 
 1. Here, you can see the newly created Logic app.
 
@@ -85,26 +81,26 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
 1. On the **Add a trigger** section, Search for **When a HTTP request is received (1)** and select it from the results **(2)**.
 
-      ![](media/9lab8.png)
+      ![](media/htptrig.png)
 
 1. Notice that the visual designer opens with the **When a HTTP request is received** trigger selected. Click the trigger to open the details.
 
 1. On the **When a HTTP request is received** trigger, under the **Request Body JSON Schema** textbox, click the **Use sample payload to generate schema** link.
 
-      ![](media/9lab9.png)   
+      ![](media/spgs.png)   
 
-      > **Note**: In the next step, you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
+      > **Note:** In the next step, you will be adding the **DeviceCreated** sample event schema to the Request Body JSON Schema textbox. This sample, along with a couple of other event schema samples and some associated documentation, can be found at the following link for those who want to learn more: [Azure Event Grid event schema for IoT Hub](https://docs.microsoft.com/en-us/azure/event-grid/event-schema-iot-hub)
       
       > **Note**: In the JSON replace the `<subscription ID>`, `<resource group name>`, `<hub name>` with the actual values from Iot hub.
 
       - Go to **Subscriptions** in the Azure portal and copy the **Subscription ID**.
 
-         ![](media/AZ-220-l5-4.png)
+         ![](media/upAZ-220-l5-4.png)
 
-      - Navigate to **Resource groups**, open your resource group, and copy the **Resource Group name**.
-      - Inside the same resource group, select the **IoT Hub** and copy the **IoT Hub name**.
+      - Navigate to **Resource groups**, open your resource group, and copy the **Resource Group name (1)**.
+      - Inside the same resource group, select the **IoT Hub (2)** and copy the **IoT Hub name**.
 
-        ![](media/AZ-220-l5-5.png)
+        ![](media/rgiot.png)
       
 1. Copy the following sample JSON to the **Enter or paste a sample JSON payload.** textbox, and then click **Done**. Please make sure to replace `<subscription ID>`, `<resource group name>`, `<hub name>` with the actual values.
 
@@ -156,7 +152,7 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
       ![](media/AZ-220-l5-3.png)
    
-      > **Note**: The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added, and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
+      > **Note:** The **Enter or paste a sample JSON payload** field is a rich editor that automatically inserts opening and closing braces, etc. In the LODS environment, if the "type text" option is used to copy the JSON above directly into the **Enter or paste a sample JSON payload** field, extra braces will be added, and the content will be invalid. Instead, open **Notepad** within the LODS VM first, and then send the text to **Notepad**. From there, you can copy the text into the field without error.
 
 1. Notice that the **Request Body JSON Schema** textbox is now populated with a JSON schema that was automatically generated based on the sample JSON that you provided.
 
@@ -170,17 +166,17 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
 1. You will be given with list of connectors with the search result, click **Send an email (V2) (2)** which grouped under **Office 365 Outlook** connector.
 
-      ![](media/AI-220-l5-9.png)
+      ![](media/emsrch.png)
 
       >**Note**: Please make sure to select **Send an email (V2) (2)** which grouped under **Office 365 Outlook** connector. If you select it under **Outlook.com** authentication fail.
 
-      > **Note**:  These instructions walk through configuring the Logic App to send an email using an email address thats visible in **Outlook.com**account. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
+      > **Note**:  These instructions walk through configuring the Logic App to send an email using an email address thats visible in **Outlook.com** account. Alternatively, the Logic App can also be configured to send email using the Office 365 Outlook or Gmail connectors as well.
 
 1. On the **Send an email(V2)** connector page, click **Sign in**, and then follow the prompts to authenticate with an existing Outlook.com account.
 
-      ![](media/AI-220-l5-10.png)
+      ![](media/emsign.png)
 
-     > **Note**: If **the browser has blocked the pop-up window** this pop-up appears, at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
+     > **Note:** If **the browser has blocked the pop-up window** this pop-up appears, at top of the page select **Always allow pop-ups and redirects from hhtps://portal.azure.com** and select **Done**.
 
       ![](media/az70011.png)
 
@@ -188,15 +184,15 @@ In this task, you configure a Logic App in Azure to send an email notification w
 
    - **Email/Username:** <inject key="AzureAdUserEmail"></inject>
 
-        ![](media/9lab15.png)
+        ![](media/odlusr.png)
 
      >**Note:** If authentication fail, please make sure you selected **Send an email (V2) (2)** under **Office 365 Outlook** connector in step no. `9`.  
  
-   - **Password:** <inject key="AzureAdUserPassword"></inject>
+   - **Temporary Access Password:** <inject key="AzureAdUserPassword"></inject>
 
-       ![](./media/sc900-image-2.png)
+       ![](./media/odltap.png)
 
-1. If you encounter a **404 or REST API not supported error**, please delete the trigger and repeat Task 2.
+1. If you encounter a **404 or REST API not supported error**, please **delete the trigger** and **repeat Task 2**.
 
 1. If prompted to **stay signed in**, you can click **No**.
 
@@ -217,31 +213,31 @@ In this task, you configure a Logic App in Azure to send an email notification w
     Device ID: {deviceID}
     Connection state: {connectionState}
     ```
-    ![](media/az-5-4.png)
+    ![](media/emcon.png)
 
 1. To replace the values, click on the **Dynamic Content** icon shown in the image below.
 
-      ![](media/az5-5.png)
+      ![](media/dyn.png)
 
 1. Type **eventType (1)** search box and select **eventType (2)** from drop down.
 
-      ![](media/AI-220-l5-11.png)
+      ![](media/evtyp.png)
 
 1. Repeat the same step by replacing the **curly-braces entries** with the actual **Dynamic content values**.
 
-      > **Note**: When you add the first dynamic content value, because the input data schema is for an array, the Logic Apps Designer will automatically change the e-mail action to be nested inside of a **For each** action. When this happens, the **Send an email (V2)** action will collapse. To reopen your email message, click **Send an email (V2)**, and then continue editing the message body.
+      > **Note:** When you add the first dynamic content value, because the input data schema is for an array, the Logic Apps Designer will automatically change the e-mail action to be nested inside of a **For each** action. When this happens, the **Send an email (V2)** action will collapse. To reopen your email message, click **Send an email (V2)**, and then continue editing the message body.
 
-      ![](media/AI-220-l5-12.png)
+      ![](media/dyndon.png)
 
 1. At the top of the designer, to save all changes to the Logic App Workflow, click on **Save** .
 
-     ![](media/AI-220-l5-13.1.png)
+     ![](media/saveem.png)
 
 1. To expand the **When a HTTP request is received** trigger, click on **When a HTTP request is received (1)**. Copy the value for the **HTTP POST URL (2)** in a notepad.
 
-      ![](media/9lab18.png)
+      ![](media/htpurl.png)
 
-    > **Note**: This URL is the Web Hook endpoint that is used to call the Logic App trigger via HTTPS. Notice the **sig** query string parameter and it's value. The **sig** parameter contains the shared access key that is used to authenticate requests to the Web Hook endpoint.
+    > **Note:** This URL is the Web Hook endpoint that is used to call the Logic App trigger via HTTPS. Notice the **sig** query string parameter and it's value. The **sig** parameter contains the shared access key that is used to authenticate requests to the Web Hook endpoint.
 
 1. Save the URL for future reference in Notepad or in any other text editor.
 
@@ -258,11 +254,11 @@ Azure IoT Hub integrates with Azure Event Grid so that you can send event notifi
 
 1. On the Azure portal, in the **Search resources, services, and Docs (G+/)** bar search **IoT Hub (1)** and select **IoT Hub (2)** from list.
 
-    ![](media/AI-220-l1-1.png)
+    ![](media/ihsrch.png)
 
 1.  Click on **iot-az220-training-<inject key="DeploymentID" enableCopy="false"/>**.
 
-      ![](media/AI-220-l5-14.png)
+      ![](media/ihtrl5.png)
 
 1. On the **IoT Hub** blade, on the left side navigation menu, select **Events (1)**. On the **Events** pane, at the top, click **+ Event Subscription (2)**.
 
@@ -280,9 +276,9 @@ Azure IoT Hub integrates with Azure Event Grid so that you can send event notifi
     | ENDPOINT DETAILS | Click on **Configure an endpoint (6)** |
     | Select Web Hook | Paste the **URL** **(7)** that you copied from your logic app, then click **Confirm Selection (8)**. |
 
-      ![](media/AZ-220-l5-1.png)
+      ![](media/ces.png)
 
-      ![](media/AZ-220-l5-2.png)
+      ![](media/upAZ-220-l5-2.png)
 
 1. At the top of the pane, click on **Filters**. Under **ADVANCED FILTERS**, click on **Add new filter(1)**, and then fill in the fields with these values:
 
@@ -306,11 +302,11 @@ In this task, you will test your Logic App by creating a new device to trigger a
 
     ![](media/AI-220-l5-17.1.png)
 
-      > **Note**: If you see an error loading the devices tab, refresh the Azure portal page.
+      > **Note:** If you see an error loading the devices tab, refresh the Azure portal page.
 
 1. In the **Device ID** field, enter **sensor-th-0050 (1)**. Leave all other fields at the defaults, and then click **Save (2)**.
 
-    ![](media/9lab24.png)
+    ![](media/th50.png)
 
 1. To test the event subscription filters, create additional devices using the following device IDs:
 
@@ -327,9 +323,10 @@ In this task, you will test your Logic App by creating a new device to trigger a
     ```text
     https://outlook.office365.com/mail/
     ```
-    ![](media/AI-220-l5-19.png)
 
-     > **Note**: You can see that only the devices starting with **sensor-th** have been triggered, as this is the configuration we set up in our event subscription.
+    ![](media/upAI-220-l5-19.png)
+
+     > **Note:** You can see that only the devices starting with **sensor-th** have been triggered, as this is the configuration we set up in our event subscription.
    
       > **Congratulations** on completing the task! Now, it's time to validate it. Here are the steps:
       > - Hit the Validate button for the corresponding task. If you receive a success message, you can proceed to the next task.
