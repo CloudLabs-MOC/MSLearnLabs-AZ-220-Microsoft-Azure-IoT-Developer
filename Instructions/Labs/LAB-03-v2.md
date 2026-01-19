@@ -93,7 +93,7 @@ In this task, you will be reviewing the enrollment created and obtain the keys f
 
     ![](./media/AI-220-l3-4.png)
 
-1. Copy the **Primary Key (1)** and **Secondary Key (2)** values for this device enrollment, and then paste them in any text editor such as notepad for later use.
+1. 1. Copy the **Primary Key (1)** and **Secondary Key (2)** values for this device enrollment, paste them into a text editor such as **Notepad** for later use, and then close this blade.
 
    ![](./media/AI-220-l3-5.png)
 
@@ -109,9 +109,9 @@ The simulated device that you create in this exercise represents an IoT device t
 
 In this task, you will be creating the simulating device using the dotnet project.
 
-1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview (1)**. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope (2)** then click on **Copy to clipboard** and then paste it in a Notepad for later use.
+1. On the left-side menu of the **dps-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, click on **Overview (1)**. In the top-right area of the blade, hover the mouse pointer over value assigned to **ID Scope (2)** then click on **Copy to clipboard** and then paste it in a **Notepad** for later use.
 
-    ![](./media/az-3-61.png)
+    ![](./media/image2-220.png)
 
 1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
@@ -143,16 +143,18 @@ In this task, you will be creating the simulating device using the dotnet projec
     > choco install dotnet-8.0-sdk -y
     > ```  
 
-1. In the Visual Studio Code **explorer** pane, click on **Program.cs (1)**.
+1. In the Visual Studio Code **explorer** pane, click on **Program.cs**.
+
+   ![](./media/image3-220.png)
 
 1. In the code editor, near the top of the Program class, locate the **dpsIdScope** variable.
 
 1. Update the following values:
-   - Update the value assigned to **dpsIdScope (2)** using the ID Scope that you copied from the Device Provisioning Service.
-   - Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (3)**.
-   - Update the **individualEnrollmentPrimaryKey (4)** and **individualEnrollmentSecondaryKey (5)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
+   - Update the value assigned to **dpsIdScope (1)** using the ID Scope that you copied from the Device Provisioning Service.
+   - Locate the **registrationId** variable, and update the assigned value using **sensor-thl-1000 (2)**.
+   - Update the **individualEnrollmentPrimaryKey (3)** and **individualEnrollmentSecondaryKey (4)** variables using the **Primary Key** and **Secondary Key** values that you copied in Exercise 1 Task 2.
 
-     ![](./media/AI-220-l3-8.png)    
+     ![](./media/image4-220.png)
 
 ### Task 2: Add the provisioning code
 
@@ -300,12 +302,10 @@ In this exercise, you will run the Simulated Device and verify that it's sending
 
 In this task you will build the dotnet project and run to send the telemetry data.
 
-1. Ensure that you have your code project open in Visual Studio Code. click on **Terminal (1)** and then **New Terminal (2)**.
+1. In the **Explorer** pane, right-click the **Program.cs (1)** file, and then select **Open in Integrated Terminal (2)**.
 
-   ![](./media/az-3-24.png) 
-
-1. In the Terminal pane, ensure the command prompt shows the directory path for the `Program.cs` file.
-
+    ![](./media/image7-220.png)
+   
 1. At the command prompt, to build and run the Simulated Device application, enter the following command:
 
     ```cmd/sh
@@ -354,10 +354,10 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
    ![](./media/AI-220-l2-22.png)
 
-1. Run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name it looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
-
+1. Run the following Azure CLI command.
+   
     ```cmd/sh
-    az iot hub monitor-events --hub-name {IoTHubName} 
+    az iot hub monitor-events --hub-name iot-az220-training-<inject key="DeploymentID" enableCopy="false" /> 
     ```
 
     ![](./media/AI-220-l3-11.png)
@@ -382,7 +382,9 @@ In this task, you will be changing the twin property and will verify that device
 
      ![](./media/az-3-14.png)
 
-1. On the **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**. The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
+1. On the **sensor-thl-1000** device blade, next to **Tags**, click Edit and delete all tag entries then click on save.
+
+1. Back on **sensor-thl-1000** device blade, at the top of the blade, click on **Device Twin**. The **Device twin** blade provides an editor with the full JSON for the device twin. This enables you to view and/or edit the device twin state directly within the Azure portal.
 
      ![](./media/AI-220-l3-13.png)
 
@@ -390,11 +392,11 @@ In this task, you will be changing the twin property and will verify that device
 
      ![](./media/AI-220-l3-14.png)
 
-     ![](./media/AI-220-l3-15.png)
+1. To update the value assigned to the telemetryDelay property, change the value to "5" **(1)** in properties.desired and also add the same value to properties.reported **(2)**, and then click Save **(3)**. If the value reverts after saving, verify the change and update it again until the correct value is retained.
 
-1. To update the value assigned to the `telemetryDelay` desired property, change the value to `"5"` **(1)**.
-
-1. At the top of the **Device twin** blade, click on **Save (2)**. The `OnDesiredPropertyChanged` event will be triggered automatically within the code for the Simulated Device, and the device will update its configuration to reflect the changes to the device twin Desired state.
+   ![](./media/image11-220.png)
+   
+1. The `OnDesiredPropertyChanged` event will be triggered automatically within the code for the Simulated Device, and the device will update its configuration to reflect the changes to the device twin Desired state.
 
 1. Switch to the **Visual Studio Code** window that you are using to run the simulated device application.
 
@@ -490,3 +492,6 @@ In this lab, you have configured the enrollment in the Device Provision Service,
 
 
 ### You have successfully completed the Lab!
+
+
+
