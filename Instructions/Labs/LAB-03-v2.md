@@ -354,8 +354,8 @@ In this task, you will use the Azure CLI to verify telemetry sent by the simulat
 
    ![](./media/AI-220-l2-22.png)
 
-1. Run the following Azure CLI command. Make sure to replace `{IoTHubName}` with the actual name it looks similar to **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
-
+1. Run the following Azure CLI command.
+   
     ```cmd/sh
     az iot hub monitor-events --hub-name iot-az220-training-<inject key="DeploymentID" enableCopy="false" /> 
     ```
@@ -492,5 +492,6 @@ In this lab, you have configured the enrollment in the Device Provision Service,
 
 
 ### You have successfully completed the Lab!
+
 
 
