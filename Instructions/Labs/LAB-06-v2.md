@@ -1,6 +1,6 @@
 # Lab 06: Explore and analyze time stamped data with Azure Data Explorer
 
-### Estimated Duration: 120 minutes
+### Estimated Duration: 120 Minutes
 
 ## Lab Overview
 
@@ -22,9 +22,9 @@ You propose adding Azure Data Explorer to the Azure IoT solution. This will enab
 
 In this lab, you will complete the following activities:
 
- - Task 1: Setup Azure Data Explorer
- - Task 2: Run Simulated IoT Devices
- - Task 3: Visualize Data using Azure Data Explorer Queries
+ - **Task 1:** Setup Azure Data Explorer
+ - **Task 2:** Run Simulated IoT Devices
+ - **Task 3:** Visualize Data using Azure Data Explorer Queries
 
 ## Architecture Diagram
 
@@ -34,31 +34,27 @@ In this lab, you will complete the following activities:
 
 Azure Data Explorer is an end-to-end platform-as-a-service offering used to collect, process, store, analyze, and query data from IoT solutions at scale. Azure Data Explorer is designed for ad hoc data exploration and operational analysis of data that's highly contextualized and optimized for time series. In this task, you will setup Azure Data Explorer integration with Azure IoT Hub.
 
-1. On the **Azure portal**, seach for **Resource group (1)** and then select **Resource group (2)** from the services.
+1. On the **Azure portal**, search for **Resource groups (1)** and then select **Resource groups (2)** from the services.
 
-    ![](./media2/az6l1.png)
+    ![](./media/rgsrch.png)
 
 1. Then select the resource group named **az220rg-<inject key="DeploymentID" enableCopy="false"></inject>**.
 
 1. Under the **Resources** tab, select select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-    ![](./media2/lab10img1.png)
+    ![](./media2/trslctl6.png)
 
 2. On the IoT Hub left hand menu, select **Built-in-endpoints (1)** under **Hub settings**. Then under **Consumer Group** provide name as **adxevents (2)** to create a new consumer group.
 
-   ![](./media2/lab10img9updated.png)
+   ![](./media2/cgadx.png)
 
-1. On the Azure portal menu, click **+ Create a resource**.
+1. Again on the Azure portal, search for **Azure Data Explorer Clusters (1)** and then select **Azure Data Explorer Clusters (2)** from the services.
 
-   ![](./media2/lab06img1.png)
+   ![](./adecsrch.png)
 
-1. On the **New** blade, in the **Search the Marketplace** textbox, seach for **Azure Data Explorer (1)** press **Enter**. In the search results, click **Azure Data Explorer (2)**.
+1. On the **Azure Data Explorer Clusters** page, click **+ Create**.
 
-    ![](./media2/az6l2.png)
-
-1. On the **Azure Data Explorer** blade, click **Create**.
-
-   ![](./media2/lab10img4.png)
+   ![](./pluscr.png)
 
 1. On the **Create an Azure Data Explorer Cluster** blade,
 
@@ -69,27 +65,27 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
    - Select the workload as **Dev/test (5)**
    - Click on **Next : Scale > (6)**
 
-     ![](./media2/az6l3.png)
+     ![](./media2/decccr.png)
 
 1. In the **Scale** tab, select **Manual scale (1)** and then click on **Next : Configurations > (2)**.
 
-    ![](./media2/az6l4.png)
+    ![](./media2/mscl.png)
 
-1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion** and click on **Review + create**. Click on **Create** on the next pane.
+1. On the **Configurations** **(1)** tab, select **on** **(2)** for **Streaming ingestion** and click on **Review + create (3)**. Click on **Create** on the next pane.
 
-    ![](./media2/lab06img2.png)
+    ![](./media2/stng.png)
    
-      >**Note**: This may take `10 to 15` minutes to get deployed.
+      >**Note:** This may take `10 to 15` minutes to get deployed.
 
 1. Once the deployment is completed, select **Go to resource**.      
 
 1. On the **Azure Data Explorer** overview page, click on **Create** under **Database Creation**.
 
-   ![](./media2/lab10img6.png)
+   ![](./media2/dbcr.png)
 
-1. On the **Azure Data Explorer Database**, provide the database name as **streamingdata** and click on **Create**. 
+1. On the **Azure Data Explorer Database**, provide the database name as **streamingdata (1)** and click on **Create (2)**. 
 
-   ![](./media2/lab06img3.png)
+   ![](./media2/sdcr.png)
 
 1. Navigate to **Databases** under **Data** from left hand menu, verify **streamingdata** database is created.
 
@@ -97,7 +93,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
 
 1. Select **Query** from left hand menu.
 
-   ![](./media2/lab06img5.png)
+   ![](./media2/adxqry.png)
 
 1. On the **Query** pane, add the following KQL script to create a table named **Telemetry** and click on **Run**.
 
@@ -113,7 +109,7 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
     )
     ```
 
-   ![](./media2/lab06img6.png)
+   ![](./media2/runl6.png)
 
 1. After running the script successfully, replace the script with the following to create a JSON Mapping and click on **Run**.
    
@@ -131,47 +127,43 @@ Azure Data Explorer is an end-to-end platform-as-a-service offering used to coll
         '{"Column": "IotHubEnqueuedTime", "Properties": {"Path": "$.iothub-enqueuedtime"}}'
     ']'
    ```
-    ![](./media2/lab06img7.png)
+    ![](./media2/jsrun.png)
 
 1. After running the script successfully, navigate back to **Databases** pane and click on **streamingdata** database.
 
    ![](./media2/lab06img8.png)
 
-1. In the **streamingdata** page, select **Data connection** under **Settings**.
+1. In the **streamingdata** page, select **Data connection (1)** under **Settings**. Click on **+ Add data connection (2)**, in the dropdown click on **IoT Hub (3)**.
 
-   ![](./media2/lab06img9.png)
+   ![](./media2/dciot.png)
 
-1. Select **+ Add data connection (1)**, in the dropdown click on **IoT Hub (2)**.
+1. In the **create data connection** page, click on **Select Event system properties** dropdown.
 
-   ![](./media2/az6l9.png)
+   ![](./media2/sesp.png)
 
-1. In the **create data connection** page, select **Event system properties** dropdown.
+1. In the menu, select **iothub-enqueuedtime (1)** and **iothub-connection-device-id (2)** as shown. Click on **Apply (3)**.
 
-   ![](./media2/lab06img13.png)
+   ![](./media2/condidl6.png)
 
-1. In the menu, select **iothub-enqueuedtime** and **iothub-connection-device-id** as shown. Click on **Apply**.
-
-   ![](./media2/lab06img11.png)
-
-1. In the **create data connection** page, provide the following details then click on **Create** **(9)**:
+1. In the **create data connection** page, provide the following details then click on **Create** **(10)**:
 
     | Setting | Value |
     | --- | --- |
     | Data connection name | **iothubconnection** **(1)**  |
-    | Subscription | **Default** |
-    | IoT Hub | **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** **(2)** |
-    | Shared Access Policy | **iothubowner** **(3)** |
-    | Consumer group | **adxevents** **(4)** |
-    | Event system properties | Select as shown **(5)** |
-    | Table name | **Telemetry** **(6)** |
-    | Data format | **JSON** **(7)** |
-    | Mapping name | **JsonTelemetryMapping** **(8)** |
+    | Subscription | **Default** **(2)** |
+    | IoT Hub | **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** **(3)** |
+    | Shared Access Policy | **iothubowner** **(4)** |
+    | Consumer group | **adxevents** **(5)** |
+    | Event system properties | Select as shown **(6)** |
+    | Table name | **Telemetry** **(7)** |
+    | Data format | **JSON** **(8)** |
+    | Mapping name | **JsonTelemetryMapping** **(9)** |
 
-     ![](./media2/lab06img12.png)
+     ![](./media2/hbdccr.png)
 
-1. Wait till the connection is created. It may take some time, try to refresh the page until you see the connection.
+1. Wait till the connection is created. It may take some time, try to **refresh (1)** the page until you see the **connection (2)**.
 
-   ![](./media2/lab06img14.png)
+   ![](./media2/refconl6.png)
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
@@ -187,21 +179,21 @@ In this task, you will run the simulated devices so that they start sending tele
 
 1. In the Azure portal, navigate to your resource group and select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />**.
 
-    ![](./media2/lab06img18.png)
+    ![](./media2/slktrn.png)
 
-1. In the IoT Hub pane, select **Devices** from the left menu under **Device management**. select the device **sensor-thl-container0001**.
+1. In the IoT Hub pane, select **Devices (1)** from the left menu under **Device management**. Select the device **sensor-thl-container0001 (2)**.
 
-    ![](./media2/lab06img19.png)
+    ![](./media2/thlcontnr.png)
 
 1. On the device page, copy the **Primary connection string** and note it down in a notepad for future use.
 
-    ![](./media2/lab06img20.png)
+    ![](./media2/pcsthl.png)
 
 1. Copy the Primary connection string for **sensor-thl-airplane0001** and **sensor-thl-truck0001** as well. 
 
 1. To open Visual Studio Code, locate the **Visual Studio Code** icon on your desktop. Double-click the icon to launch the application.
 
-    ![](./media2/lab06img15.png)
+    ![](./media/new-az-220-lab3-1.png)
 
 1. On the **File** menu, click on **Open Folder**.
 
@@ -209,7 +201,7 @@ In this task, you will run the simulated devices so that they start sending tele
 
 1. In the **Open Folder** dialog, navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\10-Explore and analyze time stamped data with Time Series Insights\Starter` **(1)**, then select **ContainerSimulation (2)** and then click on **select folder (3)**.
 
-    ![](./media2/az6l5.png)
+    ![](./media2/csimfol.png)
 
 1. After selecting the folder, if you are prompted with a security dialog, select **Yes, I trust the authors**.
 
@@ -225,13 +217,13 @@ In this task, you will run the simulated devices so that they start sending tele
 
     ![](./media2/az6l7.png)    
 
-1. In the **File** menu, select **Save**. This action will save any changes made to the currently open file, ensuring your latest edits are preserved.
+1. In the **File (1)** menu, select **Save (2)**. This action will save any changes made to the currently open file, ensuring your latest edits are preserved.
 
-    ![](./media2/lab06img3v2.png)
+    ![](./media/fsave.png)
 
-1. Select **elispses(...) (1)**, then **Terminal (2)** and then open **New terminal (3)**.
+1. Select **elispses(...)**, then **Terminal (1)** and then open **New terminal (2)**.
 
-    ![](./media2/az6l8.png)
+    ![](./media/ntr.png)
 
 1. Within the **Terminal** pane, ensure that the command prompt specifies the path to the lab 10 **/Starter/ContainerSimulation** directory.
 
@@ -262,7 +254,7 @@ In this task, you will run the simulated devices so that they start sending tele
     12/27/2019 8:51:40 PM > CONTAINER transport changed to: TRUCK
     ```
 
-    > **Note**:  In production the shipping container would only change transport methods during the normal course of shipping. For the simulated scenario in this lab, it's performed every 30 seconds to give a short enough data duration that will fit during the course of performing the steps in this lab.
+    > **Note:** In production the shipping container would only change transport methods during the normal course of shipping. For the simulated scenario in this lab, it's performed every 30 seconds to give a short enough data duration that will fit during the course of performing the steps in this lab.
 
 ## Task 3: Visualize Data using Azure Data Explorer Queries
 
@@ -270,9 +262,9 @@ In this task, you will get a quick introduction to working with time series data
 
 1. In the Azure Portal, navigate to your resource group and select **adx-az220-<inject key="DeploymentID" enableCopy="false" />** Azure Data Explorer Cluster.
 
-    ![](./media2/lab06img21.png)
+    ![](./media2/adxslct.png)
 
-1. Select **Query (1)** and run the following query to visualize the data that is streamed **(2)(3)**.
+1. Select **Query (1)** and run the following query **(2)** to visualize the data that is streamed by clicking on Run **(3)**.
 
     ```
     Telemetry
@@ -280,13 +272,13 @@ In this task, you will get a quick introduction to working with time series data
     | render columnchart
     ```
 
-    ![](./media2/lab06img22.png)
+    ![](./media2/visul.png)
 
 1. Wait till the query succeeded, check the histogram created to visualize data.
 
     ![](./media2/lab06img23.png)
 
-    >**Note**: If you are not able to see any result, wait for few minutes and refresh the page, till the results are shown.
+    >**Note:** If you are not able to see any result, wait for few minutes, re-run the query and refresh the page, till the results are shown.
 
 ## Summary
 
