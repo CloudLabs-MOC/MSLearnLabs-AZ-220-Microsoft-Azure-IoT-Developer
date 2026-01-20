@@ -48,7 +48,7 @@ In this task, you will use Azure IoT Hub to create a new IoT Edge device identit
 
    ![](./media/iottrl8.png)
 
-1. On the **IoT Hub** blade, on the left-side menu under **Device management**, click **IoT Edge**. On the IoT Edge pane, click **+ Add an IoT Edge device**.
+1. On the **IoT Hub** blade, on the left-side menu under **Device management**, click **IoT Edge (1)**. On the IoT Edge pane, click **+ Add an IoT Edge device (2)**.
 
    ![](./media/addiotl8.png)
 
@@ -509,6 +509,8 @@ In this task, you will add the required entry to the hosts file.
 
 1. Open **Visual Studio Code** from the desktop.
 
+    ![](./media/new-az-220-lab3-1.png)
+
 1. On the **File (1)** menu, click **Open File (2)**.
 
     ![](./media/opnfil.png)
@@ -574,7 +576,7 @@ In this task, you will connect the IoT edge device to the IoT Edge Gateway.
 
     - Append the assigned **connectionString** value with a **GatewayHostName** property, with the value of GatewayHostName to the name of your IoT Edge gateway device that you have copied in `Task 3 step 7`.
 
-      >**Note:** In the previous task, you updated the local machine's **hosts** file to resolve the IoT Edge device's hostname to an IP Address. As a result, the fully qualified domain name (DNS name) of your Edge gateway device is not required. You can proceed with **Step 8** after updating your **Primary Connection String** for the **sensor-th-0072** IoT device.
+      >**Note:** In the previous task, you updated the local machine's **hosts** file to resolve the IoT Edge device's hostname to an IP Address. As a result, the fully qualified domain name (DNS name) of your Edge gateway device is not required. So you can proceed with **Step 8** after replacing the placeholder value with the **Primary Connection String** for the **sensor-th-0072** IoT device only.
 
 1. The completed connection string values should match the following format:
 
@@ -649,7 +651,7 @@ In this task, you will use the Azure CLI to monitor the events being sent to Azu
 
     >**Note:** Be sure to replace the **{your-id}** with **<inject key="DeploymentID" enableCopy="true" />**. 
 
-    > **Note:** If prompted **Dependency updates or version updates**, enter **Y**.
+    > **Note:** If prompted for **Dependency updates or version updates**, simply enter **Y**.
 
 1. With the IoT Edge device communication working correctly, the output from the **az iot hub monitor-events** command will look similar to the following:
 
