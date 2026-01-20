@@ -24,13 +24,13 @@ In this lab, you will be prototyping a cheese cave monitoring system that implem
 
 In this lab, you will complete the following:
 
-- Exercise 1: Configure Lab Prerequisites
-- Exercise 2: Review Code to Send and Receive Telemetry
-- Exercise 3: Complete a Second App to Receive Telemetry
-- Exercise 4: Include Code to Invoke a Direct Method
-- Exercise 5: Implement the Device Twin functionality
+- **Exercise 1:** Configure Lab Prerequisites
+- **Exercise 2:** Review Code to Send and Receive Telemetry
+- **Exercise 3:** Complete a Second App to Receive Telemetry
+- **Exercise 4:** Include Code to Invoke a Direct Method
+- **Exercise 5:** Implement the Device Twin functionality
 
-## Estimated Duration: 120 minutes
+## Estimated Duration: 120 Minutes
 
 ## Architecture Diagram
 
@@ -46,7 +46,7 @@ In this lab, you will complete the following:
    - **IotHubSasKey (5)**
    - **ServiceConnectionString (6)**
 
-        ![](./media/az15-34.png)
+        ![](./media/l10-1.png)
 
 ## Exercise 2: Review Code to Send and Receive Telemetry
 
@@ -60,24 +60,24 @@ In this exercise, you will be completing the simulated device app (for the senso
 
 1. Click on **File (1)** and select **Open Folder (2)**.
 
-     ![](./media/open.png)
+     ![](./media/l10-2.png)
 
 1. Navigate to `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final` and select the **CheeseCaveDevice** folder.
 
 1. Click on **Yes, I trust the authors** when prompted.
 
-      ![](./media/az15-35.png)
+      ![](./media/l10-3.png)
 
 1. You should see the following files listed in the EXPLORER pane of Visual Studio Code:
 
      - CheeseCaveDevice.csproj
      - Program.cs
 
-         ![](./media/az15-32.png)
+         ![](./media/l10-4.png)
 
 1. To open the code file, click **Program.cs**.
    
-      ![](./media/az15-4.png)
+      ![](./media/l10-5.png)
 
 1. In Vs code, click on **Terminal (1)** and click on **New Terminal (2)**. Notice that the directory path is indicated as part of the command prompt.
 
@@ -89,7 +89,7 @@ In this exercise, you will be completing the simulated device app (for the senso
     dotnet build
     ```
 
-      ![](./media/az15-36.png)
+    ![](./media/l10-6.png)
 
 ### Task 2: Configure connection and review code
 
@@ -97,7 +97,7 @@ The simulated device app that you will build in this task simulates an IoT devic
 
 1. In Visual Studio code, open **Program.cs**. Replace the **assigned placeholder** value (including the angle braces) with the **Device connection string** that you saved earlier.
    
-      ![](./media/az15-6.png)
+      ![](./media/l10-7.png)
 
 1. Press `Ctrl + S` to save the file.
 
@@ -113,13 +113,13 @@ The simulated device app that you will build in this task simulates an IoT devic
     dotnet run
     ```
 
-    > **Note**: This command will run the **Program.cs** file in the current folder.
+    > **Note:** This command will run the **Program.cs** file in the current folder.
 
 1. Notice the output being sent to the Terminal.
 
-      ![](./media/az15-7.png)
+      ![](./media/l10-8.png)
 
-    > **Note**: The green text is used to indicate when things are working as they should be. Red text is used to indicate when there is a problem. If you don't get a screen similar to the image above, start by checking your device connection string.
+    > **Note:** The green text is used to indicate when things are working as they should be. Red text is used to indicate when there is a problem. If you don't get a screen similar to the image above, start by checking your device connection string.
 
 1. Leave this app running.
 
@@ -133,25 +133,25 @@ In this task, you will begin work on the back-end app that will be used to recei
 
 1. Open an additional instance of Visual Studio Code by selecting **File (1)** and then **New Window (2)**.
 
-    ![](./media/az9l40.png)
+    ![](./media/l10-9.png)
 
 1. From now on, you will have two instances of Visual Studio Code open, and you’ll need to switch between them as required.
 
-    ![](./media/az9l41.png)
+    ![](./media/l10-10.png)
 
 1. On the **File (1)** menu, click **Open Folder (2)** in the new instance.
 
-    ![](./media/open.png)
+    ![](./media/l10-2.png)
 
 1. In the **Open Folder** dialog, navigate to the `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\15-Remotely monitor and control devices with Azure IoT Hub\Final`.
 
-    > **NOTE**: Be sure to open the **Final** folder. You do not want the project in the Starter folder.
+    > **NOTE:** Be sure to open the **Final** folder. You do not want the project in the Starter folder.
 
 1. Click **CheeseCaveOperator**, and then click **Select Folder**.
 
 1. Click on **Yes, I trust the authors** when prompted.
 
-      ![](./media/az15-37.png)
+      ![](./media/l10-11.png)
 
 #### Task 2: Enable the telemetry receiver code
 
@@ -179,9 +179,9 @@ This test is important, checking whether your back-end app is picking up the tel
 
 1. Take a minute to observe the output to the Terminal.
 
-    ![](./media/az15-10.png)
+    ![](./media/l10-12.png)
 
-    > **Note**: The Green text is used to show things are working as they should and red text when bad stuff is happening. If you don't get a screen similar to this image, start by checking your device connection string.
+    > **Note:** The Green text is used to show things are working as they should and red text when bad stuff is happening. If you don't get a screen similar to this image, start by checking your device connection string.
 
 1. Leave this app running for a moment longer.
 
@@ -195,7 +195,7 @@ Direct methods let the backend app control device features or settings by sendin
 
 1. Return to the Visual Studio Code instance that contains your **CheeseCaveDevice** application.
 
-    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and press **CTRL + C** to exit the running application).
+    > **Note:** If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and press **CTRL + C** to exit the running application).
 
 1. Ensure that **Program.cs** is open in the code editor.
 
@@ -209,7 +209,7 @@ Direct methods let the backend app control device features or settings by sendin
 
       ![](./media/az15-11.png)
 
-    > **Note**: Notice that the **SetFanState** direct method handler is also set up by this code. As you can see, the **SetMethodHandlerAsync** method of deviceClient takes the remote method name **"SetFanState"** as an argument, along with the actual local method to call, and a user context object (in this case null).
+    > **Note:** Notice that the **SetFanState** direct method handler is also set up by this code. As you can see, the **SetMethodHandlerAsync** method of deviceClient takes the remote method name **"SetFanState"** as an argument, along with the actual local method to call, and a user context object (in this case null).
 
 1. Locate the **Handle the direct method call** comment line within the code.
 
@@ -217,11 +217,13 @@ Direct methods let the backend app control device features or settings by sendin
 
     ![](./media/az15-12.png)
 
+1. Press `Ctrl + S` to save.
+
 ### Task 2: Add Code to Call Your Direct Method
 
 1. Return to the Visual Studio Code instance that contains the **CheeseCaveOperator** application.
 
-    > **Note**: If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and press **CTRL + C** to exit the running application).
+    > **Note:** If the app is still running, use the Terminal pane to exit the app (click inside the Terminal pane to set the focus and press **CTRL + C** to exit the running application).
 
 1. Ensure that **Program.cs** is open in the code editor.
 
@@ -275,7 +277,7 @@ To test the direct method, you will need to start the apps in the correct order.
     dotnet run
     ```
     
-      > **Note**:  If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app. The CheeseCaveOperator back-end app will immediately call the direct method.
+      > **Note:** If you see the message **Direct method failed: timed-out** then double check you have saved the changes in the **CheeseCaveDevice** and started the app. The CheeseCaveOperator back-end app will immediately call the direct method.
 
       ![](./media/az-15-015.png)
 
@@ -319,7 +321,7 @@ Device twins synchronize automatically with the IoT device and can be queried by
 
       ![](./media/az15-16.png)
 
-    > **Note**: Notice that the **serviceConnectionString** value is used to connect to the IoT Hub with the appropriate access level. The **SetTwinProperties** is then called.
+    > **Note:** Notice that the **serviceConnectionString** value is used to connect to the IoT Hub with the appropriate access level. The **SetTwinProperties** is then called.
 
 1. Press `Ctrl + S` to save.
 
@@ -353,7 +355,7 @@ Device twins synchronize automatically with the IoT device and can be queried by
 
 1. Press `Ctrl+S` to save.
 
-    > **Note**:  Now you have added support for device twins to your app, you can reconsider having explicit variables such as **desiredHumidity**. You could use the variables in the device twin object instead.
+    > **Note:**  Now you have added support for device twins to your app, you can reconsider having explicit variables such as **desiredHumidity**. You could use the variables in the device twin object instead.
 
 ### Task 3: Test the Device Twins
 

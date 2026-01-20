@@ -231,7 +231,7 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
       > **Note:** Please ensure to provide a space after **Azure IoT Edge:** 
 
-     >**Note:** If the option is unavailable, navigate to **Extensions (1)**, search for **Azure IoT Tools (2)**, select it, and click **Install (3)**. After installation, please re-perform Task 1.
+      >**Note:** If the option is unavailable, navigate to **Extensions**, search for **Azure IoT Tools (1)**, select it **(2)**, and click **Install (3)**. After installation, please re-perform Task 1.
 
       ![](./media/extension.png)
 
@@ -608,7 +608,7 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
       ![](./media2/lab13img16.png)
 
-1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left side navigation menu under **Device management**, click **IoT Edge (1)**. On the **IoT Edge** pane, click **+ Add an IoT Edge device (1)**.
+1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left side navigation menu under **Device management**, click **IoT Edge (1)**. On the **IoT Edge** pane, click **+ Add IoT Edge Device (2)**.
 
       ![](./media2/l9-48.png)
 
