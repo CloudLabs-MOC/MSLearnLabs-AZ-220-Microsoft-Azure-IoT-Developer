@@ -16,13 +16,13 @@ To ensure that the correct number of packages have been processed, you decide to
 
 In this lab, you will complete the following activities:
 
-* Exercise 1: Install Azure IoT EdgeHub Dev Tool
-* Exercise 2: Create an Azure Container Registry
-* Exercise 3: Create Custom Edge Module in C#
-* Exercise 4: Debug in Attach Mode with IoT Edge Simulator
-* Exercise 5: Deploy the IoT Edge Solution
+* **Exercise 1:** Install Azure IoT EdgeHub Dev Tool
+* **Exercise 2:** Create an Azure Container Registry
+* **Exercise 3:** Create Custom Edge Module in C#
+* **Exercise 4:** Debug in Attach Mode with IoT Edge Simulator
+* **Exercise 5:** Deploy the IoT Edge Solution
 
-## Estimated Duration: 120 minutes
+## Estimated Duration: 120 Minutes
 
 ## Architecture Diagram
 
@@ -38,9 +38,9 @@ Perform the below steps to enable the Azure IoT Toolkit extension to use the exp
 
 1. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1` **(1)**, select **package.json (2)** file.
 
-   ![](./media/av7.png)
+   ![](./media/l9-1.png)
 
-    >**Note**: If you are not able to get the path, that means eAzure IoT Hub and Edge extensions are not installed in the VS code. In that case please follow the below steps.
+    >**Note:** If you are not able to get the path, that means eAzure IoT Hub and Edge extensions are not installed in the VS code. In that case please follow the below steps.
 
      - Open the **Visual Studio Code** from the desktop.
 
@@ -62,11 +62,11 @@ Perform the below steps to enable the Azure IoT Toolkit extension to use the exp
     ],
     ```
 
-     ![](./media/av8.png)
+     ![](./media/l9-2.png)
 
 1. Select **File (1)**, and then **Save (2)** to save the file.
 
-   ![](./media/av9.png)
+   ![](./media/l9-3.png)
 
 1. Please make sure the proposal is added.   
     
@@ -81,31 +81,31 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
 1. On the **Docker Subscription Service Agreement**, select **Accept** and click on **finish** in the next pane.
 
-   ![](./media2/lab13img2.png)
+   ![](./media2/l9-4.png)
 
 1. In **Welcome to Docker** pane, click on **skip** to skip all the panes.
 
-   ![](./media2/lab13img3.png)
+   ![](./media2/l9-5.png)
 
 1. If `WSL needs updating` warning appear, please copy the `wsl --update` command. 
 
-   ![](./media/av1.png)
+   ![](./media/l9-6.png)
 
 1. Search for **Powershell (1)** and then select **Windows powershell (2)**.
 
-   ![](./media/av3.png)
+   ![](./media/l9-7.png)
 
 1. Paste the `wsl --update` command.
 
-   ![](./media/av4.png)
+   ![](./media/l9-8.png)
 
 1. Navigate back to docker, click **Restart**.
 
-   ![](./media/av2.png)
+   ![](./media/l9-9.png)
 
 1. You can see the Docker Engine start running.
 
-   ![](./media/av5.png)
+   ![](./media/l9-10.png)
 
 1. Wait for sometime in the  **docker desktop**, ensure that **Engine running** status as shown. Close the docker desktop, continue with further steps.
 
@@ -127,7 +127,7 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
 1. Click on **Manage (1)** and select **Trust (2)**, to trust the author.
 
-    ![](./media/av15.png)
+    ![](./media/l9-13.png)
 
 1. Open **New terminal** in **Visual Studio Code** by selecting **Three dots(...) -> Terminal -> New Terminal**.
 
@@ -160,18 +160,18 @@ In this task, you will create a Container Registry from Azure Portal.
 
 1. On the **Container registries** blade, click on **+ Create**.
 
-   ![](./media2/lab13img10.png)
+   ![](./media2/l9-14.png)
 
-1. On the **Create container registry** blade, enter the followig details and click on **Review + Create (4)**.
+1. On the **Create container registry** blade, enter the followig details and click on **Review + Create (5)**.
 
     | Settings | Values |
     |  -- | -- |
     | **Resource group** | Select **az220rg-<inject key="DeploymentID" enableCopy="false" />** resource group **(1)** |
     | **Registry name** |**acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />** **(2)**|
-    | **Location** | **Select the default location** |
-    | **Pricing Plan** | **Standard (3)** |
+    | **Location** | **Select the default location (3)** |
+    | **Pricing Plan** | **Standard (4)** |
    
-      ![](./media2/lab09img2updated.png)
+      ![](./media2/l9-15.png)
 
 1. Then click on **Create** in Review + create tab.      
 
@@ -187,7 +187,7 @@ In this task, you will be connecting your Docker to Container Registry.
     * **Username (4)**
     * **password:** Click on **Show (5)** the copy the value to notepad 
 
-      ![](./media2/az9l2.png)
+      ![](./media2/l9-16.png)
 
 1. Navigate back to **Visual Studio Code** terminal which you have opened earlier, and then run the following command:
 
@@ -203,7 +203,7 @@ In this task, you will be connecting your Docker to Container Registry.
 
 1. You will be prompted for the Username and Password values that you recorded. Once these values are entered and verified, you will see a **Login Succeeded** message.
 
-    ![](./media2/az9l6.png)  
+    ![](./media2/l9-17.png)  
 
   >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 
@@ -223,11 +223,11 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. In the **Visual Studio Code** open, select **View (1)** menu, and click on **Command Palette (2)**.
 
-      ![](./media2/az9l5.png)
+      ![](./media2/l9-18.png)
 
 1. At the command prompt, type **Azure IoT Edge: New**, and then click **Azure IoT Edge: New IoT Edge Solution**.
 
-      ![](./media2/lab13img14.png)
+      ![](./media2/l9-19.png)
 
       > **Note:** Please ensure to provide a space after **Azure IoT Edge:** 
 
@@ -237,19 +237,21 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. Navigate to `C:\Labfiles` **(1)**, select **New folder (2)**. 
 
-     ![](./media2/az9l3.png)  
+     ![](./media2/l9-20.png)  
 
 1. Create a folder with the name **EdgeSolution (1)** and then click on **Select folder (2)**.
 
-     ![](./media2/az9l4.png)  
+     ![](./media2/l9-21.png)  
 
 1. When prompted for a solution name, enter **EdgeSolution**. This name will be used as the directory name for the new **IoT Edge Solution** that will be created. Then, click **Enter**.
+
+      ![](./media2/l9-22.png)
 
 1. When prompted to select a module template, click **C# Module**. This will define **C#** as the development language for the custom IoT Edge Module added to the solution.
 
 1. When prompted for the name of the custom IoT Edge Module, delete the existing name and enter **objectcountingmodule**. Then, click **Enter**.
 
-     ![](./media2/az9l7.png) 
+     ![](./media2/l9-23.png) 
 
 1. When prompted for name of the Docker image repository for the module, replace the **localhost:5000** part of the default "localhost:5000/objectcountingmodule" repository location with the name of the Azure Container Registry server **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" />.azurecr.io**. Then, click **Enter**.
    
@@ -257,25 +259,25 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
     <acr-name>.azurecr.io/<module-name>
     ```
 
-     ![](./media2/az9l8.png)     
+     ![](./media2/l9-24.png)     
 
-    > **Note**: Be sure to replace the placeholders with the appropriate values:
+    > **Note:** Be sure to replace the placeholders with the appropriate values:
               - `<acr-name>`: Replace with the name of the Azure Container Registry service.
               - `<module-name>`: Replace with the name of the custom Azure IoT Edge Module that's being created.
 
-    > **Note**:  The default Docker image repository in Visual Studio Code is set to `localhost:5000/<your module name>`. If you were to use a local Docker registry for testing, then **localhost** is fine.
+    > **Note:**  The default Docker image repository in Visual Studio Code is set to `localhost:5000/<your module name>`. If you were to use a local Docker registry for testing, then **localhost** is fine.
 
-    > **Important**: Make sure to remove any reference to port **5000** from your ACR references!  That port is used for a local Docker repository, but it not used in the ACR case.
+    > **Important:** Make sure to remove any reference to port **5000** from your ACR references!  That port is used for a local Docker repository, but it not used in the ACR case.
 
 1. Wait for Visual Studio Code to create the solution. Once the new **IoT Edge Solution** has been created, Visual Studio Code will open the solution.
 
-    > **Note**: If Visual Studio Code prompts you to load required resources or C# extension, click **Yes**
+    > **Note:** If Visual Studio Code prompts you to load required resources or C# extension, click **Yes**
 
-    > **Note**: If Visual Studio Code prompts you to configure the **.env** file, select **Yes** and proceed to Task 2 below.
+    > **Note:** If Visual Studio Code prompts you to configure the **.env** file, select **Yes** and proceed to Task 2 below.
 
-    > **Note**: 1. If the pop up appears click on **Yes, I trust the authors**.
+    > **Note:** 1. If the pop up appears click on **Yes, I trust the authors**.
 
-    ![](./media/az-3-9.png)
+    ![](./media/l9-25.png)
 
 ### Task 2: Configure the solution
 
@@ -287,45 +289,45 @@ In this task, you will be setting up your username and password in the solution.
     CONTAINER_REGISTRY_USERNAME_<registry-name>=<registry-username>
     CONTAINER_REGISTRY_PASSWORD_<registry-name>=<registry-password>
     ```
-    >**Note**: Within your version of .env file, notice that the `<registry-name>` has already been added to the configuration values. The value that has been added should match the name of the Docker registry that you specified when creating the IoT Edge Solution.
+    >**Note:** Within your version of .env file, notice that the `<registry-name>` has already been added to the configuration values. The value that has been added should match the name of the Docker registry that you specified when creating the IoT Edge Solution.
 
 1. Within the **.env** file, replace the placeholder values with the **username and password values that you saved earlier**. Save the updated **.env** file.
 
-      ![](./media2/lab09img3updated.png)
+      ![](./media2/l9-26.png)
 
 1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.debug.template.json**.
 
 1. Copy the **image (1)** that is mentioned in the `SimulatedTemperatureSensor` (Line no. 76) and paste the same for `objectcountingmodule` **image (2)** (Line no. 66).
 
-      ![](./media2/az9l10.png)
+      ![](./media2/l9-27.png)
 
 1. Ensure that the image mentioned in the **EdgeHub (1)** is `mcr.microsoft.com/azureiotedge-hub:1.4` **(2)** (Line no. 34).
 
-      ![](./media2/az9l12.png)
+      ![](./media2/l9-28.png)
 
 1. Click on  **deployment.template.json**.
 
-      ![](./media2/az9l9.png)
+      ![](./media2/l9-29.png)
 
 1. Copy the **image (1)** that is mentioned in the `SimulatedTemperatureSensor` (Line no. 76) and paste the same for `objectcountingmodule` **image (2)** (Line no. 66).
 
-      ![](./media2/az9l11.png)
+      ![](./media2/l9-29.1.png)
 
 1. In the same file, ensure that the **Schema version** is mentioned properly with **1.2** for `edgeHub` in both **deployment.template.json** and **deployment.debug.template.json** files (Line no. 85).
 
-      ![](./media2/lab13img21.png)
+      ![](./media2/l9-30.png)
 
 1. In Visual Studio Code, on the **Three dots(...) -> View** menu, click **Command Palette**.
 
-     ![](./media2/lab13img13.png)
+     ![](./media2/l9-18.png)
 
 1. At the command prompt, type **Azure IoT Edge: Set Default (1)** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution (2)**.
 
-      ![](./media2/az9l14.png)
+      ![](./media2/l9-31.png)
 
 1. To select the target platform, click **windows-amd64**.
 
-      ![](./media2/az9l15.png)
+      ![](./media2/l9-32.png)
 
 ## Exercise 4: Debug in Attach Mode with IoT Edge Simulator
 
@@ -337,21 +339,21 @@ In this task, you will test the IoT Edge device.
 
 1. In the Azure Portal, Go to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false"/> (1)**, select **iot-az220-training-<inject key="DeploymentID" enableCopy="false" /> (2)**.
 
-     ![](./media2/az9l19.png)
+     ![](./media2/l9-33.png)
 
 1. On the left side navigation menu, under **Security settings**, click **Shared access policies (1)**. In the list of policies, click **iothubowner (2)**.  copy and paste the value for **Primary connection string (3)** in a Notepad. You will need this value in the next steps.
 
-     ![](./media2/az9l17.png)
+     ![](./media2/l9-34.png)
 
-      >**Note**: Record this value, as you will need it below.
+      >**Note:** Record this value, as you will need it below.
 
 1. On the left side navigation menu, under **Device management**, click **IoT Edge (1)**. Click **+ Add an IoT Edge device (2)**.
 
      ![](./media2/az9l18.png)
 
-1. On the **Create a device** blade, under **Device ID**,  enter **SimulatedDevice**. Leave all other settings as default, click on **Save**.
+1. On the **Create a device** blade, under **Device ID**,  enter **SimulatedDevice (1)**. Leave all other settings as default, click on **Save (2)**.
 
-     ![](./media2/lab13img19.png)
+     ![](./media2/l9-35.png)
 
 ### Task 2: Configure the test module
 
@@ -363,27 +365,27 @@ In this task, you will be configuring the module using the connection string of 
 
      ![](./media2/az9l20.png)
 
-      >**Note**: We uninstall the **Azure Account** extension because it’s deprecated, and replacing it with Azure Resources for subscription sign-in and management.
+      >**Note:** We uninstall the **Azure Account** extension because it’s deprecated, and replacing it with Azure Resources for subscription sign-in and management.
 
 1. Select **Uninstall All**.
 
-     ![](./media2/az9l22.png)
+     ![](./media2/l9-36.png)
 
 1. In the **Explorer** pane, right-click **deployment.debug.template.json (1)**, and then click **Build and Run IoT Edge Solution in Simulator (2)**.
 
-     ![](./media2/az9l21.png)
+     ![](./media2/l9-37.png)
 
 1. This file is the debugging deployment manifest file. It is located in the root directory of the IoT Edge Solution.
 
 1. When the process begins, you will see a dialog open in the lower right corner of the windows that says, **Please setup iotedgehubdev first before starting simulator**. When you see the prompt to setup iotedgehubdev, click **Setup**.
 
-     ![](./media2/az9l23.png)
+     ![](./media2/l9-38.png)
 
 1. When prompted for the **IoT Hub Connection String**, enter the **Primary Connection string** you recorded earlier and select it.
 
-     ![](./media2/az9l25.png)
+     ![](./media2/l9-39.png)
 
-      >**Note**: If you get an error in the lower-right-hand corner realted to proposed APIs, please make sure you have performed the Lab prerequisites part properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not please add as mentioned in the Lab prerequisites, `step no.3` and save the file.   
+      >**Note:** If you get an error in the lower-right-hand corner realted to proposed APIs, please make sure you have performed the Lab prerequisites part properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not please add as mentioned in the Lab prerequisites, `step no.3` and save the file.   
 
       - Please follow the below steps, if you still face the below issue:
 
@@ -440,15 +442,15 @@ In this task, you will be configuring the module using the connection string of 
 
 1. When prompted to **Select an IoT Edge Device**, click **SimulatedDevice**.
 
-     ![](./media2/az9l24.png)
+     ![](./media2/l9-40.png)
 
-      >**Note**: If you get an **Unauthorized** error in the lower-right-hand corner, run the **Azure IoT Hub: Set IoT Hub Connection String** command from the Command Palette to reconfigure your simulator connection string, then run **Azure IoT Edge: Setup IoT Edge Simulator** from the command palette and try to select your device again.
+      >**Note:** If you get an **Unauthorized** error in the lower-right-hand corner, run the **Azure IoT Hub: Set IoT Hub Connection String** command from the Command Palette to reconfigure your simulator connection string, then run **Azure IoT Edge: Setup IoT Edge Simulator** from the command palette and try to select your device again.
 
-    > **Note**: It is possible that you will be prompted for your Admin password on your local machine (in the Visual Studio Code **TERMINAL** window), particularly on Linux or macOS. Enter your password at the prompt and press **Enter**. The reason it might ask for your password is that the setup command for **iotedgehubdev** is being run using **sudo** as it requires elevated privileges.
+    > **Note:** It is possible that you will be prompted for your Admin password on your local machine (in the Visual Studio Code **TERMINAL** window), particularly on Linux or macOS. Enter your password at the prompt and press **Enter**. The reason it might ask for your password is that the setup command for **iotedgehubdev** is being run using **sudo** as it requires elevated privileges.
 
 1. Once the IoT Edge Simulator is set up successfully, a **Setup IoT Edge Simulator successfully** message will be displayed in the Visual Studio Code TERMINAL. Now when you build and run the module in the IoT Edge Simulator, it will run as expected.
 
-     ![](./media2/az9l26.png)
+     ![](./media2/l9-41.png)
 
 ### Task 3: Build and run the module
 
@@ -456,7 +458,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. In the **Explorer** pane, right-click **deployment.debug.template.json (1)**, and then click **Build and Run IoT Edge Solution in Simulator (2)**.
 
-     ![](./media2/az9l21.png)
+     ![](./media2/l9-42.png)
 
 1. Observe the build process reporting in your TERMINAL window. It can take quite a few minutes to download and build everything that is required to simulate the IoT Edge device and run your modules, so be patient. Notice that once the **IoT Edge Simulator** is running, the Modules that you built will begin sending message output that is reported to the TERMINAL window:
 
@@ -469,7 +471,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
     ObjectCountingModule           | Received message sent
     ```
 
-     ![](./media2/az9l28.png)    
+     ![](./media2/l9-43.png)    
 
 1. Notice the output from the **ObjectCountingModule** contains the text **Received message: #** where **#** is the total message count that has been received by the custom **ObjectCountingModule** IoT Edge Module that was created.
 
@@ -544,7 +546,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
       docker images
       ```
 
-      ![](./media2/lab13img23.png)
+      ![](./media2/l9-45.png)
 
 1. Run the following command to tag the image.
 
@@ -558,9 +560,9 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
       docker tag mcr.microsoft.com/azureiotedge-hub:1.4 acraz220trainingcah<inject key="DeploymentID"></inject>.azurecr.io/objectcountingmodule:1.4
       ```      
 
-      >**Note**: Ensure placeholders are filled with actual values, such as `<local_image_name>` with the name of the image you copied earlier and `<acr_address>` with login server url of the registry, `<module_name>:<version>` with actual module name and version. For example, the command look similar to this:
+      >**Note:** Ensure placeholders are filled with actual values, such as `<local_image_name>` with the name of the image you copied earlier and `<acr_address>` with login server url of the registry, `<module_name>:<version>` with actual module name and version. For example, the command look similar to this:
    
-      >**Note**: Ensure to you use lowercase letters in the command.
+      >**Note:** Ensure to you use lowercase letters in the command.
   
 1. Run the following command to push the image to **Container Registry (1)**. Make sure that the images are pushed.
 
@@ -570,7 +572,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
       ![](./media2/az9l30.png)    
 
-      >**Note**: If you recieve any errors at last, please ignore. 
+      >**Note:** If you recieve any errors at last, please ignore. 
 
 1. Switch to your Azure portal window. Go to the resource group **az220rg-<inject key="DeploymentID" enableCopy="false"/> (1)**, open your Azure Container Registry (ACR) service, click **acraz220trainingcah<inject key="DeploymentID" enableCopy="false" /> (2)**.
 
@@ -578,11 +580,11 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
 1. On the left side navigation menu, under **Services**, select **Repositories (1)**, select **objectcountingmodule (2)**.
 
-     ![](./media2/az9l31.png)
+     ![](./media2/l9-46.png)
 
 1. Click on **1.4** which is the tag that we have provided.
 
-     ![](./media2/az9l32.png)
+     ![](./media2/l9-46.1.png)
 
 1. Save a copy of the **Image URI**. The format of the Docker image Repository and Tag names combined will be in the following format:
 
@@ -590,7 +592,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
     <registry-name>/<repository-name>:<tag>
     ```
 
-     ![](./media2/az9l34.png)    
+     ![](./media2/l9-47.png)    
 
 1. Here's an example of a full Docker image URI for the **objectcountingmodule** IoT Edge Module:
 
@@ -606,9 +608,9 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
       ![](./media2/lab13img16.png)
 
-1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left side navigation menu under **Device management**, click **IoT Edge**. On the **IoT Edge** pane, click **+ Add an IoT Edge device**.
+1. On the **iot-az220-training-<inject key="DeploymentID" enableCopy="false" />** blade, on the left side navigation menu under **Device management**, click **IoT Edge (1)**. On the **IoT Edge** pane, click **+ Add an IoT Edge device (1)**.
 
-      ![](./media2/lab13img27.png)
+      ![](./media2/l9-48.png)
 
 1. On the **Create a device** blade, under **Device ID**, enter **objectcountingdevice (1)**. click **Save (2)**.
 
@@ -616,11 +618,11 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
 1. On the **IoT Edge** pane, under **Device ID**, click **objectcountingdevice**.
 
-      ![](./media2/lab13img28.png)
+      ![](./media2/l9-49.png)
 
 1. At the top of the **objectcountingdevice** blade, click **Set Modules**.
 
-      ![](./media/new-az220-lab9-6.png)
+      ![](./media/l9-50.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **Container Registry Settings**, enter the following values:
 
@@ -631,7 +633,7 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
     | User Name | Enter the **Username** for the Azure Container Registry service |
     | Password | Enter the **password** for the Azure Container Registry service |
 
-     ![](./media2/lab13img30.png)    
+     ![](./media2/l9-50.1.png)    
 
       >**Note**: The Azure Container Registry (ACR) service _Registry name_, _Login server_, _Username_, and _Password_ can be found on the **Access keys** pane for the service.
 
@@ -643,11 +645,11 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
 1. On the **Add IoT Edge Module** pane, under **IoT Edge Module Name**, enter **objectcountingmodule** **(1)**. Under **Image URI** **(2)** paste the image URI you have copied earlier. Click on **Add** **(3)**.
 
-      ![](./media2/az9l35.png)
+      ![](./media2/l9-51.png)
 
 1. On the **Set modules on device: objectcountingdevice** blade, at the bottom of the blade, click **Next: Routes >**.
 
-      ![](./media2/lab13img33.png)
+      ![](./media2/l9-51.1.png)
 
 1. On the **Routes** tab, add the following two routes:
 
@@ -656,7 +658,7 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
     | `AllMessagesToObjectCountingModule` | `FROM /* INTO BrokeredEndpoint("/modules/objectcountingmodule/inputs/input1")` |
     | `ObjectCountingModuleToIoTHub` | `FROM /messages/modules/objectcountingmodule/outputs/* INTO $upstream` |
 
-      ![](./media2/lab13img34.png)
+      ![](./media/l9-52.png)
 
 1. At the bottom of the blade, click **Next: Review + create >**.
 
