@@ -129,9 +129,9 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
     ![](./media/l9-13.png)
 
-1. Open **New terminal** in **Visual Studio Code** by selecting **Three dots(...) -> Terminal -> New Terminal**.
+1. Open **New terminal** in **Visual Studio Code** by selecting **Three dots(...) -> Terminal (1) -> New Terminal (2)**.
 
-    ![](./media2/lab09img3.png)
+    ![](./media/ntr.png)
 
 1. At the terminal, to install the package manager for Python (Pip), run the following commands:
 
@@ -293,7 +293,7 @@ In this task, you will be setting up your username and password in the solution.
 
 1. Within the **.env** file, replace the placeholder values with the **username and password values that you saved earlier**. Save the updated **.env** file.
 
-      ![](./media2/l9-26.png)
+      ![](./media/l9-26n.png)
 
 1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.debug.template.json**.
 
@@ -416,15 +416,15 @@ In this task, you will be configuring the module using the connection string of 
 
       - Make sure the below proposal is added, if not please add and save the file.
 
-        ![](./media/av8.png)
+        ![](./media/l9-2.png)
 
       - At the command prompt, type **Azure IoT Edge: Set Default (1)** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution (2)**.
 
-        ![](./media2/az9l14.png)
+        ![](./media2/l9-31.png)
 
       - To select the target platform, click **windows-amd64**.
 
-        ![](./media2/az9l15.png)  
+        ![](./media2/l9-32.png) 
 
       - Navigate to **Extensions (1)**, search for **Azure account (2)** then select the **Azure account (3)** and then **Uninstall (3)**.
 
@@ -432,11 +432,11 @@ In this task, you will be configuring the module using the connection string of 
 
       - In the **Explorer** pane, right-click **deployment.debug.template.json (1)**, and then click **Build and Run IoT Edge Solution in Simulator (2)**.
 
-        ![](./media2/az9l21.png)
+        ![](./media2/l9-37.png)
 
       - When the process begins, you will see a dialog open in the lower right corner of the windows that says, **Please setup iotedgehubdev first before starting simulator**. When you see the prompt to setup iotedgehubdev, click **Setup**.
 
-        ![](./media2/az9l23.png)  
+        ![](./media2/l9-38.png)  
 
       - Select  **SimulatedDevice**. 
 
@@ -479,19 +479,19 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. At the top of the portal window, to open the Azure Cloud Shell, click **Cloud Shell**.
 
-      ![](./media2/lab09img11.png)
+      ![](./media/l7-6.png)
 
 1. On the **Welcome to Azure Cloud Shell** pane, click on **Bash**.
 
-      ![](./media2/lab0912.png)
+      ![](./media/l7-7.png)
 
 1. On the **Getting started** pane, select **Mount storage account** **(1)** and select the **subscription** **(2)** and click on **Apply** **(3)**.
 
-      ![](./media2/az9l27.png)
+      ![](./media/l7-8.png)
  
 1. On the **Mount storage account** pane select **I want to create a storage account** and click on **Next**.
 
-      ![](./media2/lab09img14.png)
+      ![](./media/l7-9.png)
 
 1. In the **Create storage account** page and click on **Create** **(5)**: 
 
@@ -534,9 +534,9 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 
 ### Task 1: Publish module to the Azure Container Registry
 
-1. Open integrated Terminal in **Visual studio code** click on **Three dots(...) >> Terminal(1)** and then **New Terminal(2).**
+1. Open integrated Terminal in **Visual studio code** click on **Three dots(...) >> Terminal (1)** and then **New Terminal (2).**
 
-      ![](./media/az-3-10.png)
+      ![](./media/ntr.png)
 
 1. On the terminal, run commands to tag and push the image to **Azure Container Registries**.
 
@@ -570,7 +570,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
       docker push <acr_address>/<module_name>:<version>
       ```
 
-      ![](./media2/az9l30.png)    
+      ![](./media2/l9-48.1.png)    
 
       >**Note:** If you recieve any errors at last, please ignore. 
 
@@ -641,7 +641,7 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
 1. On the **Set modules on device: objectcountingdevice** blade, under **IoT Edge Modules**, click **+ Add (1)**, and then click **+ IoT Edge Module (2)**.
 
-      ![](./media/new-az220-lab9-7.png)
+      ![](./media/l9--39.png)
 
 1. On the **Add IoT Edge Module** pane, under **IoT Edge Module Name**, enter **objectcountingmodule** **(1)**. Under **Image URI** **(2)** paste the image URI you have copied earlier. Click on **Add** **(3)**.
 
