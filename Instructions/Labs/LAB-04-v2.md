@@ -116,11 +116,11 @@ In this task, you will be reviewing your code and also configure it with connect
 
 1. On the Devices page, under **Device ID**, click on **sensor-v-3000**.
 
-     ![](./media/AI-220-l4-8.png)
+   ![](./media/AI-220-l4-8.png)
 
 1. On the sensor-v-3000 page, to the right of the **Primary Connection String** value then click on **Copy**.
 
-   ![](./media/sensord34.png)
+   ![](./media2/sensord34.png)
 
 1. Save the copied device connection string value to Notepad for later use. Navigate back to your IoT hub blade.
 
