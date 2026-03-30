@@ -120,17 +120,9 @@ In this task, you will be reviewing your code and also configure it with connect
 
 1. On the sensor-v-3000 page, to the right of the **Primary Connection String** value then click on **Copy**.
 
-   ![](./media/AI-220-l4-9.png)
+   ![](./media/sensord34.png)
 
 1. Save the copied device connection string value to Notepad for later use. Navigate back to your IoT hub blade.
-
-1. On the left side menu, under **Security settings (1)**, click on **Shared access policies (2)** and then select **iothubowner (3)**.
-
-   ![](./media/AI-220-l4-10.png)
-
-1. Notice that the IoT hub **Primary connection string** is listed. Copy the IoT hub **Primary connection string** value and save it to Notepad.
-
-   ![](./media/lab7img5.png)
 
 1. Ensure that you have the **Program.cs (1)** file opened in Visual Studio Code.
 
