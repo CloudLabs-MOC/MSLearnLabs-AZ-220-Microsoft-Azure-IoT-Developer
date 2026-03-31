@@ -27,48 +27,6 @@ In this lab, you will complete the following activities:
 ## Architecture Diagram
 
 ![Lab 13 Architecture](media/LAB_AK_13-architecture.png)
-
-### Lab Prerequisites
-
-Perform the below steps to enable the Azure IoT Toolkit extension to use the experimental Quick Pick tooltip API. Because the extension uses the quickPickItemTooltip proposed API, which must be explicitly declared and enabled for development.
-
-1. Search for **File (1)** and select **File explorer (2)**.
-
-   ![](./media/av6.png)
-
-1. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1` **(1)**, select **package.json (2)** file.
-
-   ![](./media/l9-1.png)
-
-    >**Note:** If you are not able to get the path, that means eAzure IoT Hub and Edge extensions are not installed in the VS code. In that case please follow the below steps.
-
-     - Open the **Visual Studio Code** from the desktop.
-
-     - Naviagte to **Extensions (1)**, search for **edge (2)** and then **Install (3)** `Azure IoT Edge`.
-
-       ![](./media/av13.png)
-
-     - Then search for **hub**, then **Install** the **Azure IoT Hub**.
-
-     - Please make sure to **close** the Visual Studio Code.
-
-     - Then search for `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`.
-
-1. Add the below proposal to allow the extension to use the experimental Quick Pick tooltip API.
-
-    ```cmd/sh
-    "enabledApiProposals": [
-      "quickPickItemTooltip"
-    ],
-    ```
-
-     ![](./media/l9-2.png)
-
-1. Select **File (1)**, and then **Save (2)** to save the file.
-
-   ![](./media/l9-3.png)
-
-1. Please make sure the proposal is added.   
     
 
 ## Exercise 1: Install Azure IoT EdgeHub Dev Tool
@@ -86,22 +44,6 @@ In this exercise, you will ensure docker engine is running and install the Azure
 1. In **Welcome to Docker** pane, click on **skip** to skip all the panes.
 
    ![](./media2/l9-5.png)
-
-1. If `WSL needs updating` warning appear, please copy the `wsl --update` command. 
-
-   ![](./media/l9-6.png)
-
-1. Search for **Powershell (1)** and then select **Windows powershell (2)**.
-
-   ![](./media/l9-7.png)
-
-1. Paste the `wsl --update` command.
-
-   ![](./media/l9-8.png)
-
-1. Navigate back to docker, click **Restart**.
-
-   ![](./media/l9-9.png)
 
 1. You can see the Docker Engine start running.
 
