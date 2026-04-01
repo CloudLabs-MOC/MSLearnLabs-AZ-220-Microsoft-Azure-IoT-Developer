@@ -67,9 +67,9 @@ In this exercise, you will ensure docker engine is running and install the Azure
 
 1. Visual Studio Code opens.   
 
-1. Click on **Manage (1)** and select **Trust (2)**, to trust the author.
+1. If any file was opened in VS Code when it opens, close it.
 
-    ![](./media/l9-13.png)
+      ![](./media/av11-1.png)
 
 1. Open **New terminal** in **Visual Studio Code** by selecting **Three dots(...) -> Terminal (1) -> New Terminal (2)**.
 
@@ -82,7 +82,11 @@ In this exercise, you will ensure docker engine is running and install the Azure
     python get-pip.py
     ```
 
+    ![](./media/av11-2.png)
+
 1. Run the following command to install the Azure IoT Edge Hub Dev Tool for local development and testing of IoT Edge modules.
+
+   >**Note:** Please wait for 3-5 minutes for the installation to complete.
 
     ```cmd/sh
     pip install iotedgehubdev --user
@@ -115,7 +119,9 @@ In this task, you will create a Container Registry from Azure Portal.
    
       ![](./media2/l9-15.png)
 
-1. Then click on **Create** in Review + create tab.      
+1. Then, click on **Create** in Review + create tab.      
+
+      ![](./media/lab9-task1-1.png)
 
 1. Wait for the deployemet to complete, select **Go to resource**.
 
@@ -147,11 +153,10 @@ In this task, you will be connecting your Docker to Container Registry.
 
     ![](./media2/l9-17.png)  
 
-  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="50eea306-3342-453b-9f11-b1721b9ac260" />
 
@@ -179,17 +184,19 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. Navigate to `C:\Labfiles` **(1)**, select **New folder (2)**. 
 
-     ![](./media2/l9-20.png)  
+     ![](./media/l9-21.png)  
 
 1. Create a folder with the name **EdgeSolution (1)** and then click on **Select folder (2)**.
 
-     ![](./media2/l9-21.png)  
+     ![](./media/l9-21-1.png)
 
 1. When prompted for a solution name, enter **EdgeSolution**. This name will be used as the directory name for the new **IoT Edge Solution** that will be created. Then, click **Enter**.
 
       ![](./media2/l9-22.png)
 
 1. When prompted to select a module template, click **C# Module**. This will define **C#** as the development language for the custom IoT Edge Module added to the solution.
+
+      ![](./media/l9-22-1.png)
 
 1. When prompted for the name of the custom IoT Edge Module, delete the existing name and enter **objectcountingmodule**. Then, click **Enter**.
 
@@ -204,10 +211,10 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
      ![](./media2/l9-24.png)     
 
     > **Note:** Be sure to replace the placeholders with the appropriate values:
-              - `<acr-name>`: Replace with the name of the Azure Container Registry service.
-              - `<module-name>`: Replace with the name of the custom Azure IoT Edge Module that's being created.
+      - `<acr-name>`: Replace with the name of the Azure Container Registry service.
+      - `<module-name>`: Replace with the name of the custom Azure IoT Edge Module that's being created.
 
-    > **Note:**  The default Docker image repository in Visual Studio Code is set to `localhost:5000/<your module name>`. If you were to use a local Docker registry for testing, then **localhost** is fine.
+    > **Note:** The default Docker image repository in Visual Studio Code is set to `localhost:5000/<your module name>`. If you were to use a local Docker registry for testing, then **localhost** is fine.
 
     > **Important:** Make sure to remove any reference to port **5000** from your ACR references!  That port is used for a local Docker repository, but it not used in the ACR case.
 
@@ -237,7 +244,7 @@ In this task, you will be setting up your username and password in the solution.
 
       ![](./media/l9-26n.png)
 
-1. In the **Explorer** pane, to open the deployment.template.json file, click **deployment.debug.template.json**.
+1. In the **Explorer** pane, to open the deployment.debug.template.json file, click **deployment.debug.template.json**.
 
 1. Copy the **image (1)** that is mentioned in the `SimulatedTemperatureSensor` (Line no. 76) and paste the same for `objectcountingmodule` **image (2)** (Line no. 66).
 
@@ -255,7 +262,7 @@ In this task, you will be setting up your username and password in the solution.
 
       ![](./media2/l9-29.1.png)
 
-1. In the same file, ensure that the **Schema version** is mentioned properly with **1.2** for `edgeHub` in both **deployment.template.json** and **deployment.debug.template.json** files (Line no. 85).
+1. In the same file, ensure that the **schemaVersion** is mentioned properly with **1.2** for `edgeHub` in both **deployment.template.json** and **deployment.debug.template.json** files (Line no. 85).
 
       ![](./media2/l9-30.png)
 
@@ -303,16 +310,6 @@ In this task, you will be configuring the module using the connection string of 
 
 1. Switch to the **Visual Studio Code** instance containing your IoT Edge solution.
 
-1. Navigate to **Extensions (1)**, search for **Azure account (2)** then select the **Azure account (3)** and then **Uninstall (3)**.
-
-     ![](./media2/az9l20.png)
-
-      >**Note:** We uninstall the **Azure Account** extension because it’s deprecated, and replacing it with Azure Resources for subscription sign-in and management.
-
-1. Select **Uninstall All**.
-
-     ![](./media2/l9-36.png)
-
 1. In the **Explorer** pane, right-click **deployment.debug.template.json (1)**, and then click **Build and Run IoT Edge Solution in Simulator (2)**.
 
      ![](./media2/l9-37.png)
@@ -327,14 +324,15 @@ In this task, you will be configuring the module using the connection string of 
 
      ![](./media2/l9-39.png)
 
-      >**Note:** If you get an error in the lower-right-hand corner realted to proposed APIs, please make sure you have performed the Lab prerequisites part properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not please add as mentioned in the Lab prerequisites, `step no.3` and save the file.   
+      >**Note:** If you get an error in the lower-right-hand corner related to proposed APIs, please make sure to perform the below provided steps properly. Navigate to `C:\Users\azureuser\.vscode\extensions\vsciot-vscode.azure-iot-toolkit-2.17.1`, -> **package.json** file and make sure `enabledApiProposals` proposal is added. If not added, please add as it is required as Lab prerequisites, `step no.3` and save the file.
 
       - Please follow the below steps, if you still face the below issue:
 
         ![](./media/aa2.png)
 
       - **Close the opened Visual Studio Code.**
-      - Open a new command prompt
+
+      - Click on search bar at the bottom, search for **cmd (1)** and select **Command Prompt (2)**.
 
         ![](./media/av10.png)
 
@@ -462,11 +460,10 @@ In this task, you will build the solution and run it as IoT Edge device which se
 
 1. Close the **Cloud Shell** window.
 
-  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="976bf7db-9c4f-4611-9bfc-f4c533696c10" />
 
@@ -509,7 +506,7 @@ In this exercise, you will build and publish the custom IoT Edge Module into the
 1. Run the following command to push the image to **Container Registry (1)**. Make sure that the images are pushed.
 
       ```
-      docker push <acr_address>/<module_name>:<version>
+      docker push acraz220trainingcah<inject key="DeploymentID"></inject>.azurecr.io/objectcountingmodule:1.4
       ```
 
       ![](./media2/l9-48.1.png)    
@@ -570,8 +567,8 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
     | Setting | Value |
     | --- | --- |
-    | Name | Enter the **Registry name** of the Azure Container Registry (e.g. **acraz220trainingcah191204**)  |
-    | Address | Enter the **Login server** (or DNS name) of the Azure Container Registry service (e.g. **acraz220trainingcah191204.azurecr.io**) |
+    | Name | Enter the **Registry name** of the Azure Container Registry (e.g. **acraz220trainingcah<inject key="DeploymentID"></inject>**)  |
+    | Address | Enter the **Login server** (or DNS name) of the Azure Container Registry service (e.g. **acraz220trainingcah<inject key="DeploymentID"></inject>.azurecr.io**) |
     | User Name | Enter the **Username** for the Azure Container Registry service |
     | Password | Enter the **password** for the Azure Container Registry service |
 
@@ -606,11 +603,12 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
 1. Review the Deployment Manifest for the device, and then click **Create**.
 
-  >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+      ![](./media/l9-52-1.png)
 
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
+>**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="702e474b-50e3-4fa6-8d7e-864560f327f6" />
 
@@ -619,6 +617,3 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 In this lab, you have deployed an azure container registry and docker desktop to manage the container which is built using .NET Simulator project. You have used the build commands to build the image from the project. You have pushed the image to registry and created a IoT Edge Device and added the Docker Image as module to it.
 
 ### You have successfully completed the Lab!
-
-
-
