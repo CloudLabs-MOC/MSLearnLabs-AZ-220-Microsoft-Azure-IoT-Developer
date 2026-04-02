@@ -169,10 +169,9 @@ https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.
 1. With these three ports open on the Network Security Group (NSG), the downstream devices will be able to connect to the IoT Edge Gateway using the MQTT, AMQP, or HTTPS protocols.
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="b1385042-0098-4338-aa44-f920b7ab3d5d" />
 
@@ -424,10 +423,9 @@ Next, you need to "download" the **MyEdgeDeviceCA** certificate from the **vm-az
 1. Once the files are copied to Cloud Shell storage from the **vm-az220-training-gw0001-<inject key="DeploymentID" enableCopy="false" />** virtual machine, you will be able to easily download any of the IoT Edge Device certificate and key files to your local machine as necessary. Files can be downloaded from the Cloud Shell using the `download <filename>` command. You will do this later in the lab.
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
-
-  > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
-  > - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
-  > - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
+> - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
+> - If not, carefully read the error message and retry the step, following the instructions in the lab guide.
+> - If you need any assistance, please contact us at cloudlabs-support@spektrasystems.com.
 
    <validation step="347b3d97-90c7-4666-9630-5fe2b5a5b3d8" />
 
@@ -489,7 +487,9 @@ In this task, you will configure the connection between a pre-built downstream d
 
 1. Search  and select **Windows Powershell** from the labvm and **Run as an Administrator**.
 
-1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is: `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter`. Enter the below command:
+    ![](./media/select-powershell.png)
+
+1. Copy the **azure-iot-test-only.root.ca.cert.pem** X.509 certificate file to the **DownstreamDevice** directory folder (under the Starter folder for lab 12) where the source code for the downstream IoT device is located. The Lab 12 **Starter** folder is part of the lab resources that you downloaded before starting this lab. The folder path is: `C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownstreamDevice`. Enter the below command:
 
     ```
     scp vmadmin@vm-az220-training-gw0001-<DID>.{your location}.cloudapp.azure.com:/tmp/lab12/certs/azure-iot-test-only.root.ca.cert.pem "C:\LabFiles\az-220\MSLearnLabs-AZ-220-Microsoft-Azure-IoT-Developer-stage-rowancollege\Allfiles\Labs\12-Setup an IoT Edge Gateway\Starter\DownstreamDevice"
