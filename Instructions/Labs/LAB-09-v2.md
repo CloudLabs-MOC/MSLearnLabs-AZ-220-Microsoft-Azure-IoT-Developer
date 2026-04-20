@@ -178,9 +178,11 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
       > **Note:** Please ensure to provide a space after **Azure IoT Edge:** 
 
-      >**Note:** If the option is unavailable, navigate to **Extensions**, search for **Azure IoT Tools (1)**, select it **(2)**, and click **Install (3)**. After installation, please re-perform Task 1.
+      >**Note:** If the option is unavailable, navigate to **Extensions (1)**, search for **azure iot hub (1)**, select it **(2)**, and click **Install (3)**, and also install **azure iot edge**. After installation, please re-perform Task 1.
 
-      ![](./media/extension.png)
+      ![](./media/lab30-04-9.png)
+
+      ![](./media/lab30-04-10.png)
 
 1. Navigate to `C:\Labfiles` **(1)**, select **New folder (2)**. 
 
