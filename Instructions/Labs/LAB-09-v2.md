@@ -63,7 +63,7 @@ In this exercise, you will ensure docker engine is running and install the Azure
     code --enable-proposed-api vsciot-vscode.azure-iot-toolkit
     ```
 
-     ![](./media/av11.png)
+     ![](./media/lab30-04-1.png)
 
 1. Visual Studio Code opens.   
 
@@ -82,7 +82,7 @@ In this exercise, you will ensure docker engine is running and install the Azure
     python get-pip.py
     ```
 
-    ![](./media/av11-2.png)
+    ![](./media/lab30-04-8.png)
 
 1. Run the following command to install the Azure IoT Edge Hub Dev Tool for local development and testing of IoT Edge modules.
 
@@ -196,7 +196,7 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
 1. When prompted to select a module template, click **C# Module**. This will define **C#** as the development language for the custom IoT Edge Module added to the solution.
 
-      ![](./media/l9-22-1.png)
+      ![](./media/lab30-04-2.png)
 
 1. When prompted for the name of the custom IoT Edge Module, delete the existing name and enter **objectcountingmodule**. Then, click **Enter**.
 
@@ -224,7 +224,7 @@ In this task, you will be using Visual Studio Code setup the IoT Edge Solution.
 
     > **Note:** If Visual Studio Code prompts you to configure the **.env** file, select **Yes** and proceed to Task 2 below.
 
-    > **Note:** 1. If the pop up appears click on **Yes, I trust the authors**.
+    > **Note:** If the pop up appears click on **Yes, I trust the authors**.
 
     ![](./media/l9-25.png)
 
@@ -240,9 +240,9 @@ In this task, you will be setting up your username and password in the solution.
     ```
     >**Note:** Within your version of .env file, notice that the `<registry-name>` has already been added to the configuration values. The value that has been added should match the name of the Docker registry that you specified when creating the IoT Edge Solution.
 
-1. Within the **.env** file, replace the placeholder values with the **username and password values that you saved earlier**. Save the updated **.env** file.
+1. Within the **.env** file, replace the placeholder values with the **username and password values that you saved earlier**. **Save (CTRL + S)** the updated **.env** file.
 
-      ![](./media/l9-26n.png)
+      ![](./media/lab30-04-3.png)
 
 1. In the **Explorer** pane, to open the deployment.debug.template.json file, click **deployment.debug.template.json**.
 
@@ -253,6 +253,8 @@ In this task, you will be setting up your username and password in the solution.
 1. Ensure that the image mentioned in the **EdgeHub (1)** is `mcr.microsoft.com/azureiotedge-hub:1.4` **(2)** (Line no. 34).
 
       ![](./media2/l9-28.png)
+
+1. After making the changes, select **Save (Ctrl + S)**.
 
 1. Click on  **deployment.template.json**.
 
@@ -266,13 +268,15 @@ In this task, you will be setting up your username and password in the solution.
 
       ![](./media2/l9-30.png)
 
+1. After making the changes, select **Save (Ctrl + S)**.
+
 1. In Visual Studio Code, on the **Three dots(...) -> View** menu, click **Command Palette**.
 
      ![](./media2/l9-18.png)
 
 1. At the command prompt, type **Azure IoT Edge: Set Default (1)** and then click **Azure IoT Edge: Set Default Target Platform for Edge Solution (2)**.
 
-      ![](./media2/l9-31.png)
+      ![](./media/lab30-04-4.png)
 
 1. To select the target platform, click **windows-amd64**.
 
@@ -442,7 +446,7 @@ In this task, you will build the solution and run it as IoT Edge device which se
       | **Storage account name** | **stoaz220<inject key="DeploymentID" enableCopy="false" />** **(3)** |
       | **File share** | **cloudshell** **(4)** |
 
-      ![](./media2/lab09img15.png)
+      ![](./media/lab30-04-5.png)
 
 1. At the Cloud Shell command prompt, to monitor the messages being sent to Azure IoT Hub from the **SimulatedDevice** running in the IoT Edge Simulator on your local machine, enter the following command:
 
@@ -567,14 +571,14 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
 
     | Setting | Value |
     | --- | --- |
-    | Name | Enter the **Registry name** of the Azure Container Registry (e.g. **acraz220trainingcah<inject key="DeploymentID"></inject>**)  |
-    | Address | Enter the **Login server** (or DNS name) of the Azure Container Registry service (e.g. **acraz220trainingcah<inject key="DeploymentID"></inject>.azurecr.io**) |
+    | Name | Enter the **Registry name** of the Azure Container Registry (e.g. **acraz220trainingcah<inject key="DeploymentID" enableCopy="false"/>**)  |
+    | Address | Enter the **Login server** (or DNS name) of the Azure Container Registry service (e.g. **acraz220trainingcah<inject key="DeploymentID" enableCopy="false"/>.azurecr.io**) |
     | User Name | Enter the **Username** for the Azure Container Registry service |
     | Password | Enter the **password** for the Azure Container Registry service |
 
      ![](./media2/l9-50.1.png)    
 
-      >**Note**: The Azure Container Registry (ACR) service _Registry name_, _Login server_, _Username_, and _Password_ can be found on the **Access keys** pane for the service.
+      >**Note:** The Azure Container Registry (ACR) service _Registry name_, _Login server_, _Username_, and _Password_ can be found on the **Access keys** pane for the service.
 
       ![](./media2/az9l38.png)
 
@@ -597,13 +601,13 @@ In this task, you will configure the IoT edge device and set the IoT Edge Module
     | `AllMessagesToObjectCountingModule` | `FROM /* INTO BrokeredEndpoint("/modules/objectcountingmodule/inputs/input1")` |
     | `ObjectCountingModuleToIoTHub` | `FROM /messages/modules/objectcountingmodule/outputs/* INTO $upstream` |
 
-      ![](./media/l9-52.png)
+      ![](./media/lab30-04-6.png)
 
 1. At the bottom of the blade, click **Next: Review + create >**.
 
 1. Review the Deployment Manifest for the device, and then click **Create**.
 
-      ![](./media/l9-52-1.png)
+      ![](./media/lab30-04-7.png)
 
 >**Congratulations** on completing the Task! Now, it's time to validate it. Here are the steps:
 > - Hit the Validate button for the corresponding task. If you receive a success message, you have successfully validated the lab. 
